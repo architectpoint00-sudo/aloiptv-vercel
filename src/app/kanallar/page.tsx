@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 export default function KanallarPage() {
   return (
     <>
-      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
+      <section className="pt-28 sm:pt-36 lg:pt-44 pb-28 sm:pb-36 lg:pb-44">
         <div className="container-main">
           <Breadcrumb
             items={[
@@ -22,7 +22,7 @@ export default function KanallarPage() {
             ]}
           />
 
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Kanal Listesi</span>
             <h1 className="heading-lg mb-4 sm:mb-5">150.000+ Canli Kanal</h1>
             <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
@@ -31,11 +31,11 @@ export default function KanallarPage() {
           </div>
 
           {/* Channel Categories */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24 sm:mb-32 lg:mb-36">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-24 sm:mb-32 lg:mb-36">
             {CHANNEL_CATEGORIES.map((category) => (
               <div key={category.name} className="card">
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <h3 className="text-white font-semibold text-base sm:text-lg">{category.name}</h3>
+                  <h3 className="text-white font-semibold text-lg sm:text-xl">{category.name}</h3>
                   <span className="text-2xl opacity-60">{category.icon}</span>
                 </div>
                 <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">{category.description}</p>
@@ -52,7 +52,7 @@ export default function KanallarPage() {
             <div className="space-y-5 sm:space-y-6">
               {CHANNEL_LISTS.map((group) => (
                 <div key={group.title} className="card">
-                  <h3 className="text-white font-semibold text-base sm:text-lg mb-4 sm:mb-5">{group.title}</h3>
+                  <h3 className="text-white font-semibold text-lg sm:text-xl mb-4 sm:mb-5">{group.title}</h3>
                   <div className="flex flex-wrap gap-2 sm:gap-2.5">
                     {group.channels.map((channel) => (
                       <span

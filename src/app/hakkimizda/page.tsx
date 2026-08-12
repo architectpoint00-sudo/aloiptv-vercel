@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 export default function HakkimizdaPage() {
   return (
     <>
-      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
+      <section className="pt-28 sm:pt-36 lg:pt-44 pb-28 sm:pb-36 lg:pb-44">
         <div className="container-main max-w-4xl">
           <Breadcrumb
             items={[
@@ -22,7 +22,7 @@ export default function HakkimizdaPage() {
             ]}
           />
 
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Hakkimizda</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Premium IPTV&apos;de Guvenilir Isim</h1>
             <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
@@ -43,7 +43,7 @@ export default function HakkimizdaPage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mb-20 sm:mb-28 lg:mb-32">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-7 mb-20 sm:mb-28 lg:mb-32">
             {ABOUT_PAGE_DATA.stats.map((stat) => (
               <div key={stat.label} className="card text-center py-7 sm:py-8">
                 <div className="text-white text-3xl sm:text-4xl font-extrabold">{stat.value}</div>
@@ -55,10 +55,10 @@ export default function HakkimizdaPage() {
           {/* Degerlerimiz */}
           <div className="mb-20 sm:mb-28 lg:mb-32">
             <h2 className="heading-md mb-6 sm:mb-8">Degerlerimiz</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               {ABOUT_PAGE_DATA.values.map((value) => (
                 <div key={value.title} className="card">
-                  <h3 className="text-white font-semibold text-base sm:text-lg mb-2.5 sm:mb-3">{value.title}</h3>
+                  <h3 className="text-white font-semibold text-lg sm:text-xl mb-2.5 sm:mb-3">{value.title}</h3>
                   <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">{value.description}</p>
                 </div>
               ))}
@@ -68,7 +68,7 @@ export default function HakkimizdaPage() {
           {/* Ekibimiz */}
           <div className="mb-20 sm:mb-28 lg:mb-32">
             <h2 className="heading-md mb-6 sm:mb-8">Ekibimiz</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
               {ABOUT_PAGE_DATA.team.map((member) => {
                 const initials = member.name
                   .split(' ')
@@ -79,7 +79,7 @@ export default function HakkimizdaPage() {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mx-auto mb-5">
                       <span className="text-red-400 font-bold text-lg sm:text-xl">{initials}</span>
                     </div>
-                    <h3 className="text-white font-semibold text-base sm:text-lg mb-1.5">{member.name}</h3>
+                    <h3 className="text-white font-semibold text-lg sm:text-xl mb-1.5">{member.name}</h3>
                     <p className="text-red-400 text-sm font-medium mb-3 sm:mb-4">{member.role}</p>
                     <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">{member.description}</p>
                   </div>

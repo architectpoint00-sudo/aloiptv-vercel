@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <>
       {/* ═══════ HERO ═══════ */}
-      <section className="relative overflow-hidden pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
+      <section className="relative overflow-hidden pt-32 sm:pt-40 lg:pt-48 pb-28 sm:pb-36 lg:pb-44">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[400px] sm:h-[600px] bg-red-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container-main relative z-10">
@@ -29,22 +29,22 @@ export default function HomePage() {
                 <span className="text-red-400 text-[10px] sm:text-xs font-semibold tracking-wide">AloIPTV &mdash; Guvenilir &amp; Kesintisiz IPTV</span>
               </div>
 
-              <h1 className="heading-xl mb-6 sm:mb-8">
+              <h1 className="heading-xl mb-8 sm:mb-10">
                 Premium IPTV ile Canli TV, Spor, Film{' '}
                 <span className="text-gradient">&amp; Dizi Keyfi</span>
               </h1>
 
-              <p className="text-[#94a3b8] text-base sm:text-lg lg:text-xl leading-relaxed mb-10 sm:mb-12 max-w-[520px]">
+              <p className="text-[#94a3b8] text-base sm:text-lg lg:text-xl leading-relaxed mb-12 sm:mb-14 max-w-[520px]">
                 150.000+ canli kanal ve 80.000+ film-dizi arsivi. 4K Ultra HD kalite,
                 Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. Tum cihazlarinizda.
               </p>
 
-              <div className="flex flex-wrap gap-3 sm:gap-4 mb-16 sm:mb-20 lg:mb-24">
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-20 sm:mb-24 lg:mb-28">
                 <Link href="/fiyatlar/" className="btn btn-primary btn-lg">Fiyatlari Gor</Link>
                 <Link href="/kanallar/" className="btn btn-outline btn-lg">Kanallari Incele</Link>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12">
                 {STATS.map((stat) => (
                   <div key={stat.label}>
                     <div className="text-white text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">{stat.value}</div>
@@ -108,9 +108,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ FEATURES ═══════ */}
-      <section className="section-alt py-24 sm:py-36 lg:py-44">
+      <section className="section-alt py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Ozellikler</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Premium Canli TV Deneyimi</h2>
             <p className="text-[#94a3b8] text-base sm:text-lg">
@@ -118,11 +118,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {FEATURES.map((feature) => (
               <div key={feature.title} className="card">
                 <div className="card-icon"><span>{feature.icon}</span></div>
-                <h3 className="text-white font-semibold text-base sm:text-lg mb-2.5">{feature.title}</h3>
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-3 sm:mb-4">{feature.title}</h3>
                 <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{feature.description}</p>
               </div>
             ))}
@@ -131,9 +131,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ PRICING ═══════ */}
-      <section className="py-24 sm:py-36 lg:py-44">
+      <section className="py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Fiyatlandirma</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h2>
             <p className="text-[#94a3b8] text-base sm:text-lg">
@@ -141,7 +141,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             {PRICING_PACKAGES.filter(p => !p.isFree).slice(0, 6).map((pkg) => (
               <div key={pkg.name} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                 <PricingCard pkg={pkg} />
@@ -159,9 +159,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ SETUP STEPS ═══════ */}
-      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-alt section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
+          <div className="max-w-2xl mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Kurulum</span>
             <h2 className="heading-lg mb-4 sm:mb-5">3 Kolay Adimda Baslayin</h2>
             <p className="text-[#94a3b8] text-base sm:text-lg">
@@ -169,13 +169,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {SETUP_STEPS.map((step) => (
               <div key={step.step} className="card">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mb-6">
                   <span className="text-red-400 font-bold text-sm">{step.step}</span>
                 </div>
-                <h3 className="text-white font-semibold text-base sm:text-lg mb-3">{step.title}</h3>
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-3 sm:mb-4">{step.title}</h3>
                 <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{step.description}</p>
               </div>
             ))}
@@ -184,7 +184,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ TRIAL CTA ═══════ */}
-      <section className="py-10 sm:py-14 lg:py-16">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="container-main">
           <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-xl sm:rounded-2xl px-7 sm:px-10 lg:px-14 py-8 sm:py-10 lg:py-12">
             <div className="absolute top-0 right-0 w-[200px] sm:w-[300px] h-[150px] sm:h-[200px] bg-red-500/[0.04] rounded-full blur-[80px] pointer-events-none" />
@@ -202,9 +202,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ WHY CHOOSE ═══════ */}
-      <section className="section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
+          <div className="max-w-2xl mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Neden AloIPTV?</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Ilk Yayinindan Itibaren Farki Hissedin</h2>
             <p className="text-[#94a3b8] text-base sm:text-lg">
@@ -213,7 +213,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               { icon: '📺', title: 'Canli TV & Spor', desc: '150.000+ canli kanal. Super Lig, Premier League, Champions League, NBA, UFC ve daha fazlasi.' },
               { icon: '🎬', title: 'Film & Dizi Arsivi', desc: '80.000+ film ve dizi. Netflix, Disney+, HBO Max icerikleri tek abonelikte.' },
@@ -224,7 +224,7 @@ export default function HomePage() {
             ].map((item) => (
               <div key={item.title} className="card">
                 <div className="card-icon"><span>{item.icon}</span></div>
-                <h3 className="text-white font-semibold text-base sm:text-lg mb-2.5">{item.title}</h3>
+                <h3 className="text-white font-semibold text-lg sm:text-xl mb-3 sm:mb-4">{item.title}</h3>
                 <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -233,18 +233,18 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ CHANNEL CATEGORIES ═══════ */}
-      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-alt section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Kanal Kategorileri</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Tek Abonelik, Tum Kategoriler</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {CHANNEL_CATEGORIES.map((cat) => (
               <div key={cat.name} className="card">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-white font-semibold text-base sm:text-lg">{cat.name}</h3>
+                  <h3 className="text-white font-semibold text-lg sm:text-xl">{cat.name}</h3>
                   <span className="text-2xl opacity-60">{cat.icon}</span>
                 </div>
                 <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{cat.description}</p>
@@ -262,9 +262,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ DEVICES ═══════ */}
-      <section className="section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
+          <div className="max-w-2xl mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Cihaz Uyumlulugu</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Tum Cihazlarinizda Calisir</h2>
             <p className="text-[#94a3b8] text-base sm:text-lg">
@@ -272,9 +272,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-7">
             {DEVICES.map((device) => (
-              <div key={device.name} className="card text-center py-6 sm:py-8">
+              <div key={device.name} className="card text-center py-8 sm:py-10">
                 <span className="text-3xl sm:text-4xl block mb-4 sm:mb-5">{device.icon}</span>
                 <h3 className="text-white text-sm sm:text-base font-semibold mb-1.5">{device.name}</h3>
                 <p className="text-[#64748b] text-xs sm:text-sm">{device.description}</p>
@@ -285,14 +285,14 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ TESTIMONIALS ═══════ */}
-      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-alt section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
+          <div className="max-w-2xl mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Yorumlar</span>
             <h2 className="heading-lg">10.000+ Ailenin Tercihi</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {TESTIMONIALS.map((t) => (
               <TestimonialCard key={t.name} testimonial={t} />
             ))}
@@ -301,9 +301,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ FAQ ═══════ */}
-      <section className="section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main max-w-3xl">
-          <div className="mb-16 sm:mb-20 lg:mb-24">
+          <div className="mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Sikca Sorulan Sorular</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Satin Almadan Once Yanitlar</h2>
             <p className="text-[#94a3b8] text-sm">
@@ -322,7 +322,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ FINAL CTA ═══════ */}
-      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
+      <section className="section-alt section-border py-28 sm:py-36 lg:py-44">
         <div className="container-main text-center max-w-2xl">
           <h2 className="heading-lg mb-5 sm:mb-6">
             Premium IPTV&apos;ye Gecmeye Hazir misiniz?

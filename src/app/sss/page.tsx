@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function SSSPage() {
   return (
     <>
-      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
+      <section className="pt-28 sm:pt-36 lg:pt-44 pb-28 sm:pb-36 lg:pb-44">
         <div className="container-main max-w-3xl">
           <Breadcrumb
             items={[
@@ -23,7 +23,7 @@ export default function SSSPage() {
             ]}
           />
 
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Sikca Sorulan Sorular</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Merak Ettiginiz Her Sey</h1>
             <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">

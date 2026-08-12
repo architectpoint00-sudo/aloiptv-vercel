@@ -18,8 +18,8 @@ export default function PricingCard({ pkg }: PricingCardProps) {
         </div>
       )}
 
-      <div className="mb-6">
-        <h3 className="text-white font-semibold text-lg sm:text-xl mb-1.5">{pkg.name}</h3>
+      <div className="mb-7 sm:mb-8">
+        <h3 className="text-white font-semibold text-xl sm:text-2xl mb-2">{pkg.name}</h3>
         {pkg.discount && (
           <span className="text-red-400 text-sm font-medium">{pkg.discount}</span>
         )}

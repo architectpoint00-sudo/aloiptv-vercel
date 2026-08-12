@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
 export default function FiyatlarPage() {
   return (
     <>
-      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
+      <section className="pt-28 sm:pt-36 lg:pt-44 pb-28 sm:pb-36 lg:pb-44">
         <div className="container-main">
           <Breadcrumb
             items={[
@@ -24,7 +24,7 @@ export default function FiyatlarPage() {
             ]}
           />
 
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center mb-20 sm:mb-24 lg:mb-28">
             <span className="section-tag">Fiyatlandirma</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h1>
             <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
@@ -34,7 +34,7 @@ export default function FiyatlarPage() {
           </div>
 
           {/* Pricing Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24 sm:mb-32 lg:mb-36">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-24 sm:mb-32 lg:mb-36">
             {PRICING_PACKAGES.map((pkg) => (
               <PricingCard key={pkg.name} pkg={pkg} />
             ))}
