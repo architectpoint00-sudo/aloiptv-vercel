@@ -17,67 +17,53 @@ import FaqAccordion from '@/components/FaqAccordion'
 export default function HomePage() {
   return (
     <>
-      {/* ══════════════════════════════════════
-          HERO
-         ══════════════════════════════════════ */}
-      <section className="relative overflow-hidden pt-10 sm:pt-16 md:pt-24 pb-16 sm:pb-20 md:pb-32">
-        {/* Background glow */}
+      {/* ═══════ HERO ═══════ */}
+      <section className="relative overflow-hidden pt-12 sm:pt-20 lg:pt-28 pb-20 sm:pb-28 lg:pb-36">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[400px] sm:h-[600px] bg-red-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container-main relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Left — text content */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-2.5 bg-red-500/[0.08] border border-red-500/20 rounded-full px-3.5 sm:px-5 py-1.5 sm:py-2 mb-6 sm:mb-8">
+              <div className="inline-flex items-center gap-2 sm:gap-2.5 bg-red-500/[0.08] border border-red-500/20 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 mb-8 sm:mb-10">
                 <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full animate-pulse" />
                 <span className="text-red-400 text-[10px] sm:text-xs font-semibold tracking-wide">AloIPTV &mdash; Guvenilir &amp; Kesintisiz IPTV</span>
               </div>
 
-              <h1 className="heading-xl mb-4 sm:mb-6">
+              <h1 className="heading-xl mb-6 sm:mb-8">
                 Premium IPTV ile Canli TV, Spor, Film{' '}
                 <span className="text-gradient">&amp; Dizi Keyfi</span>
               </h1>
 
-              <p className="text-[#94a3b8] text-sm sm:text-base md:text-lg leading-relaxed mb-8 sm:mb-10 max-w-[520px]">
+              <p className="text-[#94a3b8] text-sm sm:text-base lg:text-lg leading-relaxed mb-10 sm:mb-12 max-w-[520px]">
                 150.000+ canli kanal ve 80.000+ film-dizi arsivi. 4K Ultra HD kalite,
                 Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. Tum cihazlarinizda.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-3 sm:gap-4 mb-10 sm:mb-14">
-                <Link href="/fiyatlar/" className="btn btn-primary btn-lg">
-                  Fiyatlari Gor
-                </Link>
-                <Link href="/kanallar/" className="btn btn-outline btn-lg">
-                  Kanallari Incele
-                </Link>
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-14 sm:mb-16">
+                <Link href="/fiyatlar/" className="btn btn-primary btn-lg">Fiyatlari Gor</Link>
+                <Link href="/kanallar/" className="btn btn-outline btn-lg">Kanallari Incele</Link>
               </div>
 
-              {/* Stats row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10">
                 {STATS.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">{stat.value}</div>
-                    <div className="text-[#64748b] text-[10px] sm:text-xs font-medium uppercase tracking-wider mt-1">{stat.label}</div>
+                    <div className="text-white text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight">{stat.value}</div>
+                    <div className="text-[#64748b] text-[10px] sm:text-xs font-medium uppercase tracking-wider mt-1.5">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right — hero visual (desktop only) */}
+            {/* Hero visual — desktop only */}
             <div className="hidden lg:block">
               <div className="relative">
-                {/* Main card */}
                 <div className="bg-gradient-to-br from-[#0f1d32] to-[#0a1628] border border-[#1a2d4a] rounded-2xl overflow-hidden">
-                  {/* Top bar */}
                   <div className="flex items-center gap-2 px-5 py-3 border-b border-[#1a2d4a]/60">
                     <div className="w-3 h-3 rounded-full bg-red-500/40" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/40" />
                     <div className="w-3 h-3 rounded-full bg-green-500/40" />
                     <span className="text-[#475569] text-[11px] ml-2">AloIPTV Player</span>
                   </div>
-                  {/* Content */}
                   <div className="p-8">
                     <div className="grid grid-cols-3 gap-3 mb-6">
                       {['Super Lig', 'Premier Lig', 'La Liga'].map((league) => (
@@ -104,8 +90,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-
-                {/* Floating card */}
                 <div className="absolute -bottom-4 -left-4 bg-[#0f1d32]/95 backdrop-blur-lg border border-[#1a2d4a] rounded-xl px-5 py-3.5 shadow-2xl shadow-black/20">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
@@ -123,26 +107,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          FEATURES
-         ══════════════════════════════════════ */}
-      <section className="section-alt py-16 sm:py-20 md:py-28">
+      {/* ═══════ FEATURES ═══════ */}
+      <section className="section-alt py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
             <span className="section-tag">Ozellikler</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">Premium Canli TV Deneyimi</h2>
+            <h2 className="heading-lg mb-4 sm:mb-5">Premium Canli TV Deneyimi</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
               AloIPTV ile canli spor, film, dizi ve daha fazlasina tek bir yerden erisin.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {FEATURES.map((feature) => (
               <div key={feature.title} className="card">
-                <div className="card-icon">
-                  <span>{feature.icon}</span>
-                </div>
-                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2">{feature.title}</h3>
+                <div className="card-icon"><span>{feature.icon}</span></div>
+                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2.5">{feature.title}</h3>
                 <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
@@ -150,26 +130,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          PRICING
-         ══════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 md:py-28">
+      {/* ═══════ PRICING ═══════ */}
+      <section className="py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
             <span className="section-tag">Fiyatlandirma</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">Size Uygun Paketi Secin</h2>
+            <h2 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
               Tum paketlerde 150.000+ kanal, 4K UHD ve 7/24 destek dahildir.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {PRICING_PACKAGES.filter(p => !p.isFree).slice(0, 6).map((pkg) => (
               <PricingCard key={pkg.name} pkg={pkg} />
             ))}
           </div>
 
-          <div className="text-center mt-8 sm:mt-10">
+          <div className="text-center mt-10 sm:mt-12">
             <Link href="/fiyatlar/" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1.5">
               Tum paketleri gor
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
@@ -178,26 +156,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          SETUP STEPS
-         ══════════════════════════════════════ */}
-      <section className="section-alt section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ SETUP STEPS ═══════ */}
+      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="max-w-2xl mb-10 sm:mb-14">
+          <div className="max-w-2xl mb-14 sm:mb-16">
             <span className="section-tag">Kurulum</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">3 Kolay Adimda Baslayin</h2>
+            <h2 className="heading-lg mb-4 sm:mb-5">3 Kolay Adimda Baslayin</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
               Teknisyen yok, donanim yok, sozlesme yok. Adimlari takip edin ve izlemeye baslayin.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
             {SETUP_STEPS.map((step) => (
-              <div key={step.step} className="card relative">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mb-4">
-                  <span className="text-red-400 font-bold text-xs sm:text-sm">{step.step}</span>
+              <div key={step.step} className="card">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mb-5">
+                  <span className="text-red-400 font-bold text-sm">{step.step}</span>
                 </div>
-                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2">{step.title}</h3>
+                <h3 className="text-white font-semibold text-sm sm:text-base mb-2.5">{step.title}</h3>
                 <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
@@ -205,24 +181,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          TRIAL CTA BANNER
-         ══════════════════════════════════════ */}
-      <section className="py-6 sm:py-8 md:py-12">
+      {/* ═══════ TRIAL CTA ═══════ */}
+      <section className="py-10 sm:py-14 lg:py-16">
         <div className="container-main">
-          <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-xl sm:rounded-2xl px-6 sm:px-8 md:px-12 py-6 sm:py-8 md:py-10">
+          <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-xl sm:rounded-2xl px-7 sm:px-10 lg:px-14 py-8 sm:py-10 lg:py-12">
             <div className="absolute top-0 right-0 w-[200px] sm:w-[300px] h-[150px] sm:h-[200px] bg-red-500/[0.04] rounded-full blur-[80px] pointer-events-none" />
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6 relative z-10">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative z-10">
               <div>
-                <h3 className="text-white font-bold text-base sm:text-lg md:text-xl mb-1 sm:mb-1.5">Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
-                <p className="text-[#94a3b8] text-xs sm:text-sm">Satin almadan once tum kanallari test edin — hicbir baglantilik yok.</p>
+                <h3 className="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-2">Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
+                <p className="text-[#94a3b8] text-sm">Satin almadan once tum kanallari test edin — hicbir baglantilik yok.</p>
               </div>
-              <a
-                href={WHATSAPP_LINKS.test}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary btn-lg shrink-0 w-full sm:w-auto"
-              >
+              <a href={WHATSAPP_LINKS.test} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg shrink-0 w-full sm:w-auto">
                 Ucretsiz Test Al
               </a>
             </div>
@@ -230,21 +199,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          WHY CHOOSE
-         ══════════════════════════════════════ */}
-      <section className="section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ WHY CHOOSE ═══════ */}
+      <section className="section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="max-w-2xl mb-10 sm:mb-14">
+          <div className="max-w-2xl mb-14 sm:mb-16">
             <span className="section-tag">Neden AloIPTV?</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">Ilk Yayinindan Itibaren Farki Hissedin</h2>
+            <h2 className="heading-lg mb-4 sm:mb-5">Ilk Yayinindan Itibaren Farki Hissedin</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
               Genis kanal secenekleri, yuksek goruntu kalitesi, genis cihaz destegi ve
               ozel musteri hizmetleri ile IPTV deneyimini en ust seviyeye tasiyoruz.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {[
               { icon: '📺', title: 'Canli TV & Spor', desc: '150.000+ canli kanal. Super Lig, Premier League, Champions League, NBA, UFC ve daha fazlasi.' },
               { icon: '🎬', title: 'Film & Dizi Arsivi', desc: '80.000+ film ve dizi. Netflix, Disney+, HBO Max icerikleri tek abonelikte.' },
@@ -254,10 +221,8 @@ export default function HomePage() {
               { icon: '🔗', title: 'Coklu Cihaz Baglantisi', desc: 'Tek abonelikle birden fazla cihazda izleyin. Herkes kendi favorisini izlesin.' },
             ].map((item) => (
               <div key={item.title} className="card">
-                <div className="card-icon">
-                  <span>{item.icon}</span>
-                </div>
-                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2">{item.title}</h3>
+                <div className="card-icon"><span>{item.icon}</span></div>
+                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2.5">{item.title}</h3>
                 <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -265,17 +230,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          CHANNEL CATEGORIES
-         ══════════════════════════════════════ */}
-      <section className="section-alt section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ CHANNEL CATEGORIES ═══════ */}
+      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
             <span className="section-tag">Kanal Kategorileri</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">Tek Abonelik, Tum Kategoriler</h2>
+            <h2 className="heading-lg mb-4 sm:mb-5">Tek Abonelik, Tum Kategoriler</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {CHANNEL_CATEGORIES.map((cat) => (
               <div key={cat.name} className="card">
                 <div className="flex items-start justify-between mb-3">
@@ -287,7 +250,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-8 sm:mt-10">
+          <div className="text-center mt-10 sm:mt-12">
             <Link href="/kanallar/" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1.5">
               Tum kanallari incele
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
@@ -296,24 +259,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          DEVICES
-         ══════════════════════════════════════ */}
-      <section className="section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ DEVICES ═══════ */}
+      <section className="section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="max-w-2xl mb-10 sm:mb-14">
+          <div className="max-w-2xl mb-14 sm:mb-16">
             <span className="section-tag">Cihaz Uyumlulugu</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">Tum Cihazlarinizda Calisir</h2>
+            <h2 className="heading-lg mb-4 sm:mb-5">Tum Cihazlarinizda Calisir</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
               Tek hesap, M3U veya Xtream Codes destekleyen tum oynaticilarda. Ekstra donanim gerekmez.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
             {DEVICES.map((device) => (
-              <div key={device.name} className="card text-center py-5 sm:py-6">
-                <span className="text-xl sm:text-2xl block mb-2 sm:mb-3">{device.icon}</span>
-                <h3 className="text-white text-xs sm:text-sm font-semibold mb-0.5">{device.name}</h3>
+              <div key={device.name} className="card text-center py-6 sm:py-8">
+                <span className="text-2xl sm:text-3xl block mb-3 sm:mb-4">{device.icon}</span>
+                <h3 className="text-white text-xs sm:text-sm font-semibold mb-1">{device.name}</h3>
                 <p className="text-[#64748b] text-[10px] sm:text-xs">{device.description}</p>
               </div>
             ))}
@@ -321,17 +282,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          TESTIMONIALS
-         ══════════════════════════════════════ */}
-      <section className="section-alt section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ TESTIMONIALS ═══════ */}
+      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main">
-          <div className="max-w-2xl mb-10 sm:mb-14">
+          <div className="max-w-2xl mb-14 sm:mb-16">
             <span className="section-tag">Yorumlar</span>
             <h2 className="heading-lg">10.000+ Ailenin Tercihi</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             {TESTIMONIALS.map((t) => (
               <TestimonialCard key={t.name} testimonial={t} />
             ))}
@@ -339,15 +298,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          FAQ
-         ══════════════════════════════════════ */}
-      <section className="section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ FAQ ═══════ */}
+      <section className="section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main max-w-3xl">
-          <div className="mb-10 sm:mb-14">
+          <div className="mb-14 sm:mb-16">
             <span className="section-tag">Sikca Sorulan Sorular</span>
-            <h2 className="heading-lg mb-3 sm:mb-4">Satin Almadan Once Yanitlar</h2>
-            <p className="text-[#94a3b8] text-xs sm:text-sm">
+            <h2 className="heading-lg mb-4 sm:mb-5">Satin Almadan Once Yanitlar</h2>
+            <p className="text-[#94a3b8] text-sm">
               Daha fazla detay icin{' '}
               <Link href="/sss/" className="text-red-400 hover:text-red-300 underline underline-offset-2">SSS sayfamizi</Link>{' '}
               ziyaret edin.
@@ -356,42 +313,24 @@ export default function HomePage() {
 
           <FaqAccordion items={HOMEPAGE_FAQ} />
 
-          <div className="text-center mt-8 sm:mt-10">
-            <Link href="/fiyatlar/" className="btn btn-primary btn-lg">
-              Planini Sec
-            </Link>
+          <div className="text-center mt-12 sm:mt-14">
+            <Link href="/fiyatlar/" className="btn btn-primary btn-lg">Planini Sec</Link>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════
-          FINAL CTA
-         ══════════════════════════════════════ */}
-      <section className="section-alt section-border py-16 sm:py-20 md:py-28">
+      {/* ═══════ FINAL CTA ═══════ */}
+      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
         <div className="container-main text-center max-w-2xl">
-          <h2 className="heading-lg mb-4 sm:mb-5">
+          <h2 className="heading-lg mb-5 sm:mb-6">
             Premium IPTV&apos;ye Gecmeye Hazir misiniz?
           </h2>
-          <p className="text-[#94a3b8] text-sm sm:text-base mb-8 sm:mb-10 max-w-md mx-auto">
+          <p className="text-[#94a3b8] text-sm sm:text-base mb-10 sm:mb-12 max-w-md mx-auto">
             7 gun kosulsuz iade garantisi. Risksiz deneyin.
           </p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-            <a
-              href={WHATSAPP_LINKS.buy}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary btn-lg"
-            >
-              Hemen Basla
-            </a>
-            <a
-              href={WHATSAPP_LINKS.test}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline btn-lg"
-            >
-              Ucretsiz Test
-            </a>
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+            <a href={WHATSAPP_LINKS.buy} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Hemen Basla</a>
+            <a href={WHATSAPP_LINKS.test} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">Ucretsiz Test</a>
           </div>
         </div>
       </section>
