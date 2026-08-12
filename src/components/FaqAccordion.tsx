@@ -22,7 +22,7 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
   return (
     <div>
       {categoryTitle && (
-        <h3 className="text-xl font-bold text-white mb-4">{categoryTitle}</h3>
+        <h3 className="text-xl font-bold text-white mb-5">{categoryTitle}</h3>
       )}
       <div className="space-y-3">
         {items.map((item, index) => {
@@ -30,27 +30,29 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
           return (
             <div
               key={index}
-              className={`border rounded-xl transition-all duration-300 ${
+              className={`rounded-xl transition-all duration-300 overflow-hidden ${
                 isOpen
-                  ? 'border-red-500/30 bg-[#111111]'
-                  : 'border-[#1a1a1a] bg-[#111111] hover:border-red-500/20'
+                  ? 'bg-gradient-to-b from-[#0f0f18] to-[#0a0a10] border border-red-500/20 shadow-lg shadow-red-500/5'
+                  : 'glass-card'
               }`}
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between px-5 py-4 text-left"
+                className="w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left group"
               >
-                <span className="text-white font-medium text-sm sm:text-base pr-4">
+                <span className={`font-medium text-sm sm:text-base pr-4 transition-colors ${
+                  isOpen ? 'text-white' : 'text-gray-300 group-hover:text-white'
+                }`}>
                   {item.question}
                 </span>
                 <span
-                  className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                  className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300 ${
                     isOpen
-                      ? 'bg-red-500 text-white rotate-0'
-                      : 'bg-white/5 text-gray-400'
+                      ? 'bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg shadow-red-500/25 rotate-45'
+                      : 'bg-white/[0.06] text-gray-500 group-hover:text-white'
                   }`}
                 >
-                  {isOpen ? '−' : '+'}
+                  +
                 </span>
               </button>
               <div
@@ -58,7 +60,7 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
                   isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-5 pb-4 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-3">
+                <div className="px-5 sm:px-6 pb-5 text-gray-400 text-sm leading-relaxed border-t border-white/[0.04] pt-4">
                   {item.answer}
                 </div>
               </div>

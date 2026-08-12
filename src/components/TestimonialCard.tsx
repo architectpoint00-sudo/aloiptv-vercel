@@ -6,14 +6,14 @@ interface TestimonialCardProps {
 }
 
 const AVATAR_COLORS = [
-  'bg-red-500',
-  'bg-blue-500',
-  'bg-green-500',
-  'bg-purple-500',
-  'bg-yellow-500',
-  'bg-pink-500',
-  'bg-indigo-500',
-  'bg-teal-500',
+  'from-red-500 to-orange-500',
+  'from-blue-500 to-cyan-500',
+  'from-green-500 to-emerald-500',
+  'from-purple-500 to-violet-500',
+  'from-yellow-500 to-amber-500',
+  'from-pink-500 to-rose-500',
+  'from-indigo-500 to-blue-500',
+  'from-teal-500 to-cyan-500',
 ]
 
 function getInitials(name: string): string {
@@ -40,16 +40,16 @@ export default function TestimonialCard({
   membership,
 }: TestimonialCardProps) {
   const initials = getInitials(name)
-  const avatarColor = getAvatarColor(name)
+  const avatarGradient = getAvatarColor(name)
 
   return (
-    <div className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 flex flex-col hover:border-red-500/20 transition-all duration-300">
+    <div className="glass-card rounded-2xl p-6 sm:p-7 flex flex-col transition-all duration-500 hover:-translate-y-1 group">
       {/* Stars */}
-      <div className="flex gap-0.5 mb-4">
+      <div className="flex gap-1 mb-5">
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
-            className="w-4 h-4 text-yellow-400"
+            className="w-4 h-4 text-yellow-400 drop-shadow-[0_0_3px_rgba(250,204,21,0.3)]"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -59,21 +59,25 @@ export default function TestimonialCard({
       </div>
 
       {/* Quote */}
-      <blockquote className="text-gray-300 text-sm leading-relaxed italic mb-5 flex-1">
-        &ldquo;{quote}&rdquo;
-      </blockquote>
+      <div className="relative mb-6 flex-1">
+        <svg className="absolute -top-2 -left-1 w-8 h-8 text-red-500/10" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609L9.978 5.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
+        </svg>
+        <blockquote className="text-gray-300 text-sm leading-relaxed pl-2">
+          &ldquo;{quote}&rdquo;
+        </blockquote>
+      </div>
 
       {/* Author */}
-      <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-        {/* Avatar */}
+      <div className="flex items-center gap-3 pt-5 border-t border-white/[0.04]">
         <div
-          className={`w-10 h-10 rounded-full ${avatarColor} flex items-center justify-center shrink-0`}
+          className={`w-11 h-11 rounded-full bg-gradient-to-br ${avatarGradient} flex items-center justify-center shrink-0 shadow-lg`}
         >
           <span className="text-white text-xs font-bold">{initials}</span>
         </div>
         <div>
           <p className="text-white text-sm font-semibold">{name}</p>
-          <p className="text-gray-500 text-xs">
+          <p className="text-gray-500 text-xs mt-0.5">
             {location} &middot; {membership}
           </p>
         </div>

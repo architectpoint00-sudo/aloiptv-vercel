@@ -24,7 +24,7 @@ import CtaSection from '@/components/CtaSection'
 export const metadata = buildMetadata({
   title: `${SITE_NAME} — Premium IPTV Satn Al | 150K+ Kanal, 4K UHD`,
   description:
-    'Premium IPTV hizmeti. 150.000+ kanal, 4K UHD kalite, Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. 7 gun koşulsuz iade garantisi.',
+    'Premium IPTV hizmeti. 150.000+ kanal, 4K UHD kalite, Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. 7 gun kosulsuz iade garantisi.',
   path: '/',
 })
 
@@ -36,64 +36,68 @@ export default function HomePage() {
   return (
     <>
       {/* ═══════════ HERO SECTION ═══════════ */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
         {/* Background effects */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.08),transparent_60%)]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-red-500/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.1),transparent_50%)]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-red-500/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-blue-500/[0.02] rounded-full blur-[100px]" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 grid-pattern opacity-30" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left — Text */}
             <div>
               {/* Badge */}
-              <span className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest border border-red-500/30 bg-red-500/10 px-4 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+              <span className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest border border-red-500/20 bg-red-500/[0.08] px-5 py-2 rounded-full mb-8">
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
                 Turkiye&apos;nin #1 IPTV Saglayicisi
               </span>
 
               {/* Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-7 tracking-tight">
                 En Iyi{' '}
-                <span className="text-red-500">IPTV Satn Al</span>
-                {' '}&mdash; Aloiptv ile Izle
+                <span className="text-gradient">IPTV Satn Al</span>
+                <br className="hidden sm:block" />
+                <span className="text-gradient-white"> Aloiptv ile Izle</span>
               </h1>
 
               {/* Description */}
-              <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-10 max-w-xl">
                 150.000+ canli kanal, 80.000+ film ve dizi, 4K Ultra HD kalite
                 ve Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi.
-                7/24 Turkce destek ve 7 gun koşulsuz iade garantisi.
+                7/24 Turkce destek ve 7 gun kosulsuz iade garantisi.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex flex-wrap gap-4 mb-12">
                 <a
                   href={WHATSAPP_LINKS.buy}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:scale-105 shadow-lg shadow-red-500/20"
+                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-xl shadow-red-500/25 hover:shadow-red-500/40 btn-shine text-base"
                 >
-                  Premium Erişim
+                  Premium Erisim
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
                 <a
                   href={WHATSAPP_LINKS.test}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/5 text-white font-semibold px-7 py-3.5 rounded-xl border border-white/20 hover:border-white/40 transition-all"
+                  className="inline-flex items-center gap-2.5 bg-white/[0.04] hover:bg-white/[0.08] text-white font-semibold px-8 py-4 rounded-xl border border-white/10 hover:border-white/20 transition-all text-base"
                 >
                   Ucretsiz Test Al
                 </a>
               </div>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-4 gap-6">
                 {STATS.map((stat, i) => (
                   <div key={i} className="text-center sm:text-left">
-                    <div className="text-white font-bold text-lg sm:text-xl">{stat.value}</div>
-                    <div className="text-gray-500 text-xs">{stat.label}</div>
+                    <div className="text-white font-black text-xl sm:text-2xl">{stat.value}</div>
+                    <div className="text-gray-600 text-xs mt-0.5">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -101,20 +105,27 @@ export default function HomePage() {
 
             {/* Right — TV Mockup */}
             <div className="relative hidden lg:flex items-center justify-center">
-              <div className="relative w-full max-w-lg">
+              <div className="relative w-full max-w-lg animate-float">
                 {/* TV Frame */}
-                <div className="relative bg-[#111111] border-2 border-[#2a2a2a] rounded-2xl p-4 shadow-2xl shadow-black/50">
+                <div className="relative bg-gradient-to-b from-[#12121a] to-[#0a0a10] border border-white/[0.08] rounded-3xl p-5 shadow-2xl shadow-black/60">
                   {/* Screen */}
-                  <div className="relative bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] rounded-xl overflow-hidden aspect-video">
+                  <div className="relative bg-gradient-to-br from-[#0c0c14] to-[#080810] rounded-2xl overflow-hidden aspect-video">
                     {/* CANLI badge */}
                     <div className="absolute top-3 left-3 z-10">
-                      <span className="bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md animate-pulse">
+                      <span className="bg-red-500 text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg animate-pulse shadow-lg shadow-red-500/30">
                         CANLI
                       </span>
                     </div>
 
+                    {/* Quality badge */}
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="bg-white/10 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md backdrop-blur-sm border border-white/10">
+                        4K UHD
+                      </span>
+                    </div>
+
                     {/* Channel logos grid */}
-                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-3 p-6">
+                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-3 p-6 pt-12">
                       {[
                         { name: 'beIN', color: 'from-orange-500 to-red-600' },
                         { name: 'Sport', color: 'from-blue-500 to-blue-700' },
@@ -125,9 +136,9 @@ export default function HomePage() {
                       ].map((ch, i) => (
                         <div
                           key={i}
-                          className={`bg-gradient-to-br ${ch.color} rounded-lg flex items-center justify-center shadow-lg`}
+                          className={`bg-gradient-to-br ${ch.color} rounded-xl flex items-center justify-center shadow-lg shadow-black/30`}
                         >
-                          <span className="text-white font-bold text-xs sm:text-sm tracking-wide">
+                          <span className="text-white font-black text-xs sm:text-sm tracking-wider">
                             {ch.name}
                           </span>
                         </div>
@@ -139,13 +150,14 @@ export default function HomePage() {
                   </div>
 
                   {/* TV stand */}
-                  <div className="flex justify-center mt-3">
-                    <div className="w-20 h-1.5 bg-[#2a2a2a] rounded-full" />
+                  <div className="flex justify-center mt-4">
+                    <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full" />
                   </div>
                 </div>
 
-                {/* Glow */}
-                <div className="absolute -inset-4 bg-red-500/5 rounded-3xl blur-2xl -z-10" />
+                {/* Glow effects */}
+                <div className="absolute -inset-8 bg-red-500/[0.04] rounded-[40px] blur-3xl -z-10" />
+                <div className="absolute -inset-4 bg-blue-500/[0.02] rounded-3xl blur-2xl -z-10" />
               </div>
             </div>
           </div>
@@ -153,47 +165,54 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ TRUST BADGES ═══════════ */}
-      <section className="border-y border-[#1a1a1a] bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {TRUST_BADGES.map((badge, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 justify-center lg:justify-start"
-              >
-                <span className="text-2xl shrink-0">{badge.icon}</span>
-                <div>
-                  <p className="text-white text-sm font-semibold">{badge.title}</p>
-                  <p className="text-gray-500 text-xs hidden sm:block">{badge.description}</p>
+      <section className="relative">
+        <div className="section-divider" />
+        <div className="bg-gradient-to-b from-white/[0.02] to-transparent">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {TRUST_BADGES.map((badge, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-4 justify-center lg:justify-start group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/[0.06] flex items-center justify-center shrink-0 group-hover:border-red-500/20 transition-colors">
+                    <span className="text-xl">{badge.icon}</span>
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">{badge.title}</p>
+                    <p className="text-gray-600 text-xs hidden sm:block mt-0.5">{badge.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+        <div className="section-divider" />
       </section>
 
       {/* ═══════════ PLATFORMS & CHANNELS ═══════════ */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(239,68,68,0.04),transparent_70%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/[0.08] border border-red-500/15 px-5 py-2 rounded-full mb-5">
               Platformlar & Kanallar
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Tum Platformlar, Tek Abonelik
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Tum Platformlar, <span className="text-gradient">Tek Abonelik</span>
             </h2>
           </div>
 
           {/* Platform marquee */}
           <div className="relative overflow-hidden mb-6">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#050508] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#050508] to-transparent z-10" />
             <div className="flex animate-marquee whitespace-nowrap">
               {[...PLATFORM_LOGOS, ...PLATFORM_LOGOS].map((name, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center mx-4 px-5 py-2.5 bg-[#111111] border border-[#1a1a1a] rounded-lg text-gray-300 text-sm font-medium hover:border-red-500/20 transition-colors shrink-0"
+                  className="inline-flex items-center mx-3 px-6 py-3 glass-card rounded-xl text-gray-300 text-sm font-semibold shrink-0"
                 >
                   {name}
                 </span>
@@ -203,8 +222,8 @@ export default function HomePage() {
 
           {/* Turkish channels marquee (reverse direction) */}
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#050508] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#050508] to-transparent z-10" />
             <div
               className="flex animate-marquee whitespace-nowrap"
               style={{ animationDirection: 'reverse', animationDuration: '35s' }}
@@ -212,7 +231,7 @@ export default function HomePage() {
               {[...TURKISH_CHANNELS, ...TURKISH_CHANNELS].map((name, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center mx-3 px-4 py-2 bg-white/[0.03] border border-[#1a1a1a] rounded-lg text-gray-400 text-xs font-medium shrink-0"
+                  className="inline-flex items-center mx-3 px-5 py-2.5 bg-white/[0.02] border border-white/[0.04] rounded-lg text-gray-500 text-xs font-medium shrink-0"
                 >
                   {name}
                 </span>
@@ -223,30 +242,34 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ DEVICE COMPATIBILITY ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(59,130,246,0.03),transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-widest bg-blue-500/[0.08] border border-blue-500/15 px-5 py-2 rounded-full mb-5">
               Cihaz Uyumlulugu
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Her Cihazda, Her Yerde
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Her Cihazda, <span className="text-gradient-white">Her Yerde</span>
             </h2>
           </div>
 
           {/* Device grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
             {DEVICES.map((device, i) => (
               <div
                 key={i}
-                className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-5 text-center hover:border-red-500/20 transition-all duration-300 group"
+                className="glass-card rounded-2xl p-6 sm:p-7 text-center group cursor-default"
               >
-                <span className="text-3xl sm:text-4xl block mb-3 group-hover:scale-110 transition-transform">
-                  {device.icon}
-                </span>
-                <h3 className="text-white font-semibold text-sm mb-1">{device.name}</h3>
-                <p className="text-gray-500 text-xs">{device.description}</p>
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-white/[0.06] to-transparent border border-white/[0.06] flex items-center justify-center group-hover:border-red-500/20 transition-all">
+                  <span className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform inline-block">
+                    {device.icon}
+                  </span>
+                </div>
+                <h3 className="text-white font-semibold text-sm mb-1.5">{device.name}</h3>
+                <p className="text-gray-600 text-xs leading-relaxed">{device.description}</p>
               </div>
             ))}
           </div>
@@ -254,15 +277,17 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ EASY SETUP ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,rgba(239,68,68,0.04),transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-green-400 text-xs font-bold uppercase tracking-widest bg-green-500/[0.08] border border-green-500/15 px-5 py-2 rounded-full mb-5">
               Kolay Kurulum
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              3 Basit Adimda IPTV Satn Al ve Başla
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              3 Basit Adimda <span className="text-gradient">Basla</span>
             </h2>
           </div>
 
@@ -271,18 +296,20 @@ export default function HomePage() {
             {SETUP_STEPS.map((step) => (
               <div
                 key={step.step}
-                className="relative bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 hover:border-red-500/20 transition-all duration-300"
+                className="relative glass-card rounded-2xl p-7 sm:p-8 group"
               >
                 {/* Step number */}
-                <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mb-4">
-                  <span className="text-white font-bold text-sm">{step.step}</span>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-5 shadow-lg shadow-red-500/20 group-hover:shadow-red-500/30 transition-shadow">
+                  <span className="text-white font-black text-lg">{step.step}</span>
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
 
-                {/* Connector line (not on last item) */}
+                {/* Connector line */}
                 {step.step < 3 && (
-                  <div className="hidden md:block absolute top-10 -right-4 lg:-right-5 w-8 lg:w-10 h-px bg-gradient-to-r from-red-500/40 to-transparent z-10" />
+                  <div className="hidden md:block absolute top-12 -right-4 lg:-right-5 w-8 lg:w-10">
+                    <div className="h-px bg-gradient-to-r from-red-500/30 to-transparent" />
+                  </div>
                 )}
               </div>
             ))}
@@ -291,28 +318,31 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ FEATURES ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.03),transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-purple-400 text-xs font-bold uppercase tracking-widest bg-purple-500/[0.08] border border-purple-500/15 px-5 py-2 rounded-full mb-5">
               Ozellikler
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              4K Icerik Kutuphanesi. Kesintisiz Performans.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 tracking-tight">
+              4K Icerik Kutuphanesi.<br className="hidden sm:block" />
+              <span className="text-gradient-white">Kesintisiz Performans.</span>
             </h2>
           </div>
 
           {/* Bullet highlights */}
-          <div className="max-w-2xl mx-auto mb-12">
-            <div className="grid sm:grid-cols-2 gap-4">
+          <div className="max-w-2xl mx-auto mb-14">
+            <div className="grid sm:grid-cols-2 gap-5">
               {[
-                { label: '150.000+ canli kanal — dunyanin her koşesinden', icon: '📺' },
+                { label: '150.000+ canli kanal — dunyanin her kosesinden', icon: '📺' },
                 { label: '80.000+ film ve dizi arsivi — surekli guncelleniyor', icon: '🎬' },
                 { label: 'Anti-Freeze teknolojisi — mac gunlerinde bile kesintisiz', icon: '❄️' },
                 { label: '4K Ultra HD + HDR — kristal netliginde goruntu', icon: '📡' },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
+                <div key={i} className="flex items-start gap-3 glass-card rounded-xl p-4">
                   <span className="text-lg shrink-0">{item.icon}</span>
                   <p className="text-gray-300 text-sm leading-relaxed">{item.label}</p>
                 </div>
@@ -321,17 +351,19 @@ export default function HomePage() {
           </div>
 
           {/* Feature cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {FEATURES.map((feature, i) => (
               <div
                 key={i}
-                className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 hover:border-red-500/20 transition-all duration-300 group"
+                className="glass-card rounded-2xl p-6 sm:p-7 group cursor-default"
               >
-                <span className="text-2xl block mb-3 group-hover:scale-110 transition-transform">
-                  {feature.icon}
-                </span>
-                <h3 className="text-white font-semibold text-base mb-2">{feature.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/[0.06] to-transparent border border-white/[0.06] flex items-center justify-center mb-4 group-hover:border-red-500/20 transition-all">
+                  <span className="text-2xl group-hover:scale-110 transition-transform inline-block">
+                    {feature.icon}
+                  </span>
+                </div>
+                <h3 className="text-white font-bold text-base mb-2">{feature.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -339,19 +371,22 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ WHY ALOIPTV ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(239,68,68,0.04),transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
             {/* Left — Text */}
             <div>
-              <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+              <span className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/[0.08] border border-red-500/15 px-5 py-2 rounded-full mb-6">
                 Neden AloIPTV?
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Turkiye&apos;nin En Guvenilir IPTV Saglayicisi
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 tracking-tight leading-tight">
+                Turkiye&apos;nin En Guvenilir{' '}
+                <span className="text-gradient">IPTV Saglayicisi</span>
               </h2>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {ABOUT_SECTION.map((paragraph, i) => (
                   <p key={i} className="text-gray-400 text-sm sm:text-base leading-relaxed">
                     {paragraph}
@@ -361,16 +396,16 @@ export default function HomePage() {
             </div>
 
             {/* Right — Stats */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
               {ABOUT_STATS.map((stat, i) => (
                 <div
                   key={i}
-                  className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 text-center hover:border-red-500/20 transition-all duration-300"
+                  className="glass-card rounded-2xl p-6 sm:p-7 text-center group cursor-default"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-red-500 mb-2">
+                  <div className="text-3xl sm:text-4xl font-black text-gradient mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-gray-400 text-xs sm:text-sm font-medium uppercase tracking-wide">
+                  <div className="text-gray-500 text-xs sm:text-sm font-medium uppercase tracking-wide">
                     {stat.label}
                   </div>
                 </div>
@@ -381,15 +416,17 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ COMPARISON TABLE ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(239,68,68,0.04),transparent_60%)]" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
-              Karşilaştirma
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-orange-400 text-xs font-bold uppercase tracking-widest bg-orange-500/[0.08] border border-orange-500/15 px-5 py-2 rounded-full mb-5">
+              Karsilastirma
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Piyasa vs Aloiptv Kalitesi
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Piyasa vs <span className="text-gradient">Aloiptv</span> Kalitesi
             </h2>
           </div>
 
@@ -398,17 +435,22 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ TESTIMONIALS ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.03),transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Kullanicilarimiiz Ne Diyor?
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-widest bg-yellow-500/[0.08] border border-yellow-500/15 px-5 py-2 rounded-full mb-5">
+              Musterilerimiz
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Kullanicilarimiz <span className="text-gradient-white">Ne Diyor?</span>
             </h2>
           </div>
 
           {/* Testimonial cards */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
             {TESTIMONIALS.map((t, i) => (
               <TestimonialCard
                 key={i}
@@ -423,20 +465,22 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ PRICING ═══════════ */}
-      <section id="fiyatlar" className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="fiyatlar" className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.06),transparent_50%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/[0.08] border border-red-500/15 px-5 py-2 rounded-full mb-5">
               Fiyatlandirma
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Premium Paketler
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              <span className="text-gradient">Premium</span> Paketler
             </h2>
           </div>
 
           {/* Pricing cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {homepagePackages.map((pkg, i) => (
               <PricingCard
                 key={i}
@@ -454,25 +498,29 @@ export default function HomePage() {
           </div>
 
           {/* Refund note */}
-          <p className="text-center text-gray-500 text-sm mt-8 flex items-center justify-center gap-2">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            7 Gun Koşulsuz Para Iadesi
+          <p className="text-center text-gray-500 text-sm mt-10 flex items-center justify-center gap-2.5">
+            <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center">
+              <svg className="w-3.5 h-3.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            7 Gun Kosulsuz Para Iadesi
           </p>
         </div>
       </section>
 
       {/* ═══════════ FAQ ═══════════ */}
-      <section className="py-16 sm:py-20 border-t border-[#1a1a1a]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 relative">
+        <div className="section-divider" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.03),transparent_60%)]" />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           {/* Section header */}
-          <div className="text-center mb-12">
-            <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-widest bg-blue-500/[0.08] border border-blue-500/15 px-5 py-2 rounded-full mb-5">
               Destek Merkezi
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Sikca Sorulan Sorular
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Sikca Sorulan <span className="text-gradient-white">Sorular</span>
             </h2>
           </div>
 
@@ -481,6 +529,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ CTA ═══════════ */}
+      <div className="section-divider" />
       <CtaSection />
     </>
   )

@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 
 export default function FiyatlarPage() {
   return (
-    <main className="bg-[#0a0a0a] min-h-screen">
+    <main>
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-12 sm:pb-16">
         <Breadcrumb
@@ -25,11 +25,11 @@ export default function FiyatlarPage() {
         />
 
         <div className="text-center mb-12 sm:mb-16">
-          <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/[0.08] border border-red-500/15 px-5 py-2 rounded-full mb-6">
             Fiyatlandirma
           </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Size Uygun Paketi Secin
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
+            Size Uygun Paketi <span className="text-gradient">Secin</span>
           </h1>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
             Her butceye uygun planlar. Tum paketlerde 150.000+ kanal, 4K kalite
@@ -99,7 +99,7 @@ export default function FiyatlarPage() {
           ].map((badge) => (
             <div
               key={badge.title}
-              className="text-center p-4 rounded-xl bg-[#111111] border border-[#1a1a1a]"
+              className="text-center p-4 rounded-xl glass-card"
             >
               <div className="flex justify-center mb-3">{badge.icon}</div>
               <h3 className="text-white text-sm font-semibold mb-1">

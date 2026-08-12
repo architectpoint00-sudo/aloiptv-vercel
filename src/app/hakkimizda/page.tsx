@@ -29,7 +29,7 @@ const VALUE_ICONS = [
 
 export default function HakkimizdaPage() {
   return (
-    <main className="bg-[#0a0a0a] min-h-screen">
+    <main>
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-12 sm:pb-16">
         <Breadcrumb
@@ -40,10 +40,10 @@ export default function HakkimizdaPage() {
         />
 
         <div className="text-center mb-12 sm:mb-16">
-          <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/10 border border-red-500/20 px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block text-red-400 text-xs font-bold uppercase tracking-widest bg-red-500/[0.08] border border-red-500/15 px-5 py-2 rounded-full mb-6">
             Hakkimizda
           </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
             Premium IPTV&apos;de Guvenilir Isim
           </h1>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ export default function HakkimizdaPage() {
             {ABOUT_PAGE_DATA.values.map((value, index) => (
               <div
                 key={value.title}
-                className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 hover:border-red-500/20 transition-all duration-300"
+                className="glass-card rounded-2xl p-6 group cursor-default"
               >
                 <div className="mb-4">{VALUE_ICONS[index]}</div>
                 <h3 className="text-white font-semibold text-lg mb-2">
@@ -112,10 +112,10 @@ export default function HakkimizdaPage() {
               return (
                 <div
                   key={member.name}
-                  className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 text-center hover:border-red-500/20 transition-all duration-300"
+                  className="glass-card rounded-2xl p-6 text-center group cursor-default"
                 >
                   {/* Initials Avatar */}
-                  <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500/10 to-red-500/5 border border-red-500/15 flex items-center justify-center mx-auto mb-4">
                     <span className="text-red-400 font-bold text-xl">
                       {initials}
                     </span>
