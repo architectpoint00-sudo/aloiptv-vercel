@@ -17,64 +17,105 @@ import FaqAccordion from '@/components/FaqAccordion'
 export default function HomePage() {
   return (
     <>
-      {/* ───── HERO ───── */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-500/5 via-transparent to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — text */}
+      {/* ══════════════════════════════════════
+          HERO
+         ══════════════════════════════════════ */}
+      <section className="relative overflow-hidden pt-16 sm:pt-24 pb-20 sm:pb-32">
+        {/* Background glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-red-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-blue-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="container-main relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left — text content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-1.5 mb-6">
-                <span className="w-2 h-2 bg-red-500 rounded-full" />
-                <span className="text-red-400 text-xs font-semibold tracking-wide">AloIPTV — Guvenilir &amp; Kesintisiz IPTV</span>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2.5 bg-red-500/[0.08] border border-red-500/20 rounded-full px-5 py-2 mb-8">
+                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-red-400 text-xs font-semibold tracking-wide">AloIPTV &mdash; Guvenilir &amp; Kesintisiz IPTV</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6">
-                Premium IPTV<br />
-                <span className="text-gradient">Deneyiminin</span> Adresi
+              <h1 className="heading-xl mb-6">
+                Premium IPTV ile<br />
+                Canli TV, Spor, Film<br />
+                <span className="text-gradient">&amp; Dizi Keyfi</span>
               </h1>
 
-              <p className="text-[#888] text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
-                150.000+ canli kanal, 80.000+ film ve dizi arsivi. 4K Ultra HD kalite,
-                Anti-Freeze teknolojisi ile kesintisiz izleme keyfi. Tum cihazlarinizda.
+              <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed mb-10 max-w-[520px]">
+                150.000+ canli kanal ve 80.000+ film-dizi arsivi. 4K Ultra HD kalite,
+                Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. Tum cihazlarinizda.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-12">
-                <Link href="/fiyatlar/" className="btn-primary text-base px-8 py-3.5">
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 mb-14">
+                <Link href="/fiyatlar/" className="btn btn-primary btn-lg">
                   Fiyatlari Gor
                 </Link>
-                <Link href="/kanallar/" className="btn-outline text-base px-8 py-3.5">
+                <Link href="/kanallar/" className="btn btn-outline btn-lg">
                   Kanallari Incele
                 </Link>
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
                 {STATS.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-white text-2xl font-black">{stat.value}</div>
-                    <div className="text-[#555] text-xs font-medium mt-0.5">{stat.label}</div>
+                    <div className="text-white text-2xl sm:text-3xl font-extrabold tracking-tight">{stat.value}</div>
+                    <div className="text-[#64748b] text-xs font-medium uppercase tracking-wider mt-1">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right — visual */}
-            <div className="relative hidden lg:block">
-              <div className="relative bg-gradient-to-br from-[#0d0d0d] to-[#111] border border-[#1a1a1a] rounded-2xl p-8 aspect-[4/3] flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent rounded-2xl" />
-                <div className="text-center relative z-10">
-                  <div className="text-6xl mb-4">📺</div>
-                  <div className="text-white font-bold text-xl mb-1">150.000+ Kanal</div>
-                  <div className="text-[#666] text-sm">4K UHD Kalite</div>
+            {/* Right — hero visual */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                {/* Main card */}
+                <div className="bg-gradient-to-br from-[#0f1d32] to-[#0a1628] border border-[#1a2d4a] rounded-2xl overflow-hidden">
+                  {/* Top bar */}
+                  <div className="flex items-center gap-2 px-5 py-3 border-b border-[#1a2d4a]/60">
+                    <div className="w-3 h-3 rounded-full bg-red-500/40" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/40" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/40" />
+                    <span className="text-[#475569] text-[11px] ml-2">AloIPTV Player</span>
+                  </div>
+                  {/* Content */}
+                  <div className="p-8 sm:p-10">
+                    <div className="grid grid-cols-3 gap-3 mb-6">
+                      {['Super Lig', 'Premier Lig', 'La Liga'].map((league) => (
+                        <div key={league} className="bg-[#0a1628] border border-[#1a2d4a]/60 rounded-lg p-3 text-center">
+                          <div className="text-xs text-[#64748b] mb-1">CANLI</div>
+                          <div className="text-white text-xs font-semibold">{league}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="bg-[#0a1628]/60 border border-[#1a2d4a]/40 rounded-xl aspect-video flex items-center justify-center mb-6">
+                      <div className="text-center">
+                        <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-3">
+                          <svg className="w-6 h-6 text-red-400 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div className="text-[#64748b] text-xs">4K Ultra HD</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full" />
+                        <span className="text-[#64748b] text-xs">150.000+ kanal aktif</span>
+                      </div>
+                      <span className="text-[#64748b] text-xs">%99.9 uptime</span>
+                    </div>
+                  </div>
                 </div>
-                {/* Floating stats */}
-                <div className="absolute bottom-6 left-6 bg-[#111]/90 backdrop-blur border border-[#1a1a1a] rounded-xl px-4 py-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-red-400 text-lg">⚡</span>
+
+                {/* Floating card */}
+                <div className="absolute -bottom-4 -left-4 bg-[#0f1d32]/95 backdrop-blur-lg border border-[#1a2d4a] rounded-xl px-5 py-3.5 shadow-2xl shadow-black/20">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center">
+                      <span className="text-red-400 text-sm">⚡</span>
+                    </div>
                     <div>
-                      <div className="text-white text-xs font-semibold">0.4s gecikme</div>
-                      <div className="text-[#555] text-[10px]">tum ekranlarda</div>
+                      <div className="text-white text-xs font-semibold">Anti-Freeze Aktif</div>
+                      <div className="text-[#64748b] text-[10px]">0.4s gecikme suresi</div>
                     </div>
                   </div>
                 </div>
@@ -84,202 +125,217 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───── FEATURES ───── */}
-      <section className="py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="section-label">Ozellikler</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Premium Canli TV Deneyimini Kesfet
-            </h2>
+      {/* ══════════════════════════════════════
+          FEATURES
+         ══════════════════════════════════════ */}
+      <section className="section-alt py-20 sm:py-28">
+        <div className="container-main">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="section-tag">Ozellikler</span>
+            <h2 className="heading-lg mb-4">Premium Canli TV Deneyimi</h2>
+            <p className="text-[#94a3b8] text-sm sm:text-base">
+              AloIPTV ile canli spor, film, dizi ve daha fazlasina tek bir yerden erisin.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {FEATURES.map((feature) => (
-              <div key={feature.title} className="card p-6">
-                <div className="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-xl">{feature.icon}</span>
+              <div key={feature.title} className="card">
+                <div className="card-icon">
+                  <span>{feature.icon}</span>
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-[#666] text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-white font-semibold text-[15px] mb-2">{feature.title}</h3>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───── PRICING ───── */}
+      {/* ══════════════════════════════════════
+          PRICING
+         ══════════════════════════════════════ */}
       <section className="py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="section-label">Fiyatlandirma</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Size Uygun Paketi Secin
-            </h2>
+        <div className="container-main">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="section-tag">Fiyatlandirma</span>
+            <h2 className="heading-lg mb-4">Size Uygun Paketi Secin</h2>
+            <p className="text-[#94a3b8] text-sm sm:text-base">
+              Tum paketlerde 150.000+ kanal, 4K UHD ve 7/24 destek dahildir.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {PRICING_PACKAGES.filter(p => !p.isFree).slice(0, 6).map((pkg) => (
               <PricingCard key={pkg.name} pkg={pkg} />
             ))}
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/fiyatlar/" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors">
-              Tum paketleri gor &rarr;
+            <Link href="/fiyatlar/" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1.5">
+              Tum paketleri gor
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ───── SETUP STEPS ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <p className="section-label">Kurulum</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              3 Kolay Adimda Baslayin
-            </h2>
-            <p className="text-[#666] text-base max-w-2xl">
-              Teknisyen yok, donanim yok, sozlesme yok. Asagidaki adimlari takip edin ve izlemeye baslayin.
+      {/* ══════════════════════════════════════
+          SETUP STEPS
+         ══════════════════════════════════════ */}
+      <section className="section-alt section-border py-20 sm:py-28">
+        <div className="container-main">
+          <div className="max-w-2xl mb-14">
+            <span className="section-tag">Kurulum</span>
+            <h2 className="heading-lg mb-4">3 Kolay Adimda Baslayin</h2>
+            <p className="text-[#94a3b8] text-sm sm:text-base">
+              Teknisyen yok, donanim yok, sozlesme yok. Adimlari takip edin ve izlemeye baslayin.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {SETUP_STEPS.map((step) => (
-              <div key={step.step} className="card p-6">
-                <div className="w-10 h-10 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center justify-center mb-4">
+              <div key={step.step} className="card relative">
+                <div className="w-10 h-10 rounded-lg bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mb-4">
                   <span className="text-red-400 font-bold text-sm">{step.step}</span>
                 </div>
-                <h3 className="text-white font-semibold text-base mb-2">{step.title}</h3>
-                <p className="text-[#666] text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-white font-semibold text-[15px] mb-2">{step.title}</h3>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───── TRIAL CTA ───── */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#0d0d0d] to-[#111] border border-[#1a1a1a] rounded-2xl p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-white font-bold text-xl mb-1">Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
-              <p className="text-[#666] text-sm">Satin almadan once tum kanallari test edin.</p>
+      {/* ══════════════════════════════════════
+          TRIAL CTA BANNER
+         ══════════════════════════════════════ */}
+      <section className="py-8 sm:py-12">
+        <div className="container-main">
+          <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-2xl px-8 sm:px-12 py-8 sm:py-10">
+            <div className="absolute top-0 right-0 w-[300px] h-[200px] bg-red-500/[0.04] rounded-full blur-[80px] pointer-events-none" />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative z-10">
+              <div>
+                <h3 className="text-white font-bold text-lg sm:text-xl mb-1.5">Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
+                <p className="text-[#94a3b8] text-sm">Satin almadan once tum kanallari test edin — hicbir baglantilik yok.</p>
+              </div>
+              <a
+                href={WHATSAPP_LINKS.test}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary btn-lg shrink-0"
+              >
+                Ucretsiz Test Al
+              </a>
             </div>
-            <a
-              href={WHATSAPP_LINKS.test}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary whitespace-nowrap px-8 py-3.5"
-            >
-              Ucretsiz Test Al
-            </a>
           </div>
         </div>
       </section>
 
-      {/* ───── WHY CHOOSE ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <p className="section-label">Neden AloIPTV?</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              Ilk Yayinindan Itibaren Farki Hissedin
-            </h2>
-            <p className="text-[#666] text-base max-w-2xl">
-              AloIPTV, genis kanal secenekleri, yuksek goruntu kalitesi, genis cihaz destegi ve
-              ozel musteri hizmetleri ile IPTV deneyimini en ust seviyeye tasiyor.
+      {/* ══════════════════════════════════════
+          WHY CHOOSE
+         ══════════════════════════════════════ */}
+      <section className="section-border py-20 sm:py-28">
+        <div className="container-main">
+          <div className="max-w-2xl mb-14">
+            <span className="section-tag">Neden AloIPTV?</span>
+            <h2 className="heading-lg mb-4">Ilk Yayinindan Itibaren Farki Hissedin</h2>
+            <p className="text-[#94a3b8] text-sm sm:text-base">
+              Genis kanal secenekleri, yuksek goruntu kalitesi, genis cihaz destegi ve
+              ozel musteri hizmetleri ile IPTV deneyimini en ust seviyeye tasiyoruz.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { icon: '📺', title: 'Canli TV & Spor', desc: '150.000+ canli kanal. Super Lig, Premier League, Champions League, NBA, UFC ve daha fazlasi.' },
               { icon: '🎬', title: 'Film & Dizi Arsivi', desc: '80.000+ film ve dizi. Netflix, Disney+, HBO Max icerikleri tek abonelikte.' },
               { icon: '❄️', title: 'Anti-Freeze Sunucu', desc: 'Gelismis anti-freeze teknolojisi ile donma ve kesinti sorunu yok. Mac gunlerinde bile stabil.' },
               { icon: '📡', title: '4K UHD Kalite', desc: 'Desteklenen kanallarda 4K Ultra HD + HDR. Kristal netliginde goruntu kalitesi.' },
               { icon: '👶', title: 'Aile Profilleri', desc: 'Cocuk profilleri ve ebeveyn PIN kilidi ile aileniz guvenle ayni hesabi paylasir.' },
-              { icon: '🔗', title: 'Coklu Cihaz', desc: 'Tek abonelikle birden fazla cihazda izleyin. Herkes favorisini izlesin.' },
+              { icon: '🔗', title: 'Coklu Cihaz Baglantisi', desc: 'Tek abonelikle birden fazla cihazda izleyin. Herkes kendi favorisini izlesin.' },
             ].map((item) => (
-              <div key={item.title} className="card p-6">
-                <div className="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-xl">{item.icon}</span>
+              <div key={item.title} className="card">
+                <div className="card-icon">
+                  <span>{item.icon}</span>
                 </div>
-                <h3 className="text-white font-semibold text-base mb-2">{item.title}</h3>
-                <p className="text-[#666] text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-white font-semibold text-[15px] mb-2">{item.title}</h3>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───── CHANNEL CATEGORIES ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="section-label">Kanal Kategorileri</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Tek Abonelik, Tum Kategoriler
-            </h2>
+      {/* ══════════════════════════════════════
+          CHANNEL CATEGORIES
+         ══════════════════════════════════════ */}
+      <section className="section-alt section-border py-20 sm:py-28">
+        <div className="container-main">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="section-tag">Kanal Kategorileri</span>
+            <h2 className="heading-lg mb-4">Tek Abonelik, Tum Kategoriler</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {CHANNEL_CATEGORIES.map((cat) => (
-              <div key={cat.name} className="card p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-white font-semibold">{cat.name}</h3>
-                  <span className="text-[#333] text-lg">📡</span>
+              <div key={cat.name} className="card">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-white font-semibold text-[15px]">{cat.name}</h3>
+                  </div>
+                  <span className="text-lg opacity-60">{cat.icon}</span>
                 </div>
-                <p className="text-[#666] text-sm leading-relaxed">{cat.description}</p>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">{cat.description}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/kanallar/" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors">
-              Tum kanallari gor &rarr;
+            <Link href="/kanallar/" className="text-red-400 text-sm font-medium hover:text-red-300 transition-colors inline-flex items-center gap-1.5">
+              Tum kanallari incele
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ───── DEVICES ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <p className="section-label">Cihaz Destegi</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              Sahip Oldugunuz Her Cihazda Calisir
-            </h2>
-            <p className="text-[#666] text-base max-w-2xl">
+      {/* ══════════════════════════════════════
+          DEVICES
+         ══════════════════════════════════════ */}
+      <section className="section-border py-20 sm:py-28">
+        <div className="container-main">
+          <div className="max-w-2xl mb-14">
+            <span className="section-tag">Cihaz Uyumlulugu</span>
+            <h2 className="heading-lg mb-4">Tum Cihazlarinizda Calisir</h2>
+            <p className="text-[#94a3b8] text-sm sm:text-base">
               Tek hesap, M3U veya Xtream Codes destekleyen tum oynaticilarda. Ekstra donanim gerekmez.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {DEVICES.map((device) => (
-              <div key={device.name} className="card p-5 text-center">
-                <span className="text-2xl block mb-2">{device.icon}</span>
-                <h3 className="text-white text-sm font-semibold">{device.name}</h3>
-                <p className="text-[#555] text-xs mt-1">{device.description}</p>
+              <div key={device.name} className="card text-center py-6">
+                <span className="text-2xl block mb-3">{device.icon}</span>
+                <h3 className="text-white text-sm font-semibold mb-0.5">{device.name}</h3>
+                <p className="text-[#64748b] text-xs">{device.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───── TESTIMONIALS ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <p className="section-label">Yorumlar</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              10.000+ Ailenin Tercihi
-            </h2>
+      {/* ══════════════════════════════════════
+          TESTIMONIALS
+         ══════════════════════════════════════ */}
+      <section className="section-alt section-border py-20 sm:py-28">
+        <div className="container-main">
+          <div className="max-w-2xl mb-14">
+            <span className="section-tag">Yorumlar</span>
+            <h2 className="heading-lg">10.000+ Ailenin Tercihi</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {TESTIMONIALS.map((t) => (
               <TestimonialCard key={t.name} testimonial={t} />
             ))}
@@ -287,45 +343,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ───── FAQ ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <p className="section-label">Sikca Sorulan Sorular</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              Satin Almadan Once Yanitlar
-            </h2>
-            <p className="text-[#666] text-sm">
+      {/* ══════════════════════════════════════
+          FAQ
+         ══════════════════════════════════════ */}
+      <section className="section-border py-20 sm:py-28">
+        <div className="container-main max-w-3xl">
+          <div className="mb-14">
+            <span className="section-tag">Sikca Sorulan Sorular</span>
+            <h2 className="heading-lg mb-4">Satin Almadan Once Yanitlar</h2>
+            <p className="text-[#94a3b8] text-sm">
               Daha fazla detay icin{' '}
-              <Link href="/sss/" className="text-red-400 hover:text-red-300">SSS sayfamizi</Link> ziyaret edin.
+              <Link href="/sss/" className="text-red-400 hover:text-red-300 underline underline-offset-2">SSS sayfamizi</Link>{' '}
+              ziyaret edin.
             </p>
           </div>
 
           <FaqAccordion items={HOMEPAGE_FAQ} />
 
           <div className="text-center mt-10">
-            <Link href="/fiyatlar/" className="btn-primary px-8 py-3.5">
+            <Link href="/fiyatlar/" className="btn btn-primary btn-lg">
               Planini Sec
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ───── FINAL CTA ───── */}
-      <section className="py-20 sm:py-28 border-t border-[#1a1a1a]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-            Premium IPTV&apos;ye Gecmeye Hazir misiniz?
+      {/* ══════════════════════════════════════
+          FINAL CTA
+         ══════════════════════════════════════ */}
+      <section className="section-alt section-border py-20 sm:py-28">
+        <div className="container-main text-center max-w-2xl">
+          <h2 className="heading-lg mb-5">
+            Premium IPTV&apos;ye Gecmeye<br />Hazir misiniz?
           </h2>
-          <p className="text-[#666] text-base mb-8 max-w-lg mx-auto">
-            7 gun koşulsuz iade garantisi. Risksiz deneyin.
+          <p className="text-[#94a3b8] text-base mb-10 max-w-md mx-auto">
+            7 gun kosulsuz iade garantisi. Risksiz deneyin.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href={WHATSAPP_LINKS.buy}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-base px-10 py-4"
+              className="btn btn-primary btn-lg"
             >
               Hemen Basla
             </a>
@@ -333,7 +392,7 @@ export default function HomePage() {
               href={WHATSAPP_LINKS.test}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline text-base px-10 py-4"
+              className="btn btn-outline btn-lg"
             >
               Ucretsiz Test
             </a>

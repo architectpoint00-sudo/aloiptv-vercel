@@ -37,7 +37,7 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
               </button>
               {isOpen && (
                 <div className="px-5 pb-5">
-                  <p className="text-[#666] text-sm leading-relaxed">{item.answer}</p>
+                  <p className="text-[#94a3b8] text-sm leading-relaxed">{item.answer}</p>
                 </div>
               )}
             </div>
