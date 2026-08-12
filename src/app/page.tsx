@@ -141,9 +141,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
             {PRICING_PACKAGES.filter(p => !p.isFree).slice(0, 6).map((pkg) => (
-              <PricingCard key={pkg.name} pkg={pkg} />
+              <div key={pkg.name} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                <PricingCard pkg={pkg} />
+              </div>
             ))}
           </div>
 

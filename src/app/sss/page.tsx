@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function SSSPage() {
   return (
     <>
-      <section className="pt-8 pb-20 sm:pt-12 sm:pb-28">
+      <section className="pt-10 sm:pt-16 lg:pt-20 pb-20 sm:pb-28 lg:pb-32">
         <div className="container-main max-w-3xl">
           <Breadcrumb
             items={[
@@ -23,16 +23,16 @@ export default function SSSPage() {
             ]}
           />
 
-          <div className="text-center mb-14">
+          <div className="text-center mb-14 sm:mb-16 lg:mb-20">
             <span className="section-tag">Sikca Sorulan Sorular</span>
-            <h1 className="heading-lg mb-4">Merak Ettiginiz Her Sey</h1>
+            <h1 className="heading-lg mb-4 sm:mb-5">Merak Ettiginiz Her Sey</h1>
             <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
               Tum sorularinizin yanitlari burada.
             </p>
           </div>
 
           {/* FAQ Sections */}
-          <div className="space-y-10 mb-20">
+          <div className="space-y-12 sm:space-y-14 mb-20 sm:mb-24 lg:mb-28">
             {SSS_DATA.map((section) => (
               <FaqAccordion
                 key={section.category}
@@ -44,11 +44,11 @@ export default function SSSPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-2xl p-8 sm:p-12">
+            <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-xl sm:rounded-2xl p-8 sm:p-10 lg:p-14">
               <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-red-500/[0.04] rounded-full blur-[80px] pointer-events-none" />
               <div className="relative z-10">
-                <h2 className="heading-md mb-4">Baska Sorunuz mu Var?</h2>
-                <p className="text-[#94a3b8] text-sm mb-8 max-w-lg mx-auto">
+                <h2 className="heading-md mb-4 sm:mb-5">Baska Sorunuz mu Var?</h2>
+                <p className="text-[#94a3b8] text-sm mb-8 sm:mb-10 max-w-lg mx-auto">
                   WhatsApp uzerinden 7/24 ulasabilirsiniz.
                 </p>
                 <a
