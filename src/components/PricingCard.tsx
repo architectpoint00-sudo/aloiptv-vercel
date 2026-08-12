@@ -19,19 +19,19 @@ export default function PricingCard({ pkg }: PricingCardProps) {
       )}
 
       <div className="mb-6">
-        <h3 className="text-white font-semibold text-base sm:text-lg mb-1.5">{pkg.name}</h3>
+        <h3 className="text-white font-semibold text-lg sm:text-xl mb-1.5">{pkg.name}</h3>
         {pkg.discount && (
-          <span className="text-red-400 text-xs font-medium">{pkg.discount}</span>
+          <span className="text-red-400 text-sm font-medium">{pkg.discount}</span>
         )}
       </div>
 
       <div className="mb-7 sm:mb-8">
         <div className="flex items-baseline gap-1.5">
           {pkg.price === 0 ? (
-            <span className="text-white text-3xl sm:text-4xl font-black">Ucretsiz</span>
+            <span className="text-white text-4xl sm:text-5xl font-black">Ucretsiz</span>
           ) : (
             <>
-              <span className="text-white text-3xl sm:text-4xl font-black">{pkg.price}</span>
+              <span className="text-white text-4xl sm:text-5xl font-black">{pkg.price}</span>
               <span className="text-[#64748b] text-sm font-medium">TL</span>
             </>
           )}
@@ -44,7 +44,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
 
       <ul className="space-y-3 mb-7 sm:mb-8 flex-1">
         {pkg.features.map((feature) => (
-          <li key={feature} className="flex items-start gap-2.5 text-sm">
+          <li key={feature} className="flex items-start gap-2.5 text-base">
             <svg className="w-4 h-4 text-red-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
@@ -57,7 +57,7 @@ export default function PricingCard({ pkg }: PricingCardProps) {
         href={pkg.isFree ? WHATSAPP_LINKS.test : WHATSAPP_LINKS.buy}
         target="_blank"
         rel="noopener noreferrer"
-        className={`block text-center font-semibold text-sm py-3.5 rounded-xl transition-all ${
+        className={`block text-center font-semibold text-base py-4 rounded-xl transition-all ${
           isPopular
             ? 'btn btn-primary w-full'
             : 'bg-white/[0.03] border border-[#1a2d4a] text-white hover:bg-white/[0.06] hover:border-[#2a4270]'

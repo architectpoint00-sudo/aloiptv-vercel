@@ -25,7 +25,7 @@ export default function HakkimizdaPage() {
           <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Hakkimizda</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Premium IPTV&apos;de Guvenilir Isim</h1>
-            <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
               2019&apos;dan beri Turkiye&apos;nin en guvenilir IPTV hizmetini sunuyoruz.
             </p>
           </div>
@@ -35,7 +35,7 @@ export default function HakkimizdaPage() {
             <h2 className="heading-md mb-6 sm:mb-8">Hikayemiz</h2>
             <div className="space-y-4 sm:space-y-5">
               {ABOUT_PAGE_DATA.hikayemiz.map((paragraph, index) => (
-                <p key={index} className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">
+                <p key={index} className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">
                   {paragraph}
                 </p>
               ))}
@@ -46,8 +46,8 @@ export default function HakkimizdaPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mb-20 sm:mb-28 lg:mb-32">
             {ABOUT_PAGE_DATA.stats.map((stat) => (
               <div key={stat.label} className="card text-center py-7 sm:py-8">
-                <div className="text-white text-2xl sm:text-3xl font-extrabold">{stat.value}</div>
-                <div className="text-[#64748b] text-xs font-medium mt-1.5">{stat.label}</div>
+                <div className="text-white text-3xl sm:text-4xl font-extrabold">{stat.value}</div>
+                <div className="text-[#64748b] text-sm font-medium mt-1.5">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -58,8 +58,8 @@ export default function HakkimizdaPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {ABOUT_PAGE_DATA.values.map((value) => (
                 <div key={value.title} className="card">
-                  <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2.5 sm:mb-3">{value.title}</h3>
-                  <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{value.description}</p>
+                  <h3 className="text-white font-semibold text-base sm:text-lg mb-2.5 sm:mb-3">{value.title}</h3>
+                  <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -79,9 +79,9 @@ export default function HakkimizdaPage() {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mx-auto mb-5">
                       <span className="text-red-400 font-bold text-lg sm:text-xl">{initials}</span>
                     </div>
-                    <h3 className="text-white font-semibold text-sm sm:text-base mb-1.5">{member.name}</h3>
-                    <p className="text-red-400 text-xs font-medium mb-3 sm:mb-4">{member.role}</p>
-                    <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{member.description}</p>
+                    <h3 className="text-white font-semibold text-base sm:text-lg mb-1.5">{member.name}</h3>
+                    <p className="text-red-400 text-sm font-medium mb-3 sm:mb-4">{member.role}</p>
+                    <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">{member.description}</p>
                   </div>
                 )
               })}

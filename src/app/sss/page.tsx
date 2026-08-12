@@ -26,7 +26,7 @@ export default function SSSPage() {
           <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Sikca Sorulan Sorular</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Merak Ettiginiz Her Sey</h1>
-            <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
               Tum sorularinizin yanitlari burada.
             </p>
           </div>

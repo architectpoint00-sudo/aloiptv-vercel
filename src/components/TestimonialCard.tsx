@@ -15,20 +15,20 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
 
       {/* Quote text */}
-      <p className="text-[#94a3b8] text-sm leading-relaxed flex-1 mb-7">
+      <p className="text-[#94a3b8] text-base leading-relaxed flex-1 mb-7">
         &ldquo;{testimonial.text}&rdquo;
       </p>
 
       {/* Author */}
       <div className="flex items-center gap-3.5 pt-5 border-t border-[#12233d]">
-        <div className="w-10 h-10 rounded-full bg-[#0a1628] border border-[#1a2d4a] flex items-center justify-center">
-          <span className="text-[#94a3b8] text-xs font-semibold">
+        <div className="w-12 h-12 rounded-full bg-[#0a1628] border border-[#1a2d4a] flex items-center justify-center">
+          <span className="text-[#94a3b8] text-sm font-semibold">
             {testimonial.name.split(' ').map(n => n[0]).join('')}
           </span>
         </div>
         <div>
-          <div className="text-white font-semibold text-sm">{testimonial.name}</div>
-          <div className="text-[#64748b] text-xs mt-0.5">{testimonial.membership} &middot; {testimonial.location}</div>
+          <div className="text-white font-semibold text-base">{testimonial.name}</div>
+          <div className="text-[#64748b] text-sm mt-0.5">{testimonial.membership} &middot; {testimonial.location}</div>
         </div>
       </div>
     </div>

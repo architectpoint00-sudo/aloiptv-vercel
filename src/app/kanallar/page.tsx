@@ -25,7 +25,7 @@ export default function KanallarPage() {
           <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Kanal Listesi</span>
             <h1 className="heading-lg mb-4 sm:mb-5">150.000+ Canli Kanal</h1>
-            <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
               Spor, sinema, dizi, canli TV ve daha fazlasi. Tek abonelikle erisin.
             </p>
           </div>
@@ -35,10 +35,10 @@ export default function KanallarPage() {
             {CHANNEL_CATEGORIES.map((category) => (
               <div key={category.name} className="card">
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <h3 className="text-white font-semibold text-sm sm:text-[15px]">{category.name}</h3>
-                  <span className="text-lg opacity-60">{category.icon}</span>
+                  <h3 className="text-white font-semibold text-base sm:text-lg">{category.name}</h3>
+                  <span className="text-2xl opacity-60">{category.icon}</span>
                 </div>
-                <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{category.description}</p>
+                <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed">{category.description}</p>
               </div>
             ))}
           </div>
@@ -52,12 +52,12 @@ export default function KanallarPage() {
             <div className="space-y-5 sm:space-y-6">
               {CHANNEL_LISTS.map((group) => (
                 <div key={group.title} className="card">
-                  <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-4 sm:mb-5">{group.title}</h3>
+                  <h3 className="text-white font-semibold text-base sm:text-lg mb-4 sm:mb-5">{group.title}</h3>
                   <div className="flex flex-wrap gap-2 sm:gap-2.5">
                     {group.channels.map((channel) => (
                       <span
                         key={channel}
-                        className="inline-block bg-[#0a1628] text-[#94a3b8] text-xs px-3 py-1.5 rounded-lg border border-[#12233d] hover:border-red-500/20 hover:text-white transition-colors"
+                        className="inline-block bg-[#0a1628] text-[#94a3b8] text-sm px-4 py-2 rounded-lg border border-[#12233d] hover:border-red-500/20 hover:text-white transition-colors"
                       >
                         {channel}
                       </span>

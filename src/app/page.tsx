@@ -34,7 +34,7 @@ export default function HomePage() {
                 <span className="text-gradient">&amp; Dizi Keyfi</span>
               </h1>
 
-              <p className="text-[#94a3b8] text-sm sm:text-base lg:text-lg leading-relaxed mb-10 sm:mb-12 max-w-[520px]">
+              <p className="text-[#94a3b8] text-base sm:text-lg lg:text-xl leading-relaxed mb-10 sm:mb-12 max-w-[520px]">
                 150.000+ canli kanal ve 80.000+ film-dizi arsivi. 4K Ultra HD kalite,
                 Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. Tum cihazlarinizda.
               </p>
@@ -47,7 +47,7 @@ export default function HomePage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10">
                 {STATS.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-white text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight">{stat.value}</div>
+                    <div className="text-white text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">{stat.value}</div>
                     <div className="text-[#64748b] text-[10px] sm:text-xs font-medium uppercase tracking-wider mt-1.5">{stat.label}</div>
                   </div>
                 ))}
@@ -113,7 +113,7 @@ export default function HomePage() {
           <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Ozellikler</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Premium Canli TV Deneyimi</h2>
-            <p className="text-[#94a3b8] text-sm sm:text-base">
+            <p className="text-[#94a3b8] text-base sm:text-lg">
               AloIPTV ile canli spor, film, dizi ve daha fazlasina tek bir yerden erisin.
             </p>
           </div>
@@ -122,8 +122,8 @@ export default function HomePage() {
             {FEATURES.map((feature) => (
               <div key={feature.title} className="card">
                 <div className="card-icon"><span>{feature.icon}</span></div>
-                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2.5">{feature.title}</h3>
-                <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-white font-semibold text-base sm:text-lg mb-2.5">{feature.title}</h3>
+                <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -136,7 +136,7 @@ export default function HomePage() {
           <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Fiyatlandirma</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h2>
-            <p className="text-[#94a3b8] text-sm sm:text-base">
+            <p className="text-[#94a3b8] text-base sm:text-lg">
               Tum paketlerde 150.000+ kanal, 4K UHD ve 7/24 destek dahildir.
             </p>
           </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
           <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Kurulum</span>
             <h2 className="heading-lg mb-4 sm:mb-5">3 Kolay Adimda Baslayin</h2>
-            <p className="text-[#94a3b8] text-sm sm:text-base">
+            <p className="text-[#94a3b8] text-base sm:text-lg">
               Teknisyen yok, donanim yok, sozlesme yok. Adimlari takip edin ve izlemeye baslayin.
             </p>
           </div>
@@ -172,11 +172,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
             {SETUP_STEPS.map((step) => (
               <div key={step.step} className="card">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mb-5">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-red-500/[0.08] border border-red-500/20 flex items-center justify-center mb-6">
                   <span className="text-red-400 font-bold text-sm">{step.step}</span>
                 </div>
-                <h3 className="text-white font-semibold text-sm sm:text-base mb-2.5">{step.title}</h3>
-                <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-white font-semibold text-base sm:text-lg mb-3">{step.title}</h3>
+                <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default function HomePage() {
           <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Neden AloIPTV?</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Ilk Yayinindan Itibaren Farki Hissedin</h2>
-            <p className="text-[#94a3b8] text-sm sm:text-base">
+            <p className="text-[#94a3b8] text-base sm:text-lg">
               Genis kanal secenekleri, yuksek goruntu kalitesi, genis cihaz destegi ve
               ozel musteri hizmetleri ile IPTV deneyimini en ust seviyeye tasiyoruz.
             </p>
@@ -224,8 +224,8 @@ export default function HomePage() {
             ].map((item) => (
               <div key={item.title} className="card">
                 <div className="card-icon"><span>{item.icon}</span></div>
-                <h3 className="text-white font-semibold text-sm sm:text-[15px] mb-2.5">{item.title}</h3>
-                <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-white font-semibold text-base sm:text-lg mb-2.5">{item.title}</h3>
+                <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -244,10 +244,10 @@ export default function HomePage() {
             {CHANNEL_CATEGORIES.map((cat) => (
               <div key={cat.name} className="card">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-white font-semibold text-sm sm:text-[15px]">{cat.name}</h3>
-                  <span className="text-lg opacity-60">{cat.icon}</span>
+                  <h3 className="text-white font-semibold text-base sm:text-lg">{cat.name}</h3>
+                  <span className="text-2xl opacity-60">{cat.icon}</span>
                 </div>
-                <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{cat.description}</p>
+                <p className="text-[#94a3b8] text-base sm:text-lg leading-relaxed">{cat.description}</p>
               </div>
             ))}
           </div>
@@ -267,7 +267,7 @@ export default function HomePage() {
           <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Cihaz Uyumlulugu</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Tum Cihazlarinizda Calisir</h2>
-            <p className="text-[#94a3b8] text-sm sm:text-base">
+            <p className="text-[#94a3b8] text-base sm:text-lg">
               Tek hesap, M3U veya Xtream Codes destekleyen tum oynaticilarda. Ekstra donanim gerekmez.
             </p>
           </div>
@@ -275,9 +275,9 @@ export default function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
             {DEVICES.map((device) => (
               <div key={device.name} className="card text-center py-6 sm:py-8">
-                <span className="text-2xl sm:text-3xl block mb-3 sm:mb-4">{device.icon}</span>
-                <h3 className="text-white text-xs sm:text-sm font-semibold mb-1">{device.name}</h3>
-                <p className="text-[#64748b] text-[10px] sm:text-xs">{device.description}</p>
+                <span className="text-3xl sm:text-4xl block mb-4 sm:mb-5">{device.icon}</span>
+                <h3 className="text-white text-sm sm:text-base font-semibold mb-1.5">{device.name}</h3>
+                <p className="text-[#64748b] text-xs sm:text-sm">{device.description}</p>
               </div>
             ))}
           </div>
@@ -327,7 +327,7 @@ export default function HomePage() {
           <h2 className="heading-lg mb-5 sm:mb-6">
             Premium IPTV&apos;ye Gecmeye Hazir misiniz?
           </h2>
-          <p className="text-[#94a3b8] text-sm sm:text-base mb-10 sm:mb-12 max-w-md mx-auto">
+          <p className="text-[#94a3b8] text-base sm:text-lg mb-10 sm:mb-12 max-w-md mx-auto">
             7 gun kosulsuz iade garantisi. Risksiz deneyin.
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">

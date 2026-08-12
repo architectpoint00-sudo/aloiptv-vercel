@@ -27,7 +27,7 @@ export default function FiyatlarPage() {
           <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Fiyatlandirma</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h1>
-            <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
+            <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
               Tum paketlerde 150.000+ kanal, 4K UHD kalite ve 7/24 destek dahildir.
               7 gun kosulsuz iade garantisi.
             </p>

@@ -14,9 +14,9 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
   return (
     <div>
       {categoryTitle && (
-        <h3 className="text-white font-semibold text-lg mb-6">{categoryTitle}</h3>
+        <h3 className="text-white font-semibold text-xl sm:text-2xl mb-6">{categoryTitle}</h3>
       )}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         {items.map((item, index) => {
           const isOpen = openIndex === index
           return (
@@ -33,10 +33,10 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
             >
               <button
                 className="w-full flex items-center justify-between text-left gap-4"
-                style={{ padding: '20px 24px' }}
+                style={{ padding: '24px 28px' }}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
-                <span className="text-white font-medium" style={{ fontSize: '15px', lineHeight: '1.5' }}>{item.question}</span>
+                <span className="text-white font-medium" style={{ fontSize: '17px', lineHeight: '1.5' }}>{item.question}</span>
                 <svg
                   className={`shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-45' : ''}`}
                   style={{ width: '18px', height: '18px', color: '#ef4444' }}
@@ -48,8 +48,8 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
                 </svg>
               </button>
               {isOpen && (
-                <div style={{ padding: '0 24px 20px 24px', marginTop: '-4px' }}>
-                  <p className="text-sm leading-relaxed" style={{ color: '#94a3b8' }}>{item.answer}</p>
+                <div style={{ padding: '0 28px 24px 28px', marginTop: '-4px' }}>
+                  <p className="text-base leading-relaxed" style={{ color: '#94a3b8' }}>{item.answer}</p>
                 </div>
               )}
             </div>
