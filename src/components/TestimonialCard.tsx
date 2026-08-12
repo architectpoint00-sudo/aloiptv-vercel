@@ -5,17 +5,6 @@ interface TestimonialCardProps {
   membership: string
 }
 
-const AVATAR_COLORS = [
-  'from-red-500 to-orange-500',
-  'from-blue-500 to-cyan-500',
-  'from-green-500 to-emerald-500',
-  'from-purple-500 to-violet-500',
-  'from-yellow-500 to-amber-500',
-  'from-pink-500 to-rose-500',
-  'from-indigo-500 to-blue-500',
-  'from-teal-500 to-cyan-500',
-]
-
 function getInitials(name: string): string {
   return name
     .split(' ')
@@ -25,14 +14,6 @@ function getInitials(name: string): string {
     .slice(0, 2)
 }
 
-function getAvatarColor(name: string): string {
-  let hash = 0
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  return AVATAR_COLORS[Math.abs(hash) % AVATAR_COLORS.length]
-}
-
 export default function TestimonialCard({
   quote,
   name,
@@ -40,16 +21,15 @@ export default function TestimonialCard({
   membership,
 }: TestimonialCardProps) {
   const initials = getInitials(name)
-  const avatarGradient = getAvatarColor(name)
 
   return (
-    <div className="glass-card rounded-2xl p-6 sm:p-7 flex flex-col transition-all duration-500 hover:-translate-y-1 group">
+    <div className="bg-[#111827] border border-[#1e293b] border-t-[3px] border-t-red-500 rounded-2xl p-6 sm:p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-red-500/30">
       {/* Stars */}
       <div className="flex gap-1 mb-5">
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
-            className="w-4 h-4 text-yellow-400 drop-shadow-[0_0_3px_rgba(250,204,21,0.3)]"
+            className="w-4 h-4 text-yellow-400"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -59,21 +39,14 @@ export default function TestimonialCard({
       </div>
 
       {/* Quote */}
-      <div className="relative mb-6 flex-1">
-        <svg className="absolute -top-2 -left-1 w-8 h-8 text-red-500/10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609L9.978 5.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
-        </svg>
-        <blockquote className="text-gray-300 text-sm leading-relaxed pl-2">
-          &ldquo;{quote}&rdquo;
-        </blockquote>
-      </div>
+      <blockquote className="text-gray-300 text-sm leading-relaxed mb-6 flex-1">
+        &ldquo;{quote}&rdquo;
+      </blockquote>
 
       {/* Author */}
-      <div className="flex items-center gap-3 pt-5 border-t border-white/[0.04]">
-        <div
-          className={`w-11 h-11 rounded-full bg-gradient-to-br ${avatarGradient} flex items-center justify-center shrink-0 shadow-lg`}
-        >
-          <span className="text-white text-xs font-bold">{initials}</span>
+      <div className="flex items-center gap-3 pt-5 border-t border-[#1e293b]">
+        <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+          <span className="text-red-400 text-xs font-bold">{initials}</span>
         </div>
         <div>
           <p className="text-white text-sm font-semibold">{name}</p>

@@ -7,8 +7,7 @@ export default function AnnouncementBar() {
   const repeated = [...messages, ...messages, ...messages]
 
   return (
-    <div className="relative bg-gradient-to-r from-red-600 via-red-500 to-red-600 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:20px_20px]" />
+    <div className="relative bg-red-500 overflow-hidden">
       <div className="relative animate-ticker flex whitespace-nowrap">
         {repeated.map((msg, i) => (
           <span
