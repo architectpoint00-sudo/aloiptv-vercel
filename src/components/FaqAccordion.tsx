@@ -1,11 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-
-interface FaqItem {
-  question: string
-  answer: string
-}
+import type { FaqItem } from '@/lib/data'
 
 interface FaqAccordionProps {
   items: FaqItem[]
@@ -15,55 +11,35 @@ interface FaqAccordionProps {
 export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
     <div>
       {categoryTitle && (
-        <h3 className="text-xl font-bold text-white mb-5">{categoryTitle}</h3>
+        <h3 className="text-white font-semibold text-lg mb-4">{categoryTitle}</h3>
       )}
       <div className="space-y-3">
         {items.map((item, index) => {
           const isOpen = openIndex === index
           return (
-            <div
-              key={index}
-              className={`rounded-xl overflow-hidden transition-all duration-300 ${
-                isOpen
-                  ? 'bg-[#111827] border border-red-500/30'
-                  : 'bg-[#111827] border border-[#1e293b] hover:border-[#334155]'
-              }`}
-            >
+            <div key={index} className="faq-item" data-open={isOpen}>
               <button
-                onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 text-left group"
+                className="w-full flex items-center justify-between p-5 text-left"
+                onClick={() => setOpenIndex(isOpen ? null : index)}
               >
-                <span className={`font-medium text-sm sm:text-base pr-4 transition-colors ${
-                  isOpen ? 'text-white' : 'text-gray-300 group-hover:text-white'
-                }`}>
-                  {item.question}
-                </span>
-                <span
-                  className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                    isOpen
-                      ? 'bg-red-500 text-white rotate-45'
-                      : 'bg-[#1e293b] text-gray-400 group-hover:text-white'
-                  }`}
+                <span className="text-white text-sm font-medium pr-4">{item.question}</span>
+                <svg
+                  className={`w-4 h-4 text-red-400 shrink-0 transition-transform ${isOpen ? 'rotate-45' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  +
-                </span>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
               </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <div className="px-5 sm:px-6 pb-5 text-gray-400 text-sm leading-relaxed border-t border-[#1e293b] pt-4">
-                  {item.answer}
+              {isOpen && (
+                <div className="px-5 pb-5">
+                  <p className="text-[#666] text-sm leading-relaxed">{item.answer}</p>
                 </div>
-              </div>
+              )}
             </div>
           )
         })}
