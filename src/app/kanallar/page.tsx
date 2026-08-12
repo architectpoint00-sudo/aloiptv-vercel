@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 export default function KanallarPage() {
   return (
     <>
-      <section className="pt-10 sm:pt-16 lg:pt-20 pb-20 sm:pb-28 lg:pb-32">
+      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
         <div className="container-main">
           <Breadcrumb
             items={[
@@ -22,7 +22,7 @@ export default function KanallarPage() {
             ]}
           />
 
-          <div className="text-center mb-14 sm:mb-16 lg:mb-20">
+          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Kanal Listesi</span>
             <h1 className="heading-lg mb-4 sm:mb-5">150.000+ Canli Kanal</h1>
             <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ export default function KanallarPage() {
           </div>
 
           {/* Channel Categories */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-20 sm:mb-24 lg:mb-28">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-24 sm:mb-32 lg:mb-36">
             {CHANNEL_CATEGORIES.map((category) => (
               <div key={category.name} className="card">
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -44,8 +44,8 @@ export default function KanallarPage() {
           </div>
 
           {/* Channel Lists */}
-          <div className="mb-20 sm:mb-24 lg:mb-28">
-            <div className="mb-10 sm:mb-12">
+          <div className="mb-24 sm:mb-32 lg:mb-36">
+            <div className="mb-14 sm:mb-16 lg:mb-20">
               <span className="section-tag">Detayli Liste</span>
               <h2 className="heading-md">Kanal Listeleri</h2>
             </div>

@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function SSSPage() {
   return (
     <>
-      <section className="pt-10 sm:pt-16 lg:pt-20 pb-20 sm:pb-28 lg:pb-32">
+      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
         <div className="container-main max-w-3xl">
           <Breadcrumb
             items={[
@@ -23,7 +23,7 @@ export default function SSSPage() {
             ]}
           />
 
-          <div className="text-center mb-14 sm:mb-16 lg:mb-20">
+          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Sikca Sorulan Sorular</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Merak Ettiginiz Her Sey</h1>
             <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
@@ -32,7 +32,7 @@ export default function SSSPage() {
           </div>
 
           {/* FAQ Sections */}
-          <div className="space-y-12 sm:space-y-14 mb-20 sm:mb-24 lg:mb-28">
+          <div className="space-y-16 sm:space-y-20 mb-24 sm:mb-32 lg:mb-36">
             {SSS_DATA.map((section) => (
               <FaqAccordion
                 key={section.category}

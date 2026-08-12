@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
 export default function IletisimPage() {
   return (
     <>
-      <section className="pt-10 sm:pt-16 lg:pt-20 pb-20 sm:pb-28 lg:pb-32">
+      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
         <div className="container-main max-w-4xl">
           <Breadcrumb
             items={[
@@ -21,7 +21,7 @@ export default function IletisimPage() {
             ]}
           />
 
-          <div className="text-center mb-14 sm:mb-16 lg:mb-20">
+          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Iletisim</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Bizimle Iletisime Gecin</h1>
             <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
@@ -30,7 +30,7 @@ export default function IletisimPage() {
           </div>
 
           {/* Contact Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-16 sm:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-20 sm:mb-28 lg:mb-32">
             <a
               href={WHATSAPP_LINKS.support}
               target="_blank"
@@ -69,7 +69,7 @@ export default function IletisimPage() {
           </div>
 
           {/* Info Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-16 sm:mb-20 lg:mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-20 sm:mb-28 lg:mb-32">
             {[
               { icon: '🕐', title: 'Calisma Saatleri', value: '7/24 Kesintisiz Destek' },
               { icon: '⚡', title: 'Yanit Suresi', value: 'Ortalama 3 dakika' },

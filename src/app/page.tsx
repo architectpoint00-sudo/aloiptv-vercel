@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <>
       {/* ═══════ HERO ═══════ */}
-      <section className="relative overflow-hidden pt-12 sm:pt-20 lg:pt-28 pb-20 sm:pb-28 lg:pb-36">
+      <section className="relative overflow-hidden pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[800px] h-[400px] sm:h-[600px] bg-red-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container-main relative z-10">
@@ -39,7 +39,7 @@ export default function HomePage() {
                 Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi. Tum cihazlarinizda.
               </p>
 
-              <div className="flex flex-wrap gap-3 sm:gap-4 mb-14 sm:mb-16">
+              <div className="flex flex-wrap gap-3 sm:gap-4 mb-16 sm:mb-20 lg:mb-24">
                 <Link href="/fiyatlar/" className="btn btn-primary btn-lg">Fiyatlari Gor</Link>
                 <Link href="/kanallar/" className="btn btn-outline btn-lg">Kanallari Incele</Link>
               </div>
@@ -108,9 +108,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ FEATURES ═══════ */}
-      <section className="section-alt py-20 sm:py-28 lg:py-32">
+      <section className="section-alt py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Ozellikler</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Premium Canli TV Deneyimi</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
@@ -131,9 +131,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ PRICING ═══════ */}
-      <section className="py-20 sm:py-28 lg:py-32">
+      <section className="py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Fiyatlandirma</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
@@ -159,9 +159,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ SETUP STEPS ═══════ */}
-      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-14 sm:mb-16">
+          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Kurulum</span>
             <h2 className="heading-lg mb-4 sm:mb-5">3 Kolay Adimda Baslayin</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
@@ -202,9 +202,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ WHY CHOOSE ═══════ */}
-      <section className="section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-14 sm:mb-16">
+          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Neden AloIPTV?</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Ilk Yayinindan Itibaren Farki Hissedin</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
@@ -233,9 +233,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ CHANNEL CATEGORIES ═══════ */}
-      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Kanal Kategorileri</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Tek Abonelik, Tum Kategoriler</h2>
           </div>
@@ -262,9 +262,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ DEVICES ═══════ */}
-      <section className="section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-14 sm:mb-16">
+          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Cihaz Uyumlulugu</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Tum Cihazlarinizda Calisir</h2>
             <p className="text-[#94a3b8] text-sm sm:text-base">
@@ -285,9 +285,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ TESTIMONIALS ═══════ */}
-      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main">
-          <div className="max-w-2xl mb-14 sm:mb-16">
+          <div className="max-w-2xl mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Yorumlar</span>
             <h2 className="heading-lg">10.000+ Ailenin Tercihi</h2>
           </div>
@@ -301,9 +301,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ FAQ ═══════ */}
-      <section className="section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main max-w-3xl">
-          <div className="mb-14 sm:mb-16">
+          <div className="mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Sikca Sorulan Sorular</span>
             <h2 className="heading-lg mb-4 sm:mb-5">Satin Almadan Once Yanitlar</h2>
             <p className="text-[#94a3b8] text-sm">
@@ -322,7 +322,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ FINAL CTA ═══════ */}
-      <section className="section-alt section-border py-20 sm:py-28 lg:py-32">
+      <section className="section-alt section-border py-24 sm:py-36 lg:py-44">
         <div className="container-main text-center max-w-2xl">
           <h2 className="heading-lg mb-5 sm:mb-6">
             Premium IPTV&apos;ye Gecmeye Hazir misiniz?

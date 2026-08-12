@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 export default function HakkimizdaPage() {
   return (
     <>
-      <section className="pt-10 sm:pt-16 lg:pt-20 pb-20 sm:pb-28 lg:pb-32">
+      <section className="pt-16 sm:pt-24 lg:pt-32 pb-24 sm:pb-36 lg:pb-44">
         <div className="container-main max-w-4xl">
           <Breadcrumb
             items={[
@@ -22,7 +22,7 @@ export default function HakkimizdaPage() {
             ]}
           />
 
-          <div className="text-center mb-14 sm:mb-16 lg:mb-20">
+          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
             <span className="section-tag">Hakkimizda</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Premium IPTV&apos;de Guvenilir Isim</h1>
             <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ export default function HakkimizdaPage() {
           </div>
 
           {/* Hikayemiz */}
-          <div className="mb-16 sm:mb-20 lg:mb-24">
+          <div className="mb-20 sm:mb-28 lg:mb-32">
             <h2 className="heading-md mb-6 sm:mb-8">Hikayemiz</h2>
             <div className="space-y-4 sm:space-y-5">
               {ABOUT_PAGE_DATA.hikayemiz.map((paragraph, index) => (
@@ -43,7 +43,7 @@ export default function HakkimizdaPage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mb-16 sm:mb-20 lg:mb-24">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mb-20 sm:mb-28 lg:mb-32">
             {ABOUT_PAGE_DATA.stats.map((stat) => (
               <div key={stat.label} className="card text-center py-7 sm:py-8">
                 <div className="text-white text-2xl sm:text-3xl font-extrabold">{stat.value}</div>
@@ -53,7 +53,7 @@ export default function HakkimizdaPage() {
           </div>
 
           {/* Degerlerimiz */}
-          <div className="mb-16 sm:mb-20 lg:mb-24">
+          <div className="mb-20 sm:mb-28 lg:mb-32">
             <h2 className="heading-md mb-6 sm:mb-8">Degerlerimiz</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {ABOUT_PAGE_DATA.values.map((value) => (
@@ -66,7 +66,7 @@ export default function HakkimizdaPage() {
           </div>
 
           {/* Ekibimiz */}
-          <div className="mb-16 sm:mb-20 lg:mb-24">
+          <div className="mb-20 sm:mb-28 lg:mb-32">
             <h2 className="heading-md mb-6 sm:mb-8">Ekibimiz</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
               {ABOUT_PAGE_DATA.team.map((member) => {
