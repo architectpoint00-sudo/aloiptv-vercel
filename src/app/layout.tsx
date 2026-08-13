@@ -8,13 +8,13 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
+  themeColor: '#0a0a0a',
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Premium IPTV Satin Al | 150K+ Kanal, 4K UHD`,
+    default: `${SITE_NAME} — Premium IPTV Satın Al | 150K+ Kanal, 4K UHD`,
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -31,9 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">
+      <body>
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

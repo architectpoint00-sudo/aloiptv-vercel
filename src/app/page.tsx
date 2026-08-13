@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { WHATSAPP_LINKS } from '@/lib/constants'
 import {
-  ANNOUNCEMENT_MESSAGES,
   STATS,
   FEATURES,
   PRICING_PACKAGES,
@@ -9,109 +8,127 @@ import {
   TESTIMONIALS,
   HOMEPAGE_FAQ,
   DEVICES,
+  TRUST_BADGES,
 } from '@/lib/data'
+import Ticker from '@/components/Ticker'
 import PricingCard from '@/components/PricingCard'
 import TestimonialCard from '@/components/TestimonialCard'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function HomePage() {
-  const tickerText = ANNOUNCEMENT_MESSAGES.join('     ★     ')
-  const tickerRepeat = `${tickerText}     ★     ${tickerText}     ★     `
-
   return (
     <>
-      {/* ═══════ ANNOUNCEMENT TICKER ═══════ */}
-      <div className="overflow-hidden border-b border-white/10 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 py-2 text-white">
-        <div className="ticker-animate whitespace-nowrap">
-          <span className="text-sm font-medium">{tickerRepeat}</span>
-        </div>
-      </div>
+      <Ticker />
 
       {/* ═══════ HERO ═══════ */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[150px] opacity-20" />
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[150px] opacity-20" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-32 left-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/20 blur-[150px]" />
+          <div className="absolute -top-32 right-1/4 h-[500px] w-[500px] rounded-full bg-purple-600/20 blur-[150px]" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-36 pb-20">
-          <div className="text-center max-w-4xl mx-auto relative z-10">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+        <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
               Kesintisiz IPTV Deneyimi,{' '}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">150.000+ Kanal</span>
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                150.000+ Kanal
+              </span>
             </h1>
 
-            <p className="text-gray-400 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Turkce destek ile
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg">
+              4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Türkçe destek ile
               premium IPTV deneyimini yaşayın.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
               <a
                 href={WHATSAPP_LINKS.buy}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-105"
+                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition-transform duration-200 hover:scale-105"
               >
-                Hemen Basla
+                Hemen Başla
               </a>
               <a
                 href={WHATSAPP_LINKS.test}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/5 transition-all"
+                className="rounded-full border border-white/20 px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-white/5"
               >
-                Ucretsiz Test
+                Ücretsiz Test
               </a>
             </div>
+
+            {/* Trust row */}
+            <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+              {TRUST_BADGES.map((badge) => (
+                <li key={badge.title} className="flex items-center gap-2 text-sm text-gray-500">
+                  <span aria-hidden="true">{badge.icon}</span>
+                  <span>{badge.title}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* ═══════ STATS BAR ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="rounded-2xl border border-white/10 bg-[#111827] p-8 sm:p-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">{stat.value}</div>
-                <div className="text-gray-500 text-xs font-medium uppercase tracking-wider mt-1.5">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* ═══════ STATS ═══════ */}
+      <section aria-label="Rakamlarla AloIPTV" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <dl className="grid grid-cols-2 gap-8 rounded-2xl border border-white/10 bg-[#111827] p-8 sm:grid-cols-4 sm:p-10">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <dt className="sr-only">{stat.label}</dt>
+              <dd>
+                <span className="block bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
+                  {stat.value}
+                </span>
+                <span className="mt-1.5 block text-xs font-medium uppercase tracking-wider text-gray-500">
+                  {stat.label}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* ═══════ FEATURES ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Neden AloIPTV?</h2>
-          <p className="text-gray-400 text-base sm:text-lg">
-            Premium IPTV deneyimi icin ihtiyacınız olan her sey.
+      <section aria-labelledby="features-heading" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <h2 id="features-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+            Neden AloIPTV?
+          </h2>
+          <p className="mt-4 text-base text-gray-400 sm:text-lg">
+            Premium IPTV deneyimi için ihtiyacınız olan her şey.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature) => (
-            <div key={feature.title} className="rounded-2xl border border-white/10 bg-[#111827] p-6 sm:p-8 hover:border-white/20 transition-all">
-              <span className="text-3xl block mb-5">{feature.icon}</span>
-              <h3 className="text-white font-bold text-lg mb-3">{feature.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
-            </div>
+            <li
+              key={feature.title}
+              className="rounded-2xl border border-white/10 bg-[#111827] p-6 transition-colors hover:border-white/20 sm:p-8"
+            >
+              <span className="text-3xl" aria-hidden="true">{feature.icon}</span>
+              <h3 className="mt-5 text-lg font-bold text-white">{feature.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-400">{feature.description}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* ═══════ TESTIMONIALS ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Musterilerimiz Ne Diyor?</h2>
-          <p className="text-gray-400 text-base sm:text-lg">
-            Binlerce memnun kullanicidan gercek yorumlar.
+      <section aria-labelledby="testimonials-heading" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <h2 id="testimonials-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+            Müşterilerimiz Ne Diyor?
+          </h2>
+          <p className="mt-4 text-base text-gray-400 sm:text-lg">
+            Binlerce memnun kullanıcıdan gerçek yorumlar.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {TESTIMONIALS.map((t) => (
             <TestimonialCard key={t.name} testimonial={t} />
           ))}
@@ -119,112 +136,142 @@ export default function HomePage() {
       </section>
 
       {/* ═══════ PRICING ═══════ */}
-      <section className="scroll-mt-24 bg-[#0d0d14] py-20">
+      <section id="fiyatlar" aria-labelledby="pricing-heading" className="scroll-mt-24 bg-[#0d0d14] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Size Uygun Paketi Secin</h2>
-            <p className="text-gray-400 text-base sm:text-lg">
-              Tum paketlerde 150.000+ kanal, 4K UHD ve 7/24 destek dahildir.
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <h2 id="pricing-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+              Size Uygun Paketi Seçin
+            </h2>
+            <p className="mt-4 text-base text-gray-400 sm:text-lg">
+              Tüm paketlerde 150.000+ kanal, 4K UHD ve 7/24 destek dahildir.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {PRICING_PACKAGES.filter(p => !p.isFree).slice(0, 6).map((pkg) => (
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {PRICING_PACKAGES.filter((p) => !p.isFree).map((pkg) => (
               <PricingCard key={pkg.name} pkg={pkg} />
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link href="/fiyatlar/" className="text-purple-400 text-sm font-medium hover:text-purple-300 transition-colors inline-flex items-center gap-1.5">
-              Tum paketleri gor
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
+          <p className="mt-10 text-center">
+            <Link
+              href="/fiyatlar/"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-purple-400 transition-colors hover:text-purple-300"
+            >
+              Tüm paketleri gör
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m9 5 7 7-7 7" />
+              </svg>
             </Link>
-          </div>
+          </p>
         </div>
       </section>
 
       {/* ═══════ HOW IT WORKS ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Nasil Baslarsiniz?</h2>
-          <p className="text-gray-400 text-base sm:text-lg">
-            Uc basit adimda izlemeye baslayin.
+      <section aria-labelledby="steps-heading" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <h2 id="steps-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+            Nasıl Başlarsınız?
+          </h2>
+          <p className="mt-4 text-base text-gray-400 sm:text-lg">
+            Üç basit adımda izlemeye başlayın.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <ol className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {SETUP_STEPS.map((step) => (
-            <div key={step.step} className="rounded-2xl border border-white/10 bg-[#111827] p-6 sm:p-8 text-center hover:border-white/20 transition-all">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-5">
-                <span className="text-white font-bold text-lg">{step.step}</span>
-              </div>
-              <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
-            </div>
+            <li
+              key={step.step}
+              className="rounded-2xl border border-white/10 bg-[#111827] p-6 text-center transition-colors hover:border-white/20 sm:p-8"
+            >
+              <span
+                className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white"
+                aria-hidden="true"
+              >
+                {step.step}
+              </span>
+              <h3 className="mt-5 text-lg font-bold text-white">{step.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-gray-400">{step.description}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       {/* ═══════ DEVICES ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Tum Cihazlarinizda</h2>
-          <p className="text-gray-400 text-base sm:text-lg">
-            Tek hesap, tum cihazlarinizda. Ekstra donanim gerekmez.
+      <section aria-labelledby="devices-heading" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <h2 id="devices-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+            Tüm Cihazlarınızda
+          </h2>
+          <p className="mt-4 text-base text-gray-400 sm:text-lg">
+            Tek hesap, tüm cihazlarınızda. Ekstra donanım gerekmez.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {DEVICES.map((device) => (
-            <div key={device.name} className="rounded-2xl border border-white/10 bg-[#111827] p-5 sm:p-6 text-center hover:border-white/20 transition-all">
-              <span className="text-3xl block mb-3">{device.icon}</span>
-              <h3 className="text-white text-sm font-bold mb-1">{device.name}</h3>
-              <p className="text-gray-500 text-xs">{device.description}</p>
-            </div>
+            <li
+              key={device.name}
+              className="rounded-2xl border border-white/10 bg-[#111827] p-5 text-center transition-colors hover:border-white/20 sm:p-6"
+            >
+              <span className="text-3xl" aria-hidden="true">{device.icon}</span>
+              <h3 className="mt-3 text-sm font-bold text-white">{device.name}</h3>
+              <p className="mt-1 text-xs text-gray-500">{device.description}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* ═══════ FAQ ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Sikca Sorulan Sorular</h2>
-            <p className="text-gray-400 text-base sm:text-lg">
-              AloIPTV hakkinda merak ettikleriniz.
+      <section aria-labelledby="faq-heading" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-14 text-center">
+            <h2 id="faq-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
+              Sıkça Sorulan Sorular
+            </h2>
+            <p className="mt-4 text-base text-gray-400 sm:text-lg">
+              AloIPTV hakkında merak ettikleriniz.
             </p>
           </div>
 
           <FaqAccordion items={HOMEPAGE_FAQ} />
 
-          <div className="text-center mt-10">
-            <Link href="/sss/" className="text-purple-400 text-sm font-medium hover:text-purple-300 transition-colors inline-flex items-center gap-1.5">
-              Tum sorulari gor
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
+          <p className="mt-10 text-center">
+            <Link
+              href="/sss/"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-purple-400 transition-colors hover:text-purple-300"
+            >
+              Tüm soruları gör
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m9 5 7 7-7 7" />
+              </svg>
             </Link>
-          </div>
+          </p>
         </div>
       </section>
 
       {/* ═══════ FINAL CTA ═══════ */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 sm:p-14 lg:p-20 text-center">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px]" />
+      <section aria-labelledby="cta-heading" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 text-center sm:p-14 lg:p-20">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <div className="absolute left-0 top-0 h-[400px] w-[400px] rounded-full bg-blue-600/10 blur-[120px]" />
+            <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-600/10 blur-[120px]" />
           </div>
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">Hemen Baslayin</h2>
-            <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-8">
-              Binlerce memnun musteriye katilin ve en sevdiginiz kanallari izlemeye hemen baslayin.
+
+          <div className="relative">
+            <h2 id="cta-heading" className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+              Hemen Başlayın
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-base text-gray-400 sm:text-lg">
+              Binlerce memnun müşteriye katılın ve en sevdiğiniz kanalları izlemeye hemen başlayın.
             </p>
             <a
               href={WHATSAPP_LINKS.buy}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-105"
+              className="mt-8 inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition-transform duration-200 hover:scale-105"
             >
-              WhatsApp ile Satin Al
+              WhatsApp ile Satın Al
             </a>
           </div>
         </div>

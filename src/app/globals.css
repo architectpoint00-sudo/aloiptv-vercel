@@ -1,77 +1,94 @@
 @import "tailwindcss";
 
-/* ══════════════════════════════════════════════
-   AloIPTV — iptvwebcsgo.com Design Clone
-   Body: #0a0a0a | Cards: #111827 | Gradient: blue→purple
-   ══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════
+   AloIPTV — Design System
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+   IMPORTANT: every custom rule below MUST live inside `@layer base`.
+   Tailwind v4 emits utilities into `@layer utilities`. Any UNLAYERED
+   rule beats ALL layered rules regardless of specificity, so a bare
+   `* { margin: 0; padding: 0 }` silently nullifies every p-*, px-*,
+   m-*, mx-auto utility on the entire site. Keep custom CSS layered.
+   ══════════════════════════════════════════════════════════════ */
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
 
-body {
-  background: #0a0a0a;
-  color: #ededed;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  line-height: 1.6;
-  min-height: 100vh;
-  font-size: 16px;
-}
+  body {
+    background-color: #0a0a0a;
+    color: #ededed;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
 
-img, video, svg {
-  max-width: 100%;
-  height: auto;
-}
+  /* Balanced, tight headings */
+  h1, h2, h3 {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #555; }
+  p {
+    text-wrap: pretty;
+  }
 
-/* ═══════════════════════════════════════
-   TICKER / ANNOUNCEMENT BAR
-   ═══════════════════════════════════════ */
+  /* Visible keyboard focus everywhere */
+  :focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 
-@keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3f3f4a; }
 
-.ticker-animate {
-  animation: ticker-scroll 30s linear infinite;
+  ::selection {
+    background: rgba(139, 92, 246, 0.35);
+    color: #fff;
+  }
 }
 
 /* ═══════════════════════════════════════
    ANIMATIONS
    ═══════════════════════════════════════ */
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.25); }
-  50% { box-shadow: 0 0 35px rgba(37, 211, 102, 0.45); }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50%      { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════ */
+@utility ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: ticker-scroll 40s linear infinite;
+}
 
-h1, h2, h3, h4, h5, h6, p, span, a {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+@utility pulse-ring {
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

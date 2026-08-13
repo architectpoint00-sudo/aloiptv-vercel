@@ -8,67 +8,61 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata = buildMetadata({
   title: 'Fiyatlar',
   description:
-    'AloIPTV fiyatlari. 1, 3, 6, 12 ve 24 aylik IPTV paketleri. 150.000+ kanal, 4K UHD, Anti-Freeze.',
+    'AloIPTV fiyatları. 1, 3, 6, 12 ve 24 aylık IPTV paketleri. 150.000+ kanal, 4K UHD, Anti-Freeze.',
   path: '/fiyatlar/',
 })
 
 export default function FiyatlarPage() {
   return (
-    <>
-      <section className="pt-28 sm:pt-36 pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb
-            items={[
-              { label: 'Ana Sayfa', href: '/' },
-              { label: 'Fiyatlar' },
-            ]}
-          />
+    <div className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
+      <Breadcrumb items={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Fiyatlar' }]} />
 
-          <div className="text-center mb-14">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">Size Uygun Paketi Secin</h1>
-            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Tum paketlerde 150.000+ kanal, 4K UHD kalite ve 7/24 destek dahildir.
-              7 gun kosulsuz iade garantisi.
+      <header className="mx-auto mb-14 max-w-2xl text-center">
+        <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+          Size Uygun Paketi Seçin
+        </h1>
+        <p className="mt-4 text-base text-gray-400 sm:text-lg">
+          Tüm paketlerde 150.000+ kanal, 4K UHD kalite ve 7/24 destek dahildir.
+          7 gün koşulsuz iade garantisi.
+        </p>
+      </header>
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {PRICING_PACKAGES.map((pkg) => (
+          <PricingCard key={pkg.name} pkg={pkg} />
+        ))}
+      </div>
+
+      {/* Trial CTA */}
+      <section className="relative mt-20 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-8 sm:p-12">
+        <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-purple-600/10 blur-[100px]" />
+        <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="text-lg font-bold text-white sm:text-xl lg:text-2xl">
+              Kararsız mısınız? 24 saat ücretsiz deneyin.
+            </h2>
+            <p className="mt-2 text-sm text-gray-400">
+              Satın almadan önce tüm kanalları test edin.
             </p>
           </div>
-
-          {/* Pricing Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
-            {PRICING_PACKAGES.map((pkg) => (
-              <PricingCard key={pkg.name} pkg={pkg} />
-            ))}
-          </div>
-
-          {/* Trial CTA */}
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-8 sm:p-12 mb-20">
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px]" />
-            </div>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative z-10">
-              <div>
-                <h3 className="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-2">Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
-                <p className="text-gray-400 text-sm">Satin almadan once tum kanallari test edin.</p>
-              </div>
-              <a
-                href={WHATSAPP_LINKS.test}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-105 shrink-0 w-full sm:w-auto text-center"
-              >
-                Ucretsiz Test Al
-              </a>
-            </div>
-          </div>
-
-          {/* FAQ */}
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Sikca Sorulan Sorular</h2>
-            </div>
-            <FaqAccordion items={HOMEPAGE_FAQ} />
-          </div>
+          <a
+            href={WHATSAPP_LINKS.test}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full shrink-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-center text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-transform duration-200 hover:scale-105 sm:w-auto"
+          >
+            Ücretsiz Test Al
+          </a>
         </div>
       </section>
-    </>
+
+      {/* FAQ */}
+      <section aria-labelledby="pricing-faq" className="mx-auto mt-20 max-w-3xl">
+        <h2 id="pricing-faq" className="mb-14 text-center text-3xl font-extrabold text-white sm:text-4xl">
+          Sıkça Sorulan Sorular
+        </h2>
+        <FaqAccordion items={HOMEPAGE_FAQ} />
+      </section>
+    </div>
   )
 }

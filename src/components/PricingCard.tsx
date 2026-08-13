@@ -7,56 +7,63 @@ interface PricingCardProps {
 
 export default function PricingCard({ pkg }: PricingCardProps) {
   const isPopular = pkg.badge === 'En Populer' || pkg.badge === 'En Popüler'
-  const hasMaxSave = pkg.badge === 'Maksimum Tasarruf'
-  const hasBadge = isPopular || hasMaxSave
 
   return (
     <div
-      className={`relative rounded-2xl border p-6 sm:p-8 flex flex-col transition-all ${
+      className={`relative flex flex-col rounded-2xl border bg-[#111827] p-6 transition-colors sm:p-8 ${
         isPopular
-          ? 'border-purple-500/50 bg-[#111827] shadow-lg shadow-purple-600/10'
-          : 'border-white/10 bg-[#111827] hover:border-white/20'
+          ? 'border-purple-500/50 shadow-lg shadow-purple-600/10'
+          : 'border-white/10 hover:border-white/20'
       }`}
     >
-      {hasBadge && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-[10px] font-bold tracking-wide uppercase px-4 py-1.5 rounded-full whitespace-nowrap">
-            {pkg.badge}
-          </span>
-        </div>
+      {pkg.badge && (
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white">
+          {pkg.badge}
+        </span>
       )}
 
-      <div className="mb-6">
-        <h3 className="text-white font-bold text-lg sm:text-xl mb-2">{pkg.name}</h3>
-        {pkg.discount && (
-          <span className="inline-block text-purple-400 text-xs font-semibold bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full">
-            {pkg.discount}
-          </span>
-        )}
-      </div>
+      <h3 className="text-lg font-bold text-white sm:text-xl">{pkg.name}</h3>
 
-      <div className="mb-6">
-        <div className="flex items-baseline gap-1.5">
+      {pkg.discount && (
+        <span className="mt-2 self-start rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs font-semibold text-purple-400">
+          {pkg.discount}
+        </span>
+      )}
+
+      <div className="mt-6">
+        <p className="flex items-baseline gap-1.5">
           {pkg.price === 0 ? (
-            <span className="text-white text-4xl sm:text-5xl font-extrabold">Ucretsiz</span>
+            <span className="text-4xl font-extrabold text-white">Ücretsiz</span>
           ) : (
             <>
-              <span className="text-white text-4xl sm:text-5xl font-extrabold">{pkg.price}</span>
-              <span className="text-gray-500 text-sm font-medium">TL</span>
+              <span className="text-4xl font-extrabold text-white sm:text-5xl">{pkg.price}</span>
+              <span className="text-sm font-medium text-gray-500">TL</span>
             </>
           )}
-        </div>
+        </p>
         {pkg.originalPrice && (
-          <div className="text-gray-600 text-sm line-through mt-1">{pkg.originalPrice} TL</div>
+          <p className="mt-1 text-sm text-gray-600">
+            <span className="line-through">{pkg.originalPrice} TL</span>
+            <span className="sr-only"> yerine</span>
+          </p>
         )}
-        <div className="text-gray-500 text-xs mt-1.5">{pkg.period} &middot; {pkg.devices}</div>
+        <p className="mt-1.5 text-xs text-gray-500">
+          {pkg.period} &middot; {pkg.devices}
+        </p>
       </div>
 
-      <ul className="space-y-3 mb-8 flex-1">
+      <ul className="mt-6 flex-1 space-y-3">
         {pkg.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2.5 text-sm">
-            <svg className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            <svg
+              className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
             </svg>
             <span className="text-gray-400">{feature}</span>
           </li>
@@ -67,13 +74,14 @@ export default function PricingCard({ pkg }: PricingCardProps) {
         href={pkg.isFree ? WHATSAPP_LINKS.test : WHATSAPP_LINKS.buy}
         target="_blank"
         rel="noopener noreferrer"
-        className={`block text-center font-semibold text-sm py-3.5 rounded-full transition-all ${
+        className={`mt-8 block rounded-full py-3.5 text-center text-sm font-semibold transition-all ${
           isPopular
-            ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-purple-600/25 hover:shadow-purple-600/40 hover:scale-[1.02]'
-            : 'bg-transparent border border-white/20 text-white hover:border-white/40 hover:bg-white/5'
+            ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-purple-600/25 hover:scale-[1.02]'
+            : 'border border-white/20 text-white hover:border-white/40 hover:bg-white/5'
         }`}
       >
-        {pkg.isFree ? 'Ucretsiz Dene' : 'Satin Al'}
+        {pkg.isFree ? 'Ücretsiz Dene' : 'Satın Al'}
+        <span className="sr-only"> — {pkg.name}</span>
       </a>
     </div>
   )

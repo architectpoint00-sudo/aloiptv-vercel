@@ -6,90 +6,86 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata = buildMetadata({
   title: 'Kanallar',
   description:
-    'AloIPTV kanal listesi. 150.000+ canli TV kanali: spor, sinema, dizi, haber, belgesel, cocuk, uluslararasi kanallar.',
+    'AloIPTV kanal listesi. 150.000+ canlı TV kanalı: spor, sinema, dizi, haber, belgesel, çocuk, uluslararası kanallar.',
   path: '/kanallar/',
 })
 
 export default function KanallarPage() {
   return (
-    <>
-      <section className="pt-28 sm:pt-36 pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumb
-            items={[
-              { label: 'Ana Sayfa', href: '/' },
-              { label: 'Kanallar' },
-            ]}
-          />
+    <div className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
+      <Breadcrumb items={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Kanallar' }]} />
 
-          <div className="text-center mb-14">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">150.000+</span> Canli Kanal
-            </h1>
-            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Spor, sinema, dizi, canli TV ve daha fazlasi. Tek abonelikle erisin.
-            </p>
-          </div>
+      <header className="mx-auto mb-14 max-w-2xl text-center">
+        <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+          <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            150.000+
+          </span>{' '}
+          Canlı Kanal
+        </h1>
+        <p className="mt-4 text-base text-gray-400 sm:text-lg">
+          Spor, sinema, dizi, canlı TV ve daha fazlası. Tek abonelikle erişin.
+        </p>
+      </header>
 
-          {/* Channel Categories */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
-            {CHANNEL_CATEGORIES.map((category) => (
-              <div key={category.name} className="rounded-2xl border border-white/10 bg-[#111827] p-6 sm:p-8 hover:border-white/20 transition-all">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-white font-bold text-lg">{category.name}</h3>
-                  <span className="text-2xl opacity-60">{category.icon}</span>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{category.description}</p>
-              </div>
-            ))}
-          </div>
+      {/* Categories */}
+      <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {CHANNEL_CATEGORIES.map((category) => (
+          <li
+            key={category.name}
+            className="rounded-2xl border border-white/10 bg-[#111827] p-6 transition-colors hover:border-white/20 sm:p-8"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-lg font-bold text-white">{category.name}</h2>
+              <span className="text-2xl opacity-60" aria-hidden="true">{category.icon}</span>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-gray-400">{category.description}</p>
+          </li>
+        ))}
+      </ul>
 
-          {/* Channel Lists */}
-          <div className="mb-20">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Kanal Listeleri</h2>
-            </div>
-            <div className="space-y-5">
-              {CHANNEL_LISTS.map((group) => (
-                <div key={group.title} className="rounded-2xl border border-white/10 bg-[#111827] p-6 sm:p-8">
-                  <h3 className="text-white font-bold text-lg mb-4">{group.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {group.channels.map((channel) => (
-                      <span
-                        key={channel}
-                        className="inline-block bg-[#0a0a0a] text-gray-400 text-sm px-4 py-2 rounded-lg border border-white/10 hover:border-purple-500/30 hover:text-white transition-colors"
-                      >
-                        {channel}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Channel lists */}
+      <section aria-labelledby="channel-lists" className="mt-20">
+        <h2 id="channel-lists" className="mb-14 text-center text-3xl font-extrabold text-white sm:text-4xl">
+          Kanal Listeleri
+        </h2>
 
-          {/* CTA */}
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 sm:p-14 text-center max-w-3xl mx-auto">
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px]" />
+        <div className="space-y-5">
+          {CHANNEL_LISTS.map((group) => (
+            <div key={group.title} className="rounded-2xl border border-white/10 bg-[#111827] p-6 sm:p-8">
+              <h3 className="text-lg font-bold text-white">{group.title}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {group.channels.map((channel) => (
+                  <li
+                    key={channel}
+                    className="rounded-lg border border-white/10 bg-[#0a0a0a] px-4 py-2 text-sm text-gray-400 transition-colors hover:border-purple-500/30 hover:text-white"
+                  >
+                    {channel}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">Tum Kanallari Kesfedin</h2>
-              <p className="text-gray-400 text-sm mb-8 max-w-lg mx-auto">
-                150.000+ kanalin tamami icin ucretsiz 24 saatlik test hesabi alin.
-              </p>
-              <a
-                href={WHATSAPP_LINKS.test}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-105"
-              >
-                Ucretsiz Test Al
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
-    </>
+
+      {/* CTA */}
+      <section className="relative mx-auto mt-20 max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 text-center sm:p-14">
+        <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-purple-600/10 blur-[100px]" />
+        <div className="relative">
+          <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Tüm Kanalları Keşfedin</h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm text-gray-400">
+            150.000+ kanalın tamamı için ücretsiz 24 saatlik test hesabı alın.
+          </p>
+          <a
+            href={WHATSAPP_LINKS.test}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-transform duration-200 hover:scale-105"
+          >
+            Ücretsiz Test Al
+          </a>
+        </div>
+      </section>
+    </div>
   )
 }
