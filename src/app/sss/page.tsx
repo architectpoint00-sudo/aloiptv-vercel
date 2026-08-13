@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function SSSPage() {
   return (
     <>
-      <section className="pt-28 sm:pt-36 lg:pt-44 pb-28 sm:pb-36 lg:pb-44">
+      <section className="pt-28 sm:pt-36 lg:pt-44 pb-24 sm:pb-32 lg:pb-40">
         <div className="container-main max-w-3xl">
           <Breadcrumb
             items={[
@@ -23,7 +23,7 @@ export default function SSSPage() {
             ]}
           />
 
-          <div className="text-center mb-20 sm:mb-24 lg:mb-28">
+          <div className="text-center mb-16 sm:mb-20">
             <span className="section-tag">Sikca Sorulan Sorular</span>
             <h1 className="heading-lg mb-4 sm:mb-5">Merak Ettiginiz Her Sey</h1>
             <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
@@ -32,7 +32,7 @@ export default function SSSPage() {
           </div>
 
           {/* FAQ Sections */}
-          <div className="space-y-16 sm:space-y-20 mb-24 sm:mb-32 lg:mb-36">
+          <div className="space-y-14 sm:space-y-18 mb-20 sm:mb-28">
             {SSS_DATA.map((section) => (
               <FaqAccordion
                 key={section.category}
@@ -44,11 +44,11 @@ export default function SSSPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <div className="relative overflow-hidden bg-gradient-to-r from-[#0f1d32] via-[#111f38] to-[#0f1d32] border border-[#1a2d4a] rounded-xl sm:rounded-2xl p-8 sm:p-10 lg:p-14">
-              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-red-500/[0.04] rounded-full blur-[80px] pointer-events-none" />
+            <div className="cta-card text-center">
+              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[#22c55e]/[0.04] rounded-full blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <h2 className="heading-md mb-4 sm:mb-5">Baska Sorunuz mu Var?</h2>
-                <p className="text-[#94a3b8] text-sm mb-8 sm:mb-10 max-w-lg mx-auto">
+                <p className="text-[#94a3b8] text-sm mb-8 max-w-lg mx-auto">
                   WhatsApp uzerinden 7/24 ulasabilirsiniz.
                 </p>
                 <a
