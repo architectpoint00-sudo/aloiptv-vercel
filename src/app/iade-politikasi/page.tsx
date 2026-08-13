@@ -1,77 +1,30 @@
 import { buildMetadata } from '@/lib/seo'
 import { REFUND_POLICY } from '@/lib/data'
 import { WHATSAPP_LINKS } from '@/lib/constants'
-import Breadcrumb from '@/components/Breadcrumb'
+import PolicyPage from '@/components/PolicyPage'
 
 export const metadata = buildMetadata({
-  title: 'Iade Politikasi',
+  title: 'İade Politikası',
   description:
-    'AloIPTV iade politikasi. 7 gun kosulsuz para iade garantisi ve iade sureci hakkinda detayli bilgi.',
+    'AloIPTV iade politikası. 7 gün koşulsuz para iade garantisi ve iade süreci hakkında detaylı bilgi.',
   path: '/iade-politikasi/',
 })
 
 export default function IadePolitikasiPage() {
   return (
-    <section className="bg-[#0a0a0f] min-h-screen py-16 px-4">
-      <div className="max-w-3xl mx-auto">
-        <Breadcrumb
-          items={[
-            { label: 'Ana Sayfa', href: '/' },
-            { label: 'Iade Politikasi' },
-          ]}
-        />
-
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          AloIPTV Iade Politikasi
-        </h1>
-
-        <blockquote className="border-l-4 border-red-500 bg-white/5 rounded-r-lg p-6 mb-10">
-          <p className="text-gray-200 text-lg italic leading-relaxed">
-            &ldquo;Ihtiyaciniz oldugunda hizli ve tam iade garantisi
-            sunuyoruz. Musterilerimizin memnuniyeti bizim icin her seyden
-            onemlidir.&rdquo;
-          </p>
-        </blockquote>
-
-        <div className="space-y-10">
-          {REFUND_POLICY.map((section, index) => (
-            <div key={index}>
-              <h2 className="text-xl font-semibold text-white mb-4">
-                {section.title}
-              </h2>
-              {section.content.map((paragraph, pIndex) => (
-                <p
-                  key={pIndex}
-                  className="text-gray-300 leading-relaxed mb-4"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400 mb-4">
-            Iade talebi veya sorulariniz icin bize ulasin
-          </p>
-          <a
-            href={WHATSAPP_LINKS.refund}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fba59] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            WhatsApp ile Iletisime Gecin
-          </a>
-        </div>
-      </div>
-    </section>
+    <PolicyPage
+      title="İade Politikası"
+      breadcrumbLabel="İade Politikası"
+      sections={REFUND_POLICY}
+      ctaTitle="İade talebi veya sorularınız için bize ulaşın"
+      ctaHref={WHATSAPP_LINKS.refund}
+      ctaLabel="İade Talebi Oluştur"
+      intro={
+        <p>
+          Satın alma tarihinden itibaren 7 gün içinde koşulsuz para iade garantisi sunuyoruz.
+          Aşağıda iade koşullarını, sürecini ve sürelerini detaylı olarak bulabilirsiniz.
+        </p>
+      }
+    />
   )
 }

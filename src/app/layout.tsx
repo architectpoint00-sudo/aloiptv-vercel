@@ -4,6 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/constants'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { OrganizationJsonLd } from '@/components/JsonLd'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <OrganizationJsonLd />
         <Header />
         <main id="main">{children}</main>
         <Footer />

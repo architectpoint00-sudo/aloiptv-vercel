@@ -9,6 +9,7 @@ const FOOTER_COLUMNS = [
       { label: 'Fiyatlar', href: '/fiyatlar/' },
       { label: 'Kanallar', href: '/kanallar/' },
       { label: 'Hakkımızda', href: '/hakkimizda/' },
+      { label: 'Blog', href: '/blog/' },
     ],
   },
   {
@@ -16,6 +17,7 @@ const FOOTER_COLUMNS = [
     links: [
       { label: 'SSS', href: '/sss/' },
       { label: 'İletişim', href: '/iletisim/' },
+      { label: 'İade Politikası', href: '/iade-politikasi/' },
     ],
   },
 ]
