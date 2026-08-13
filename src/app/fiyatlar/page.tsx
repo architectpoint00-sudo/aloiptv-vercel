@@ -15,8 +15,8 @@ export const metadata = buildMetadata({
 export default function FiyatlarPage() {
   return (
     <>
-      <section className="pt-28 sm:pt-36 lg:pt-44 pb-24 sm:pb-32 lg:pb-40">
-        <div className="container-main">
+      <section className="pt-28 sm:pt-36 pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[
               { label: 'Ana Sayfa', href: '/' },
@@ -24,35 +24,36 @@ export default function FiyatlarPage() {
             ]}
           />
 
-          <div className="text-center mb-16 sm:mb-20">
-            <span className="section-tag">Fiyatlandirma</span>
-            <h1 className="heading-lg mb-4 sm:mb-5">Size Uygun Paketi Secin</h1>
-            <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-14">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">Size Uygun Paketi Secin</h1>
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
               Tum paketlerde 150.000+ kanal, 4K UHD kalite ve 7/24 destek dahildir.
               7 gun kosulsuz iade garantisi.
             </p>
           </div>
 
           {/* Pricing Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-20 sm:mb-28">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {PRICING_PACKAGES.map((pkg) => (
               <PricingCard key={pkg.name} pkg={pkg} />
             ))}
           </div>
 
           {/* Trial CTA */}
-          <div className="cta-card mb-20 sm:mb-28">
-            <div className="absolute top-0 right-0 w-[300px] h-[200px] bg-[#22c55e]/[0.04] rounded-full blur-[80px] pointer-events-none" />
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-8 sm:p-12 mb-20">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px]" />
+            </div>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative z-10">
               <div>
-                <h3 className="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
-                <p className="text-[#94a3b8] text-sm">Satin almadan once tum kanallari test edin.</p>
+                <h3 className="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-2">Kararsiz misiniz? 24 saat ucretsiz deneyin.</h3>
+                <p className="text-gray-400 text-sm">Satin almadan once tum kanallari test edin.</p>
               </div>
               <a
                 href={WHATSAPP_LINKS.test}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary btn-lg shrink-0 w-full sm:w-auto"
+                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-105 shrink-0 w-full sm:w-auto text-center"
               >
                 Ucretsiz Test Al
               </a>
@@ -61,9 +62,8 @@ export default function FiyatlarPage() {
 
           {/* FAQ */}
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12 sm:mb-16">
-              <span className="section-tag">SSS</span>
-              <h2 className="heading-md">Sikca Sorulan Sorular</h2>
+            <div className="text-center mb-14">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Sikca Sorulan Sorular</h2>
             </div>
             <FaqAccordion items={HOMEPAGE_FAQ} />
           </div>

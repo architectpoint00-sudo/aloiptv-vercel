@@ -14,8 +14,8 @@ export const metadata = buildMetadata({
 export default function SSSPage() {
   return (
     <>
-      <section className="pt-28 sm:pt-36 lg:pt-44 pb-24 sm:pb-32 lg:pb-40">
-        <div className="container-main max-w-3xl">
+      <section className="pt-28 sm:pt-36 pb-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Breadcrumb
             items={[
               { label: 'Ana Sayfa', href: '/' },
@@ -23,16 +23,15 @@ export default function SSSPage() {
             ]}
           />
 
-          <div className="text-center mb-16 sm:mb-20">
-            <span className="section-tag">Sikca Sorulan Sorular</span>
-            <h1 className="heading-lg mb-4 sm:mb-5">Merak Ettiginiz Her Sey</h1>
-            <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto">
+          <div className="text-center mb-14">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">Sikca Sorulan Sorular</h1>
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
               Tum sorularinizin yanitlari burada.
             </p>
           </div>
 
           {/* FAQ Sections */}
-          <div className="space-y-14 sm:space-y-18 mb-20 sm:mb-28">
+          <div className="space-y-14 mb-20">
             {SSS_DATA.map((section) => (
               <FaqAccordion
                 key={section.category}
@@ -43,23 +42,23 @@ export default function SSSPage() {
           </div>
 
           {/* CTA */}
-          <div className="text-center">
-            <div className="cta-card text-center">
-              <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[#22c55e]/[0.04] rounded-full blur-[80px] pointer-events-none" />
-              <div className="relative z-10">
-                <h2 className="heading-md mb-4 sm:mb-5">Baska Sorunuz mu Var?</h2>
-                <p className="text-[#94a3b8] text-sm mb-8 max-w-lg mx-auto">
-                  WhatsApp uzerinden 7/24 ulasabilirsiniz.
-                </p>
-                <a
-                  href={WHATSAPP_LINKS.support}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-lg"
-                >
-                  WhatsApp Destek
-                </a>
-              </div>
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 sm:p-14 text-center">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px]" />
+            </div>
+            <div className="relative z-10">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">Baska Sorunuz mu Var?</h2>
+              <p className="text-gray-400 text-sm mb-8 max-w-lg mx-auto">
+                WhatsApp uzerinden 7/24 ulasabilirsiniz.
+              </p>
+              <a
+                href={WHATSAPP_LINKS.support}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all hover:scale-105"
+              >
+                WhatsApp Destek
+              </a>
             </div>
           </div>
         </div>
