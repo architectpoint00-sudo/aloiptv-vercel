@@ -425,7 +425,7 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     name: '1 Aylık Paket',
-    price: 249,
+    price: 125,
     period: '1 Ay',
     features: [
       '+150.000 canlı kanal',
@@ -438,8 +438,8 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     name: '3 Aylık Paket',
-    price: 649,
-    originalPrice: 747,
+    price: 325,
+    originalPrice: 374,
     period: '3 Ay',
     discount: '%13 İndirim',
     features: [
@@ -454,8 +454,8 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     name: '6 Aylık Paket',
-    price: 1099,
-    originalPrice: 1494,
+    price: 550,
+    originalPrice: 747,
     period: '6 Ay',
     discount: '%26 İndirim',
     features: [
@@ -470,8 +470,8 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     name: '12 Aylık Paket',
-    price: 1799,
-    originalPrice: 2988,
+    price: 900,
+    originalPrice: 1494,
     period: '12 Ay',
     discount: '%40 İndirim',
     badge: 'En Popüler',
@@ -488,8 +488,8 @@ export const PRICING_PACKAGES: PricingPackage[] = [
   },
   {
     name: '24 Aylık Paket',
-    price: 2799,
-    originalPrice: 5976,
+    price: 1400,
+    originalPrice: 2988,
     period: '24 Ay',
     discount: '%53 İndirim',
     badge: 'Maksimum Tasarruf',
