@@ -76,6 +76,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════ CHANNEL GRID ═══════ */}
+      <div style={{maxWidth:'1240px',margin:'0 auto',padding:'40px 24px 0'}}>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:'16px'}}>
+          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
+            <div style={{background:'linear-gradient(135deg,#1e3a5f,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#ef4444',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>CANLI</span><div style={{textAlign:'center',fontSize:'28px'}}>⚽</div></div>
+            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>beIN SPORTS 1</div><div style={{color:'#64748b',fontSize:'11px'}}>Super Lig Canli</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'65%',height:'100%',background:'#ef4444',borderRadius:'2px'}}></div></div></div>
+          </div>
+          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
+            <div style={{background:'linear-gradient(135deg,#2d1a3e,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#ef4444',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>CANLI</span><div style={{textAlign:'center',fontSize:'28px'}}>🏎️</div></div>
+            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>S Sport</div><div style={{color:'#64748b',fontSize:'11px'}}>Formula 1 GP</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'40%',height:'100%',background:'#a855f7',borderRadius:'2px'}}></div></div></div>
+          </div>
+          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
+            <div style={{background:'linear-gradient(135deg,#3b1a1a,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#ef4444',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>CANLI</span><div style={{textAlign:'center',fontSize:'28px'}}>🏀</div></div>
+            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>NBA TV</div><div style={{color:'#64748b',fontSize:'11px'}}>Lakers vs Celtics</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'80%',height:'100%',background:'#f97316',borderRadius:'2px'}}></div></div></div>
+          </div>
+          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
+            <div style={{background:'linear-gradient(135deg,#1a1a2e,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>4K HDR</span><div style={{textAlign:'center',fontSize:'28px'}}>🎬</div></div>
+            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>Netflix Originals</div><div style={{color:'#64748b',fontSize:'11px'}}>200.000+ VOD</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'100%',height:'100%',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',borderRadius:'2px'}}></div></div></div>
+          </div>
+          <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
+            <div style={{background:'linear-gradient(135deg,#0c1e3f,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#e11d48',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>4K</span><div style={{textAlign:'center',fontSize:'28px'}}>🎥</div></div>
+            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>BluTV</div><div style={{color:'#64748b',fontSize:'11px'}}>Dizi & Film</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'90%',height:'100%',background:'#22c55e',borderRadius:'2px'}}></div></div></div>
+          </div>
+        </div>
+      </div>
+
       {/* ═══════ STATS ═══════ */}
       <section aria-label="Rakamlarla AloIPTV" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <dl className="grid grid-cols-2 gap-8 rounded-2xl border border-white/10 bg-[#111827] p-8 sm:grid-cols-4 sm:p-10">
