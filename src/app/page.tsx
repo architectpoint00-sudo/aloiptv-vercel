@@ -33,9 +33,9 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-              Kesintisiz IPTV Deneyimi,{' '}
+              Her Maç. Her Kanal.{' '}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                150.000+ Kanal
+                Sıfır Kesinti.
               </span>
             </h1>
 
