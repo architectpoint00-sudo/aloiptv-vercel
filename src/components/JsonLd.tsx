@@ -1,4 +1,4 @@
-zzimport { SITE_NAME, SITE_URL, SITE_DESCRIPTION, WHATSAPP_NUMBER } from '@/lib/constants'
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, WHATSAPP_NUMBER } from '@/lib/constants'
 import type { FaqItem, PricingPackage, BlogPost } from '@/lib/data'
 
 function Script({ data }: { data: Record<string, unknown> }) {
@@ -126,7 +126,6 @@ export function BlogPostingJsonLd({ post }: { post: BlogPost }) {
         url: `${SITE_URL}/blog/${post.slug}/`,
         mainEntityOfPage: `${SITE_URL}/blog/${post.slug}/`,
         image: `${SITE_URL}/og-image-aloiptv.png`,
-        inLanguage: 'tr-TR',
         author: { '@id': `${SITE_URL}/#organization` },
         publisher: { '@id': `${SITE_URL}/#organization` },
       }}
