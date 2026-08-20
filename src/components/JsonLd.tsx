@@ -1,4 +1,4 @@
-zimport { SITE_NAME, SITE_URL, SITE_DESCRIPTION, WHATSAPP_NUMBER } from '@/lib/constants'
+zzimport { SITE_NAME, SITE_URL, SITE_DESCRIPTION, WHATSAPP_NUMBER } from '@/lib/constants'
 import type { FaqItem, PricingPackage, BlogPost } from '@/lib/data'
 
 function Script({ data }: { data: Record<string, unknown> }) {
@@ -40,7 +40,9 @@ export function OrganizationJsonLd() {
           url: SITE_URL,
           name: SITE_NAME,
           description: SITE_DESCRIPTION,
-          inLanguage: 'tr-TR',
+          datePublished: toISODate(post.date),
+        dateModified: toISODate(post.date),
+        inLanguage: 'tr-TR',
           publisher: { '@id': `${SITE_URL}/#organization` },
         }}
       />
@@ -96,6 +98,20 @@ export function PricingJsonLd({ packages }: { packages: PricingPackage[] }) {
       }}
     />
   )
+}
+
+
+const TR_MONTHS: Record<string, string> = {
+  Ocak: '01', Subat: '02', Mart: '03', Nisan: '04',
+  Mayis: '05', Haziran: '06', Temmuz: '07', Agustos: '08',
+  Eylul: '09', Ekim: '10', Kasim: '11', Aralik: '12',
+}
+
+function toISODate(tr: string): string {
+  const [day, month, year] = tr.split(' ')
+  const normalized = month.replace(/\u015f/g, 's').replace(/\u0131/g, 'i').replace(/\u00fc/g, 'u').replace(/\u011f/g, 'g').replace(/\u00e7/g, 'c')
+  const mm = TR_MONTHS[normalized] || '01'
+  return `${year}-${mm}-${day.padStart(2, '0')}`
 }
 
 /** BlogPosting for article pages. */
