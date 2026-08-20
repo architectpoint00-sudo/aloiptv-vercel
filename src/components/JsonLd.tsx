@@ -40,9 +40,6 @@ export function OrganizationJsonLd() {
           url: SITE_URL,
           name: SITE_NAME,
           description: SITE_DESCRIPTION,
-          datePublished: toISODate(post.date),
-        dateModified: toISODate(post.date),
-        inLanguage: 'tr-TR',
           publisher: { '@id': `${SITE_URL}/#organization` },
         }}
       />
@@ -123,6 +120,9 @@ export function BlogPostingJsonLd({ post }: { post: BlogPost }) {
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.excerpt,
+        datePublished: toISODate(post.date),
+        dateModified: toISODate(post.date),
+        inLanguage: 'tr-TR',
         url: `${SITE_URL}/blog/${post.slug}/`,
         mainEntityOfPage: `${SITE_URL}/blog/${post.slug}/`,
         image: `${SITE_URL}/og-image-aloiptv.png`,
