@@ -80,6 +80,24 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         </div>
       </section>
 
+      <section className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-8">
+        <h2 className="mb-4 text-lg font-bold text-white">Kesfetmeye Devam Edin</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link href="/fiyatlar/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
+            IPTV Paketleri ve Fiyatlar
+          </Link>
+          <Link href="/kanallar/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
+            150.000+ Kanal Listesi
+          </Link>
+          <Link href="/sss/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
+            Sikca Sorulan Sorular
+          </Link>
+          <Link href="/iletisim/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
+            Bize Ulasin
+          </Link>
+        </div>
+      </section>
+
       <p className="mt-10 text-center">
         <Link
           href="/blog/"
