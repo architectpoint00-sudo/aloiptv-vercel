@@ -11,7 +11,7 @@ import {
   TRUST_BADGES,
 } from '@/lib/data'
 import Ticker from '@/components/Ticker'
-import { FaqJsonLd, PricingJsonLd } from '@/components/JsonLd'
+import { PricingJsonLd } from '@/components/JsonLd'
 import PricingCard from '@/components/PricingCard'
 import TestimonialCard from '@/components/TestimonialCard'
 import FaqAccordion from '@/components/FaqAccordion'
@@ -19,7 +19,6 @@ import FaqAccordion from '@/components/FaqAccordion'
 export default function HomePage() {
   return (
     <>
-      <FaqJsonLd items={HOMEPAGE_FAQ} />
       <PricingJsonLd packages={PRICING_PACKAGES} />
       <Ticker />
 
