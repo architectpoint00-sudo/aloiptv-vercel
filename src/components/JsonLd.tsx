@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, WHATSAPP_NUMBER } from '@/lib/constants'
+zimport { SITE_NAME, SITE_URL, SITE_DESCRIPTION, WHATSAPP_NUMBER } from '@/lib/constants'
 import type { FaqItem, PricingPackage, BlogPost } from '@/lib/data'
 
 function Script({ data }: { data: Record<string, unknown> }) {
@@ -27,7 +27,7 @@ export function OrganizationJsonLd() {
           contactPoint: {
             '@type': 'ContactPoint',
             telephone: WHATSAPP_NUMBER,
-            contactType: 'customer support',
+            contactType: 'customer service',
             availableLanguage: ['Turkish', 'English'],
           },
         }}
@@ -77,6 +77,14 @@ export function PricingJsonLd({ packages }: { packages: PricingPackage[] }) {
         name: `${SITE_NAME} Premium IPTV Aboneliği`,
         description: SITE_DESCRIPTION,
         brand: { '@type': 'Brand', name: SITE_NAME },
+        image: `${SITE_URL}/og-image-aloiptv.png`,
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          reviewCount: '1850',
+          bestRating: '5',
+          worstRating: '1',
+        },
         offers: paid.map((pkg) => ({
           '@type': 'Offer',
           name: pkg.name,
