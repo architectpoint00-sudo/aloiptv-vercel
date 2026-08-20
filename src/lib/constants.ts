@@ -1,6 +1,6 @@
 export const SITE_NAME = 'AloIPTV'
 export const SITE_URL = 'https://aloiptv.net'
-export const SITE_DESCRIPTION = 'Premium IPTV hizmeti. 150.000+ kanal, 4K UHD kalite, Anti-Freeze teknolojisi ile kesintisiz izleme deneyimi.'
+export const SITE_DESCRIPTION = 'Türkiye'nin 1 numaralı IPTV hizmeti. 150.000+ canlı kanal, film ve dizi. 4K UHD kalite, Anti-Freeze teknolojisi. Ücretsiz test hesabı ile deneyin.'
 export const WHATSAPP_NUMBER = '+17185864134'
 export const WHATSAPP_LINK = 'https://wa.me/17185864134'
 
