@@ -3,7 +3,6 @@ import { SSS_DATA } from '@/lib/data'
 import { WHATSAPP_LINKS } from '@/lib/constants'
 import Breadcrumb from '@/components/Breadcrumb'
 import FaqAccordion from '@/components/FaqAccordion'
-import { FaqJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
   title: 'SSS',
@@ -15,7 +14,6 @@ export const metadata = buildMetadata({
 export default function SSSPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
-      <FaqJsonLd items={SSS_DATA.flatMap((s) => s.items)} />
       <Breadcrumb items={[{ label: 'Ana Sayfa', href: '/' }, { label: 'SSS' }]} />
 
       <header className="mb-14 text-center">
