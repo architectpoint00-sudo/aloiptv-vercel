@@ -4,7 +4,7 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import PricingCard from '@/components/PricingCard'
 import FaqAccordion from '@/components/FaqAccordion'
 import Breadcrumb from '@/components/Breadcrumb'
-import { FaqJsonLd, PricingJsonLd } from '@/components/JsonLd'
+import { PricingJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
   title: 'Fiyatlar',
@@ -17,7 +17,6 @@ export default function FiyatlarPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8">
       <PricingJsonLd packages={PRICING_PACKAGES} />
-      <FaqJsonLd items={HOMEPAGE_FAQ} />
       <Breadcrumb items={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Fiyatlar' }]} />
 
       <header className="mx-auto mb-14 max-w-2xl text-center">
