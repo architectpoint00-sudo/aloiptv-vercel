@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  verification: {
+    google: 'i5JT6fgbfuFNK0c9itsPXbGANl8vtOCG2s1aB7BdA_c',
+  },
   alternates: {
     canonical: SITE_URL,
   },
