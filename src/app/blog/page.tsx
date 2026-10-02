@@ -4,9 +4,9 @@ import { BLOG_POSTS } from '@/lib/data'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = buildMetadata({
-  title: 'Blog',
+  title: 'IPTV Rehberleri ve Kurulum Kilavuzlari',
   description:
-    'AloIPTV blog. IPTV kurulum rehberleri, cihaz karşılaştırmaları ve premium IPTV hakkında bilmeniz gereken her şey.',
+    'AloIPTV blog. IPTV kurulum rehberleri, cihaz karsilastirmalari, donma cozumleri ve premium IPTV hakkinda bilmeniz gereken her sey.',
   path: '/blog/',
 })
 

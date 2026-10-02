@@ -77,20 +77,15 @@ export function PricingJsonLd({ packages }: { packages: PricingPackage[] }) {
         description: SITE_DESCRIPTION,
         brand: { '@type': 'Brand', name: SITE_NAME },
         image: `${SITE_URL}/og-image-aloiptv.png`,
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          reviewCount: '1850',
-          bestRating: '5',
-          worstRating: '1',
-        },
         offers: paid.map((pkg) => ({
           '@type': 'Offer',
           name: pkg.name,
           price: pkg.price,
           priceCurrency: 'TRY',
           availability: 'https://schema.org/InStock',
+          priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
           url: `${SITE_URL}/fiyatlar/`,
+          seller: { '@id': `${SITE_URL}/#organization` },
         })),
       }}
     />
@@ -113,6 +108,7 @@ function toISODate(tr: string): string {
 
 /** BlogPosting for article pages. */
 export function BlogPostingJsonLd({ post }: { post: BlogPost }) {
+  const iso = post.isoDate || toISODate(post.date)
   return (
     <Script
       data={{
@@ -120,8 +116,8 @@ export function BlogPostingJsonLd({ post }: { post: BlogPost }) {
         '@type': 'BlogPosting',
         headline: post.title,
         description: post.excerpt,
-        datePublished: toISODate(post.date),
-        dateModified: toISODate(post.date),
+        datePublished: iso,
+        dateModified: iso,
         inLanguage: 'tr-TR',
         url: `${SITE_URL}/blog/${post.slug}/`,
         mainEntityOfPage: `${SITE_URL}/blog/${post.slug}/`,

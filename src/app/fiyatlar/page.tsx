@@ -7,9 +7,9 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { PricingJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Fiyatlar',
+  title: 'IPTV Fiyatlari ve Paketler 2026',
   description:
-    'AloIPTV fiyatları. 1, 3, 6, 12 ve 24 aylık IPTV paketleri. 150.000+ kanal, 4K UHD, Anti-Freeze.',
+    'AloIPTV fiyatlari: 1, 3, 6, 12 ve 24 aylik IPTV paketleri. 150.000+ kanal, 4K UHD, Anti-Freeze teknolojisi. Aylik 58 TL\'den baslayan fiyatlarla premium IPTV.',
   path: '/fiyatlar/',
 })
 

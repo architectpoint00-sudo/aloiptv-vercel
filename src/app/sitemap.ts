@@ -4,32 +4,34 @@ import { BLOG_POSTS } from '@/lib/data'
 
 export const dynamic = 'force-static'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
+/** Most recent blog post date determines the "site last updated" signal. */
+const latestBlogDate = BLOG_POSTS.reduce((latest, p) =>
+  p.isoDate > latest ? p.isoDate : latest, '2026-01-01')
 
-  const staticRoutes: { path: string; priority: number; changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly' }[] = [
-    { path: '/', priority: 1.0, changeFrequency: 'weekly' },
-    { path: '/fiyatlar/', priority: 0.9, changeFrequency: 'weekly' },
-    { path: '/kanallar/', priority: 0.8, changeFrequency: 'weekly' },
-    { path: '/hakkimizda/', priority: 0.6, changeFrequency: 'monthly' },
-    { path: '/sss/', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/iletisim/', priority: 0.6, changeFrequency: 'monthly' },
-    { path: '/blog/', priority: 0.6, changeFrequency: 'weekly' },
-    { path: '/gizlilik-politikasi/', priority: 0.3, changeFrequency: 'yearly' },
-    { path: '/kullanim-sartlari/', priority: 0.3, changeFrequency: 'yearly' },
-    { path: '/iade-politikasi/', priority: 0.4, changeFrequency: 'yearly' },
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticRoutes: { path: string; priority: number; changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly'; lastmod: string }[] = [
+    { path: '/', priority: 1.0, changeFrequency: 'weekly', lastmod: latestBlogDate },
+    { path: '/fiyatlar/', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-08-21' },
+    { path: '/kanallar/', priority: 0.8, changeFrequency: 'weekly', lastmod: '2026-08-21' },
+    { path: '/hakkimizda/', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-08-21' },
+    { path: '/sss/', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-21' },
+    { path: '/iletisim/', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-08-21' },
+    { path: '/blog/', priority: 0.6, changeFrequency: 'weekly', lastmod: latestBlogDate },
+    { path: '/gizlilik-politikasi/', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-21' },
+    { path: '/kullanim-sartlari/', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-21' },
+    { path: '/iade-politikasi/', priority: 0.4, changeFrequency: 'yearly', lastmod: '2026-08-21' },
   ]
 
   return [
     ...staticRoutes.map((route) => ({
       url: `${SITE_URL}${route.path}`,
-      lastModified: now,
+      lastModified: route.lastmod,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),
     ...BLOG_POSTS.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}/`,
-      lastModified: now,
+      lastModified: post.isoDate,
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     })),

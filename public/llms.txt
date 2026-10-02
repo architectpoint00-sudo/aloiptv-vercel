@@ -1,0 +1,45 @@
+# AloIPTV
+
+> Turkiye'nin premium IPTV hizmeti. 150.000+ canli kanal, 80.000+ film ve dizi, 4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Turkce destek.
+
+## Hakkinda
+
+AloIPTV, 2019 yilindan bu yana Turk izleyicilere premium IPTV hizmeti sunmaktadir. Canli TV kanallari, film ve dizi arsivi, spor yayinlari ve uluslararasi kanallari tek bir abonelikle sunar.
+
+## Hizmetler
+
+- 150.000+ canli TV kanali (Turk ve uluslararasi)
+- 80.000+ film ve dizi arsivi (Netflix, Disney+, Amazon Prime icerikleri dahil)
+- 4K Ultra HD ve HDR kalitede yayin
+- Anti-Freeze teknolojisi (donma ve kasma onleme)
+- EPG (Elektronik Program Rehberi)
+- 7/24 WhatsApp ve Telegram uzerinden Turkce destek
+- Uzaktan kurulum destegi
+
+## Paketler
+
+- 1 Aylik Paket: 125 TL
+- 3 Aylik Paket: 325 TL (%13 indirim)
+- 6 Aylik Paket: 550 TL (%26 indirim)
+- 12 Aylik Paket: 900 TL (%40 indirim)
+- 24 Aylik Paket: 1400 TL (%53 indirim)
+- Ucretsiz 24 saatlik test hesabi
+
+## Desteklenen Cihazlar
+
+Android, iOS, Samsung/LG/Sony Smart TV, Amazon Fire Stick, Windows, Mac, MAG Box, Enigma2 (Dreambox, VU+)
+
+## Onemli Sayfalar
+
+- Ana Sayfa: https://aloiptv.net/
+- Fiyatlar: https://aloiptv.net/fiyatlar/
+- Kanallar: https://aloiptv.net/kanallar/
+- SSS: https://aloiptv.net/sss/
+- Blog: https://aloiptv.net/blog/
+- Iletisim: https://aloiptv.net/iletisim/
+- Hakkimizda: https://aloiptv.net/hakkimizda/
+
+## Iletisim
+
+WhatsApp: +1 (718) 586-4134
+Web: https://aloiptv.net/

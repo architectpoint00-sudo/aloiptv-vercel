@@ -92,6 +92,8 @@ export interface BlogPost {
   slug: string
   title: string
   date: string
+  /** ISO date used for sitemap lastmod and schema dateModified */
+  isoDate: string
   readTime: string
   excerpt: string
   content: string[]
@@ -926,6 +928,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'akilli-tvde-iptv-kurulumu',
     title: 'Akıllı TV\'de IPTV Nasıl Kurulur? — 2026 Kurulum Rehberi',
     date: '10 Temmuz 2026',
+    isoDate: '2026-07-10',
     readTime: '6 dk okuma',
     excerpt: 'Samsung, LG ve Sony akıllı TV\'lerde IPTV kurulumunu adım adım anlattığımız kapsamlı rehber. Hem yeni başlayanlar hem de deneyimli kullanıcılar için.',
     content: [
@@ -966,6 +969,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'iptv-vs-kablo-tv-karsilastirma',
     title: 'IPTV vs Kablo TV — 2026 Karşılaştırma Rehberi',
     date: '9 Temmuz 2026',
+    isoDate: '2026-07-09',
     readTime: '6 dk okuma',
     excerpt: 'IPTV ve geleneksel kablo TV arasındaki farkları detaylı olarak karşılaştırıyoruz. Hangisi daha avantajlı? Fiyat, kalite, içerik çeşitliliği ve daha fazlası.',
     content: [
@@ -1018,6 +1022,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'iptv-donma-kasma-cozumu',
     title: 'IPTV Donma ve Kasma Sorunu Nas\u0131l \u00c7\u00f6z\u00fclur? \u2014 2026 Rehberi',
     date: '18 A\u011fustos 2026',
+    isoDate: '2026-08-18',
     readTime: '7 dk okuma',
     excerpt: 'IPTV izlerken donma, kasma ve buffering sorunlar\u0131n\u0131 ad\u0131m ad\u0131m \u00e7\u00f6zmek i\u00e7in kapsaml\u0131 rehber.',
     content: [
@@ -1040,6 +1045,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'en-iyi-iptv-servisleri-2026',
     title: 'En \u0130yi IPTV Servisleri 2026 \u2014 T\u00fcrkiye Kar\u015f\u0131la\u015ft\u0131rmas\u0131',
     date: '17 A\u011fustos 2026',
+    isoDate: '2026-08-17',
     readTime: '9 dk okuma',
     excerpt: '2026 y\u0131l\u0131nda T\u00fcrkiye\'de en \u00e7ok tercih edilen IPTV servislerinin detayl\u0131 kar\u015f\u0131la\u015ft\u0131rmas\u0131.',
     content: [
@@ -1062,6 +1068,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'iptv-4k-ultra-hd-rehberi',
     title: 'IPTV 4K Ultra HD Rehberi \u2014 En \u0130yi Kalitede Nas\u0131l \u0130zlenir',
     date: '16 A\u011fustos 2026',
+    isoDate: '2026-08-16',
     readTime: '6 dk okuma',
     excerpt: 'IPTV\'de 4K Ultra HD kalitesinde izlemek i\u00e7in gereken her \u015fey: cihaz, internet ve ayarlar.',
     content: [
@@ -1084,6 +1091,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'samsung-lg-tv-iptv-kurulumu-2026',
     title: 'Samsung ve LG TV\'de IPTV Kurulumu 2026 Rehberi',
     date: '15 A\u011fustos 2026',
+    isoDate: '2026-08-15',
     readTime: '8 dk okuma',
     excerpt: 'Samsung ve LG Smart TV\'lerde IPTV nas\u0131l kurulur? Ad\u0131m ad\u0131m g\u00f6rselli anlat\u0131m.',
     content: [
