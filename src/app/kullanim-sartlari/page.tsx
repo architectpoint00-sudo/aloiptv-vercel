@@ -4,9 +4,9 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import PolicyPage from '@/components/PolicyPage'
 
 export const metadata = buildMetadata({
-  title: 'Kullanım Şartları',
+  title: 'Kullanım Şartları ve Hesap Koşulları',
   description:
-    'AloIPTV kullanım şartları ve koşulları. Hizmet kullanımı, ödeme, iade ve hesap yönetimi hakkında detaylı bilgi.',
+    'AloIPTV kullanım şartları: hesap kurulumu, hizmet kullanımı, cihaz limiti, ödeme ve abonelik, içerik sorumluluk reddi, hesap askıya alma ve fesih koşulları.',
   path: '/kullanim-sartlari/',
 })
 

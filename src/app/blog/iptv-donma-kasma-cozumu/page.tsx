@@ -5,7 +5,7 @@ import BlogArticle from '@/components/BlogArticle'
 const post = BLOG_POSTS[2]
 
 export const metadata = buildMetadata({
-  title: post.title,
+  title: post.metaTitle ?? post.title,
   description: post.excerpt,
   path: '/blog/iptv-donma-kasma-cozumu/',
 })

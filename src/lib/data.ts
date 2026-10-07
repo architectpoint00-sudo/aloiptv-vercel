@@ -33,12 +33,6 @@ export interface Feature {
   description: string
 }
 
-export interface ComparisonRow {
-  feature: string
-  aloiptv: string
-  others: string
-}
-
 export interface FaqItem {
   question: string
   answer: string
@@ -86,6 +80,8 @@ export interface BlogPost {
   related: string[]
   /** ISO date of the last substantive edit (sitemap lastmod + schema dateModified) */
   modifiedIso?: string
+  /** Kısa <title> (marka eki dahil 60 karakteri aşmamalı); yoksa title kullanılır */
+  metaTitle?: string
 }
 
 // ─── Duyuru Mesajları ────────────────────────
@@ -117,7 +113,7 @@ export const TRUST_BADGES: TrustBadge[] = [
   {
     icon: '🎧',
     title: '7/24 VIP Destek',
-    description: 'WhatsApp + Telegram üzerinden kesintisiz teknik destek',
+    description: 'WhatsApp + Telegram üzerinden 7/24 teknik destek',
   },
 ]
 
@@ -248,12 +244,12 @@ export const FEATURES: Feature[] = [
   {
     icon: '❄️',
     title: 'Anti-Freeze',
-    description: 'Gelişmiş Anti-Freeze teknolojisi ile donma ve kesinti sorunu yaşamadan akıcı izleme deneyimi. Özellikle maç günlerinde fark yaratır.',
+    description: 'Yerel sunucu önbellekleme kullanan Anti-Freeze teknolojisi, donma ve kesinti sorunlarını azaltmayı hedefler. Maç günleri gibi yoğun saatler için tasarlanmıştır.',
   },
   {
     icon: '📡',
     title: '4K UHD',
-    description: 'Desteklenen kanallarda 4K Ultra HD ve HDR kalitesinde yayın. Kristal netliğinde görüntü, sinema kalitesinde ses.',
+    description: 'Desteklenen kanallarda 4K Ultra HD ve HDR kalitesinde yayın. 4K için 25 Mbps ve üzeri internet hızı önerilir.',
   },
   {
     icon: '📋',
@@ -271,7 +267,7 @@ export const FEATURES: Feature[] = [
 
 export const ABOUT_SECTION: string[] = [
   'AloIPTV olarak 2019 yılından bu yana IPTV hizmeti sunmaktayız. Müşteri memnuniyetini ön planda tutarak ve hizmetimizi sürekli geliştirerek çalışıyoruz.',
-  'Anti-Freeze teknolojimiz sayesinde maç günlerinde bile kesintisiz izleme deneyimi sunuyoruz. Yerel sunucu önbellekleme sistemi ile yüksek talep anlarında stabil yayın sağlamayı hedefliyoruz. 150.000\'den fazla kanalımız ve 80.000\'i aşan film-dizi arşivimiz ile kullanıcılarımıza sınırsız eğlence sunuyoruz.',
+  'Anti-Freeze teknolojimizle maç günleri gibi yoğun saatlerde donma ve kesinti sorunlarını azaltmayı hedefliyoruz. Yerel sunucu önbellekleme sistemi ile yüksek talep anlarında stabil yayın sağlamak için çalışıyoruz. 150.000\'den fazla kanal ve 80.000\'i aşan film-dizi arşivinden oluşan geniş bir içerik seçkisi sunuyoruz.',
   '7/24 WhatsApp ve Telegram üzerinden Türkçe destek ekibimiz her an yanınızda. Kurulum, sorun giderme veya hesap yönetimi — ne ihtiyacınız olursa olsun, dakikalar içinde size yardımcı oluyoruz.',
   'Güvenli ödeme altyapımız, 7 gün iade garantimiz ve şeffaf fiyat politikamız ile hizmet vermeye devam ediyoruz.',
 ]
@@ -285,47 +281,12 @@ export const ABOUT_STATS: Stat[] = [
   { value: '2019', label: 'YILINDAN BERİ' },
 ]
 
-// ─── Karşılaştırma Tablosu ──────────────────
-
-export const COMPARISON_TABLE: ComparisonRow[] = [
-  {
-    feature: 'Kanal Sayısı',
-    aloiptv: '150.000+ Kanal',
-    others: '5.000 — 20.000 Kanal',
-  },
-  {
-    feature: '4K Ultra HD Stabilite',
-    aloiptv: '4K HDR — Tüm kanallarda stabil',
-    others: 'Sınırlı 4K — Sık donma',
-  },
-  {
-    feature: 'Anti-Freeze Teknolojisi',
-    aloiptv: 'Gelişmiş Anti-Freeze aktif',
-    others: 'Anti-Freeze yok',
-  },
-  {
-    feature: 'İade Garantisi',
-    aloiptv: '7 gün iade garantisi',
-    others: 'Değişir',
-  },
-  {
-    feature: '7/24 VIP Destek',
-    aloiptv: 'WhatsApp + Telegram — anında yanıt',
-    others: 'E-posta — 24-48 saat bekleme',
-  },
-  {
-    feature: 'EPG Yayın Rehberi',
-    aloiptv: 'Tüm kanallarda EPG aktif',
-    others: 'Sınırlı veya EPG yok',
-  },
-]
-
 // ─── Ana Sayfa SSS ───────────────────────────
 
 export const HOMEPAGE_FAQ: FaqItem[] = [
   {
     question: 'IPTV nedir?',
-    answer: 'IPTV (Internet Protocol Television), internet üzerinden televizyon yayını izlemenizi sağlayan bir teknolojidir. Geleneksel uydu veya kablo TV\'ye ihtiyaç duymadan, internet bağlantınız üzerinden binlerce canlı TV kanalı, film ve dizi izleyebilirsiniz. AloIPTV ile 150.000\'den fazla kanalı 4K kalitede izleyebilirsiniz.',
+    answer: 'IPTV (Internet Protocol Television), internet üzerinden televizyon yayını izlemenizi sağlayan bir teknolojidir. Geleneksel uydu veya kablo TV\'ye ihtiyaç duymadan, internet bağlantınız üzerinden binlerce canlı TV kanalı, film ve dizi izleyebilirsiniz. AloIPTV ile 150.000\'den fazla kanala erişebilir, desteklenen kanallarda 4K kalitede izleyebilirsiniz.',
   },
   {
     question: 'Hangi cihazlarda kullanabilirim?',
@@ -448,12 +409,12 @@ export const PRICING_PACKAGES: PricingPackage[] = [
 export const CHANNEL_CATEGORIES: ChannelCategory[] = [
   {
     name: 'Spor',
-    description: 'Futbol, basketbol, tenis, F1 ve tüm spor dallarından canlı maçlar ve spor kanalları.',
+    description: 'Futbol, basketbol, tenis, F1 ve diğer spor dallarına yönelik canlı spor kanalları.',
     icon: '⚽',
   },
   {
     name: 'Sinema & Filmler',
-    description: 'Hollywood, Türk sineması ve dünya sinemasından binlerce film. Vizyondaki filmler dahil.',
+    description: 'Hollywood, Türk sineması ve dünya sinemasından film arşivi ve sinema kanalları.',
     icon: '🎬',
   },
   {
@@ -463,17 +424,17 @@ export const CHANNEL_CATEGORIES: ChannelCategory[] = [
   },
   {
     name: 'Boks/MMA/PPV',
-    description: 'UFC, boks maçları ve tüm PPV etkinlikleri canlı olarak. Ek ücret yok.',
+    description: 'UFC, boks ve MMA gibi dövüş sporları ile PPV etkinlik kanalları. Yayınlanan etkinlikler kanal içeriğine göre değişir.',
     icon: '🥊',
   },
   {
     name: 'NFL/MLB/NBA',
-    description: 'Amerikan futbolu, beyzbol ve basketbol — tüm maçlar canlı yayında.',
+    description: 'Amerikan futbolu, beyzbol ve basketbol ligleri için NFL, MLB ve NBA kanalları.',
     icon: '🏈',
   },
   {
     name: '7/24 Canlı TV',
-    description: 'Haber, eğlence, belgesel ve yaşam kanalları — 7 gün 24 saat kesintisiz yayın.',
+    description: 'Haber, eğlence, belgesel ve yaşam kanalları — 7 gün 24 saat canlı yayın akışı.',
     icon: '📡',
   },
   {
@@ -555,10 +516,10 @@ export const CHANNEL_LISTS: ChannelGroup[] = [
 
 export const ABOUT_PAGE_DATA: AboutPageData = {
   hikayemiz: [
-    'AloIPTV, 2019 yılında Türk izleyicilere kaliteli bir IPTV hizmeti sunmak amacıyla kuruldu. Kurucularımız, yıllarca IPTV sektöründe yaşanan düşük kalite, sürekli donma sorunları ve yetersiz müşteri desteğinden bıkmış kullanıcılardı. Bu sorunlara kalıcı çözümler sunmak için yola çıktık.',
+    'AloIPTV, 2019 yılında Türk izleyicilere IPTV hizmeti sunmak amacıyla kuruldu. IPTV kullanıcılarının sık dile getirdiği donma sorunları ve yetersiz destek gibi konulara çözüm üretmeyi hedefledik.',
     'İlk günden itibaren teknolojiye yatırım yapmayı ve müşteri memnuniyetini her şeyin üzerinde tutmayı ilke edindik. Anti-Freeze teknolojimizi geliştirdik, güçlü sunucu altyapımızı kurduk ve 7/24 Türkçe destek ekibimizi oluşturduk.',
-    'Sunduğumuz hizmetin kalitesinden o kadar eminiz ki, kullanıcılarımıza 24 saatlik ücretsiz test ve 7 gün iade garantisi sunuyoruz. Amacımız sadece IPTV hizmeti satmak değil, kullanıcılarımıza iyi bir izleme deneyimi yaşatmaktır.',
-    'Yıllar içinde edindiğimiz tecrübe ve kullanıcı geri bildirimleri ile hizmetimizi sürekli geliştirmeye devam ediyoruz. 150.000\'den fazla kanal, 80.000\'i aşan film ve dizi arşivi, 4K Ultra HD kalite ile hizmet veriyoruz.',
+    'Hizmeti satın almadan değerlendirebilmeniz için 24 saatlik ücretsiz test ve 7 gün iade seçeneği sunuyoruz (koşullar iade politikası sayfasında yer alır). Amacımız, kullanıcılarımıza iyi bir izleme deneyimi sunmaktır.',
+    'Hizmetimizi kullanıcı geri bildirimleriyle geliştirmeye devam ediyoruz. Sitemizde 150.000\'den fazla kanal, 80.000\'i aşan film ve dizi arşivi ve desteklenen kanallarda 4K Ultra HD yayın sunduğumuzu belirtiyoruz.',
   ],
   stats: [
     { value: '2019', label: 'Kuruluş Yılı' },
@@ -569,15 +530,15 @@ export const ABOUT_PAGE_DATA: AboutPageData = {
   values: [
     {
       title: 'Güvenilirlik',
-      description: 'SSL şifreli ödeme, 7 gün iade garantisi ve şeffaf fiyatlandırma ile kullanıcılarımızın güvenini kazandık. Sürpriz ücretlendirme veya gizli koşullar yoktur.',
+      description: 'SSL şifreli ödeme, 7 gün iade seçeneği ve şeffaf fiyatlandırma ile güven vermeyi hedefliyoruz. Fiyatlar sitede açıktır; otomatik yenileme yoktur.',
     },
     {
       title: 'Performans',
-      description: 'Anti-Freeze teknolojisi ve güçlü sunucu altyapısı ile akıcı izleme deneyimi. 4K Ultra HD kalitede yayın.',
+      description: 'Anti-Freeze teknolojisi ve sunucu altyapısı ile akıcı bir izleme deneyimi hedefliyoruz. Desteklenen kanallarda 4K Ultra HD yayın.',
     },
     {
       title: '7/24 Destek',
-      description: 'WhatsApp ve Telegram üzerinden 7 gün 24 saat Türkçe teknik destek. Kurulum yardımı, sorun giderme ve hesap yönetimi — dakikalar içinde yanıt.',
+      description: 'WhatsApp ve Telegram üzerinden 7 gün 24 saat Türkçe teknik destek. Kurulum yardımı, sorun giderme ve hesap yönetimi desteği.',
     },
     {
       title: 'Şeffaflık',
@@ -623,7 +584,7 @@ export const SSS_DATA: { category: string; items: FaqItem[] }[] = [
       },
       {
         question: 'Anti-Freeze teknolojisi nedir?',
-        answer: 'Anti-Freeze teknolojimiz, yerel sunucu önbellekleme kullanarak yoğun izlenme saatlerinde bile kesintisiz yayın kalitesi sağlar. Özellikle futbol maçları, boks etkinlikleri ve popüler dizi yayınları sırasında donma ve buffer sorunlarını azaltmayı hedefler. Minimum 10 Mbps internet hızı yeterlidir.',
+        answer: 'Anti-Freeze teknolojimiz, yerel sunucu önbellekleme kullanarak yoğun izlenme saatlerinde yayın kalitesini korumaya yardımcı olur. Özellikle futbol maçları, boks etkinlikleri ve popüler dizi yayınları sırasında donma ve buffer sorunlarını azaltmayı hedefler. Minimum 10 Mbps internet hızı yeterlidir.',
       },
       {
         question: 'Kurulum nasıl yapılır?',
@@ -838,179 +799,5 @@ export const TERMS_OF_USE: { title: string; content: string[] }[] = [
 ]
 
 // ─── Blog Yazıları ───────────────────────────
-
-export const BLOG_POSTS: BlogPost[] = [
-  {
-    slug: 'akilli-tvde-iptv-kurulumu',
-    title: 'Samsung, LG ve Sony Akıllı TV\'de IPTV Kurulumu — 2026 Rehberi',
-    date: '10 Temmuz 2026',
-    isoDate: '2026-07-10',
-    readTime: '6 dk okuma',
-    excerpt: 'Samsung (Tizen), LG (webOS) ve Sony (Android TV) akıllı TV\'lerde IPTV kurulumu: uygulama seçimi, adım adım kurulum, SS IPTV alternatifi ve sorun giderme.',
-    modifiedIso: '2026-10-07',
-    content: [
-      'Akıllı TV\'nizde IPTV izlemek hiç bu kadar kolay olmamıştı. Bu rehberde Samsung, LG ve Sony akıllı TV\'lerde IPTV kurulumunu adım adım anlatıyoruz. İster ilk kez IPTV kullanıyor olun, ister mevcut kurulumunuzu güncellemek isteyin, bu rehber tam size göre.',
-
-      'IPTV Nedir ve Neden Akıllı TV\'de Kullanmalısınız?',
-
-      'IPTV (Internet Protocol Television), internet bağlantınız üzerinden binlerce TV kanalı, film ve dizi izlemenizi sağlayan bir teknolojidir. Geleneksel uydu veya kablo TV\'nin aksine, IPTV ile 150.000\'den fazla kanala erişebilir, 4K Ultra HD kalitede içerik izleyebilir ve geniş bir VOD (isteğe bağlı video) arşivinden yararlanabilirsiniz.',
-
-      'Akıllı TV\'ler, büyük ekranları ve dahili internet bağlantıları sayesinde IPTV izlemek için en ideal cihazlardır. Ek bir cihaz satın almanıza gerek kalmadan, TV\'nizin uygulama mağazasından bir IPTV uygulaması indirerek dakikalar içinde kurulumu tamamlayabilirsiniz.',
-
-      'Kurulum Öncesi Gereksinimler',
-
-      'Kuruluma başlamadan önce şu gereksinimleri karşıladığınızdan emin olun: Stabil bir internet bağlantısı (minimum 10 Mbps — 4K için 25 Mbps önerilir), AloIPTV aboneliği veya ücretsiz test hesabı, Smart TV\'nizin Wi-Fi veya ethernet ile internete bağlı olması.',
-
-      'Samsung Smart TV Kurulumu',
-
-      'Samsung TV\'lerde Tizen işletim sistemi bulunur ve kurulum oldukça basittir. Adım 1: TV\'nizi açın ve Smart Hub\'a (Apps / Uygulamalar) gidin. Adım 2: Arama çubuğuna "IPTV Smarters" veya "Smart IPTV" yazın. Adım 3: Uygulamayı indirip yükleyin ve açın. Adım 4: Xtream Codes API seçeneğini seçin. Adım 5: AloIPTV\'den gelen bilgileri girin: sunucu adresi (URL), kullanıcı adı ve şifre. Bilgileri kaydedip bağlan butonuna tıklayın; kanal listeniz yüklenince izlemeye başlayabilirsiniz.',
-
-      'LG Smart TV Kurulumu (webOS)',
-
-      'LG TV\'lerde webOS işletim sistemi bulunur. Adım 1: Ana menüden LG Content Store\'u açın. Adım 2: "IPTV Smarters Pro" uygulamasını arayın. Adım 3: Yükle butonuna basın. Adım 4: Uygulamayı açın ve "Login with Xtream Codes API" seçeneğini seçin. Adım 5: AloIPTV hesap bilgilerinizi girin, kaydedip bağlanın.',
-
-      'Alternatif Yöntem: SS IPTV',
-
-      'Samsung ve LG\'de SS IPTV uygulaması da kullanılabilir. Bu uygulamada M3U playlist URL\'nizi girerek kanallarınıza erişirsiniz.',
-
-      'Sony Smart TV Kurulumu (Android TV)',
-
-      'Sony TV\'ler Android TV işletim sistemi kullandığı için Google Play Store\'a erişiminiz vardır. Play Store\'dan "TiviMate" veya "IPTV Smarters Pro" uygulamasını indirin. Uygulamayı açın, "Playlist Ekle" seçeneğine tıklayın. AloIPTV\'den gelen M3U linkini veya Xtream Codes bilgilerini girin. Kanal listesi yüklendikten sonra izlemeye başlayabilirsiniz.',
-
-      'Sorun Giderme ve İpuçları',
-
-      'Uygulama açılmıyorsa TV\'nizin yazılımını güncelleyin. Bağlantı hatası alıyorsanız DNS ayarlarınızı kontrol edin. Kanal listesi yüklenmiyorsa internet bağlantınızı kontrol edin. Donma sorunu yaşıyorsanız kablolu ethernet bağlantısını deneyin — Wi-Fi\'den daha stabil performans sunar. EPG (yayın rehberi) görünmüyorsa uygulama ayarlarından EPG kaynağını kontrol edin. Herhangi bir sorunla karşılaşırsanız AloIPTV 7/24 WhatsApp destek hattından yardım alabilirsiniz. Uzaktan kurulum desteği ile TeamViewer veya AnyDesk aracılığıyla cihazınıza bağlanıp kurulumu sizin için yapabiliriz.',
-
-      'AloIPTV ile Fark Yaratın',
-
-      'AloIPTV\'nin Anti-Freeze teknolojisi sayesinde akıllı TV\'nizde kesintisiz izleme keyfi yaşayabilirsiniz. 150.000+ kanal, 80.000+ film ve dizi, 4K Ultra HD kalite ve 7/24 Türkçe destek ile televizyon izleme deneyiminizi bir üst seviyeye taşıyın. Henüz üye değilseniz ücretsiz 24 saatlik test hesabımızı deneyin!',
-    ],
-    related: ['iptv-donma-kasma-cozumu', 'iptv-4k-ultra-hd-rehberi', 'iptv-vs-kablo-tv-karsilastirma'],
-  },
-  {
-    slug: 'iptv-vs-kablo-tv-karsilastirma',
-    title: 'IPTV vs Kablo TV — 2026 Karşılaştırma Rehberi',
-    date: '9 Temmuz 2026',
-    isoDate: '2026-07-09',
-    readTime: '6 dk okuma',
-    excerpt: 'IPTV ve geleneksel kablo TV arasındaki farkları detaylı olarak karşılaştırıyoruz. Hangisi daha avantajlı? Fiyat, kalite, içerik çeşitliliği ve daha fazlası.',
-    content: [
-      'Televizyon izleme alışkanlıkları son yıllarda büyük bir dönüşüm geçirdi. Geleneksel kablo TV abonelikleri yerini internet tabanlı çözümlere bırakıyor. Peki IPTV mi yoksa kablo TV mi tercih etmelisiniz? Bu kapsamlı karşılaştırma rehberinde her iki seçeneği detaylı olarak inceliyoruz.',
-
-      'IPTV ve Kablo TV Nedir?',
-
-      'Kablo TV, koaksiyel kablo veya fiber optik altyapı üzerinden analog veya dijital televizyon sinyalleri ileten geleneksel bir yayın teknolojisidir. Türkiye\'de Türksat Kablo TV, Digitürk ve D-Smart gibi sağlayıcılar bu hizmeti sunmaktadır.',
-
-      'IPTV ise internet protokolü üzerinden televizyon yayını sunan modern bir teknolojidir. İnternet bağlantınız üzerinden canlı TV, film, dizi ve daha fazlasını izlemenizi sağlar. AloIPTV gibi premium IPTV sağlayıcıları, geleneksel TV\'nin sunduğundan çok daha fazla içerik ve özellik sunmaktadır.',
-
-      'İçerik Karşılaştırması',
-
-      'Kablo TV, genellikle 200-500 kanal arasında bir seçenek sunar. Paketinize göre bazı kanallar ek ücretlidir. Spor paketleri, sinema paketleri ve uluslararası kanallar ayrı faturalandırılır.',
-
-      'IPTV ile durum çok farklıdır. AloIPTV örneğinde, tek bir abonelikle 150.000\'den fazla canlı TV kanalına, 80.000+ film ve dizi arşivine erişebilirsiniz. Tek abonelikle tüm kanallara ve arşive erişirsiniz.',
-
-      'Görüntü ve Ses Kalitesi',
-
-      'Modern kablo TV hizmetleri HD ve bazı kanallarda Full HD kalite sunmaktadır. Ancak 4K içerik seçenekleri oldukça sınırlıdır ve genellikle ek donanım gerektirir.',
-
-      'IPTV teknolojisi, desteklenen kanallarda 4K Ultra HD ve HDR kalitede yayın sunabilmektedir. AloIPTV\'nin güçlü sunucu altyapısı ve Anti-Freeze teknolojisi sayesinde yüksek kaliteli yayınlar donma veya buffer olmadan izlenebilmektedir.',
-
-      'Fiyat Karşılaştırması',
-
-      'Kablo TV abonelikleri Türkiye\'de aylık 200-600 TL arasında değişmektedir. Spor paketleri, sinema paketleri ve ek kanallar dahil edildiğinde bu rakam aylık 800 TL\'yi aşabilmektedir.',
-
-      'AloIPTV\'de 12 aylık paket 900 TL\'dir ve aylık 75 TL\'ye denk gelir. Bu fiyata 150.000+ kanal, 80.000+ film ve dizi, 4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 destek dahildir. Güncel paket fiyatlarının tamamını fiyatlar sayfasından görebilirsiniz.',
-
-      'Cihaz Uyumluluğu ve Esneklik',
-
-      'Kablo TV, genellikle set-top box (alıcı) gerektiren ve evinize sabit olan bir hizmettir. Evden ayrıldığınızda içeriklerinize erişiminiz sınırlıdır.',
-
-      'IPTV ise internet bağlantısı olan her yerden ve birçok farklı cihazdan erişilebilir. Smart TV, telefon, tablet, bilgisayar, Fire Stick, MAG Box — seçim sizin. Evde, işte veya seyahatte içeriklerinize kesintisiz erişebilirsiniz.',
-
-      'Kurulum ve Kullanım Kolaylığı',
-
-      'Kablo TV kurulumu genellikle teknisyen randevusu gerektirir ve birkaç gün sürebilir. Ayrıca kablo çekimi ve set-top box montajı gibi fiziksel işlemler söz konusudur.',
-
-      'IPTV kurulumu ise dakikalar içinde tamamlanır. AloIPTV\'de ödeme yaptıktan sonra hesap bilgileriniz anında iletilir. Uygulamayı indirin, bilgilerinizi girin ve izlemeye başlayın. Üstelik 7/24 WhatsApp desteği ve uzaktan kurulum yardımı mevcuttur.',
-
-      'Sonuç: Hangisini Seçmelisiniz?',
-
-      'İçerik çeşitliliği, fiyat/performans oranı, görüntü kalitesi, cihaz esnekliği ve kurulum kolaylığı açısından IPTV, geleneksel kablo TV\'ye göre güçlü avantajlar sunmaktadır. AloIPTV ile 150.000+ kanal, 4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Türkçe desteğe kablo TV paketlerine kıyasla daha düşük bir aylık maliyetle sahip olabilirsiniz.',
-
-      'Henüz karar veremediyseniz, AloIPTV\'nin 24 saatlik ücretsiz test hesabını deneyerek farkı kendiniz görün. 7 gün iade garantimizle başlayabilirsiniz (koşullar iade politikasında).',
-    ],
-    related: ['en-iyi-iptv-servisleri-2026', 'akilli-tvde-iptv-kurulumu', 'iptv-4k-ultra-hd-rehberi'],
-  },
-  {
-    slug: 'iptv-donma-kasma-cozumu',
-    title: 'IPTV Donma ve Kasma Sorunu Nas\u0131l \u00c7\u00f6z\u00fclur? \u2014 2026 Rehberi',
-    date: '18 A\u011fustos 2026',
-    isoDate: '2026-08-18',
-    readTime: '7 dk okuma',
-    excerpt: 'IPTV izlerken donma, kasma ve buffering sorunlar\u0131n\u0131 ad\u0131m ad\u0131m \u00e7\u00f6zmek i\u00e7in kapsaml\u0131 rehber.',
-    content: [
-      'IPTV izlerken en s\u0131k kar\u015f\u0131la\u015f\u0131lan sorun donma ve kasma problemidir. Bu rehberde, IPTV donma sorununu k\u00f6k nedeninden \u00e7\u00f6zmek i\u00e7in uygulayabilece\u011finiz t\u00fcm y\u00f6ntemleri s\u0131ras\u0131yla anlat\u0131yoruz.',
-      'IPTV Neden Donar veya Kas\u0131yor',
-      'IPTV donma sorununun be\u015f temel nedeni vard\u0131r: yetersiz internet h\u0131z\u0131, Wi-Fi sinyal zay\u0131fl\u0131\u011f\u0131, yanl\u0131\u015f DNS ayarlar\u0131, IPTV uygulamas\u0131 tampon ayarlar\u0131 ve cihaz performans s\u0131n\u0131rlamalar\u0131.',
-      '\u0130nternet Ba\u011flant\u0131s\u0131n\u0131 Optimize Edin',
-      'Birinci ad\u0131m kablolu ba\u011flant\u0131ya ge\u00e7mektir. Ethernet kablosu ile TV\'nizi do\u011frudan modeme ba\u011flamak, donma sorunlar\u0131n\u0131n b\u00fcy\u00fck \u00e7o\u011funlu\u011funu \u00e7\u00f6zer.',
-      'DNS Ayarlar\u0131n\u0131 De\u011fi\u015ftirin',
-      'Google DNS (8.8.8.8 / 8.8.4.4), Cloudflare DNS (1.1.1.1 / 1.0.0.1) veya Quad9 (9.9.9.9) adreslerini kullanman\u0131z\u0131 \u00f6neriyoruz.',
-      'IPTV Uygulama Ayarlar\u0131n\u0131 D\u00fczenleyin',
-      'IPTV Smarters Pro kullan\u0131yorsan\u0131z, ayarlar men\u00fcs\u00fcnden Buffer Size de\u011ferini 2-3 saniyeye y\u00fckeltin. TiviMate\'de Tampon boyutunu B\u00fcy\u00fck olarak ayarlay\u0131n.',
-      'Cihaz Performans\u0131n\u0131 Art\u0131r\u0131n',
-      'Arka planda \u00e7al\u0131\u015fan uygulamalar\u0131 kapat\u0131n. Cihaz\u0131n\u0131z\u0131 g\u00fcnde bir kez yeniden ba\u015flatmak performans\u0131 iyile\u015ftirir.',
-      'AloIPTV Anti-Freeze Teknolojisi',
-      'AloIPTV, \u00f6zel Anti-Freeze teknolojisi ile donma sorunlar\u0131n\u0131 en aza indirir. Sorunlar\u0131n\u0131z devam ederse 7/24 WhatsApp destek hatt\u0131m\u0131zdan yard\u0131m alabilirsiniz.',
-    ],
-    related: ['akilli-tvde-iptv-kurulumu', 'iptv-4k-ultra-hd-rehberi', 'en-iyi-iptv-servisleri-2026'],
-  },
-  {
-    slug: 'en-iyi-iptv-servisleri-2026',
-    title: 'En \u0130yi IPTV Servisleri 2026 \u2014 T\u00fcrkiye Kar\u015f\u0131la\u015ft\u0131rmas\u0131',
-    date: '17 A\u011fustos 2026',
-    isoDate: '2026-08-17',
-    readTime: '9 dk okuma',
-    excerpt: '2026 y\u0131l\u0131nda T\u00fcrkiye\'de en \u00e7ok tercih edilen IPTV servislerinin detayl\u0131 kar\u015f\u0131la\u015ft\u0131rmas\u0131.',
-    content: [
-      '2026 y\u0131l\u0131nda T\u00fcrkiye\'de onlarca IPTV servisi faaliyet g\u00f6stermektedir. Ancak hangisini se\u00e7meniz gerekti\u011fini bilmek zordur. Bu rehberde, en pop\u00fcler IPTV servislerini fiyat, kanal say\u0131s\u0131, g\u00f6r\u00fcnt\u00fc kalitesi ve m\u00fc\u015fteri deste\u011fi a\u00e7\u0131s\u0131ndan kar\u015f\u0131la\u015ft\u0131r\u0131yoruz.',
-      'IPTV Servisi Se\u00e7erken Dikkat Edilecekler',
-      'Bir IPTV servisi se\u00e7erken be\u015f kritik fakt\u00f6r\u00fc de\u011ferlendirmelisiniz: kanal say\u0131s\u0131 ve \u00e7e\u015fitlili\u011fi, g\u00f6r\u00fcnt\u00fc kalitesi (HD/FHD/4K), sunucu kararl\u0131l\u0131\u011f\u0131, m\u00fc\u015fteri deste\u011fi kalitesi ve fiyat-performans oran\u0131.',
-      'Kanal Say\u0131s\u0131 ve \u00c7e\u015fitlili\u011fi',
-      'Kaliteli bir IPTV servisi en az 10.000 canl\u0131 kanal ve 20.000 VOD i\u00e7erik sunmal\u0131d\u0131r. T\u00fcrk kanallar\u0131 yan\u0131nda uluslararas\u0131 spor, sinema ve belgesel kanallar\u0131 da bulunmal\u0131d\u0131r.',
-      'G\u00f6r\u00fcnt\u00fc Kalitesi',
-      'FHD (1080p) art\u0131k standart olmal\u0131d\u0131r. 4K UHD destekli kanallar sunan servisler \u00f6ne \u00e7\u0131kmaktad\u0131r. Ancak 4K izlemek i\u00e7in en az 25 Mbps internet h\u0131z\u0131 gereklidir.',
-      'Sunucu Kararl\u0131l\u0131\u011f\u0131 ve Uptime',
-      'Kesinti ya\u015fan\u0131p ya\u015fanmad\u0131\u011f\u0131n\u0131 test s\u00fcresince kendiniz g\u00f6zlemleyin; \u00fccretsiz test bunun i\u00e7in en do\u011fru y\u00f6ntemdir.',
-      'M\u00fc\u015fteri Deste\u011fi',
-      '7/24 WhatsApp veya Telegram deste\u011fi sunan servisler tercih edilmelidir. T\u00fcrk\u00e7e destek b\u00fcy\u00fck avantajd\u0131r.',
-      'AloIPTV Neden Fark Yarat\u0131yor',
-      'AloIPTV, 150.000+ canl\u0131 kanal, 4K UHD destek ve 7/24 T\u00fcrk\u00e7e WhatsApp deste\u011fi sunar. 24 saatlik \u00fccretsiz test hesab\u0131yla hizmeti sat\u0131n almadan deneyebilirsiniz.',
-    ],
-    related: ['iptv-vs-kablo-tv-karsilastirma', 'iptv-4k-ultra-hd-rehberi', 'iptv-donma-kasma-cozumu'],
-  },
-  {
-    slug: 'iptv-4k-ultra-hd-rehberi',
-    title: 'IPTV 4K Ultra HD Rehberi \u2014 En \u0130yi Kalitede Nas\u0131l \u0130zlenir',
-    date: '16 A\u011fustos 2026',
-    isoDate: '2026-08-16',
-    readTime: '6 dk okuma',
-    excerpt: 'IPTV\'de 4K Ultra HD kalitesinde izlemek i\u00e7in gereken her \u015fey: cihaz, internet ve ayarlar.',
-    content: [
-      '4K Ultra HD, IPTV deneyimini tamamen farkl\u0131 bir seviyeye ta\u015f\u0131r. Ancak 4K kalitesinde sorunsuz izlemek i\u00e7in do\u011fru cihaz, yeterli internet h\u0131z\u0131 ve do\u011fru ayarlar gerekir.',
-      '4K IPTV \u0130\u00e7in Gerekli \u0130nternet H\u0131z\u0131',
-      '4K i\u00e7erik izlemek i\u00e7in minimum 25 Mbps indirme h\u0131z\u0131na ihtiyac\u0131n\u0131z vard\u0131r. Ancak ideal deneyim i\u00e7in 50 Mbps ve \u00fczeri \u00f6nerilir. Ayn\u0131 a\u011fda birden fazla cihaz kullan\u0131yorsan\u0131z 100 Mbps d\u00fc\u015f\u00fcn\u00fcn.',
-      '4K Destekli Cihazlar',
-      'NVIDIA Shield TV Pro, Amazon Fire TV Stick 4K Max, Apple TV 4K ve Android TV kutular\u0131 4K IPTV i\u00e7in en iyi se\u00e7eneklerdir. Smart TV\'lerin \u00e7o\u011fu da 4K IPTV uygulamalar\u0131n\u0131 destekler.',
-      'En \u0130yi 4K IPTV Uygulamalar\u0131',
-      'TiviMate Premium, IPTV Smarters Pro ve OTT Navigator 4K i\u00e7erikleri sorunsuz oynat\u0131r. TiviMate\'in EPG ve kay\u0131t \u00f6zellikleri \u00f6zellikle 4K izleyiciler i\u00e7in \u00e7ok faydal\u0131d\u0131r.',
-      '4K \u0130\u00e7in Optimum Ayarlar',
-      'Video oynat\u0131c\u0131y\u0131 ExoPlayer veya VLC olarak ayarlay\u0131n. Donan\u0131m kod \u00e7\u00f6z\u00fcc\u00fcy\u00fc aktif olmal\u0131d\u0131r. Tampon boyutunu en az 3 saniye olarak ayarlay\u0131n.',
-      'HDMI Kablo Se\u00e7imi',
-      '4K 60fps i\u00e7in HDMI 2.0 veya \u00fczeri kablo kullanman\u0131z gerekir. HDR i\u00e7erik izleyecekseniz HDMI 2.1 idealdir.',
-      'AloIPTV 4K Kanal Listesi',
-      'AloIPTV, spor, sinema ve belgesel kategorilerinde y\u00fczlerce 4K kanal sunar. T\u00fcm 4K kanallar\u0131m\u0131z\u0131 g\u00f6rmek ve \u00fccretsiz deneme almak i\u00e7in bizimle ileti\u015fime ge\u00e7in.',
-    ],
-    related: ['akilli-tvde-iptv-kurulumu', 'iptv-donma-kasma-cozumu', 'en-iyi-iptv-servisleri-2026'],
-  },
-]
+// İçerik src/lib/blog-posts.ts dosyasındadır.
+export { BLOG_POSTS } from './blog-posts'

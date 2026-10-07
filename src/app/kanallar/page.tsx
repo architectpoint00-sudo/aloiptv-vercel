@@ -5,9 +5,9 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = buildMetadata({
-  title: 'Kanallar',
+  title: 'IPTV Kanal Listesi',
   description:
-    'AloIPTV kanal listesi. 150.000+ canlı TV kanalı: spor, sinema, dizi, haber, belgesel, çocuk, uluslararası kanallar.',
+    'AloIPTV kanal listesi: Türk kanalları, spor, sinema ve dizi, çocuk ve uluslararası kanal grupları. 150.000+ canlı kanal ve film-dizi arşivi tek abonelikte.',
   path: '/kanallar/',
 })
 

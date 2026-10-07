@@ -6,9 +6,9 @@ import FaqAccordion from '@/components/FaqAccordion'
 import { FaqJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Sikca Sorulan Sorular (SSS) - IPTV Rehberi',
+  title: 'Sıkça Sorulan Sorular (SSS) — IPTV Rehberi',
   description:
-    'Sikca sorulan sorular. IPTV nedir, nasil kurulur, hangi cihazlarda kullanilir, ucretler ve iade politikasi hakkinda tum sorularin yanitlari.',
+    'IPTV nedir, nasıl kurulur, hangi cihazlarda kullanılır, kaç cihazda izlenir, ödeme ve 7 gün iade koşulları nelerdir? AloIPTV sıkça sorulan sorular.',
   path: '/sss/',
 })
 

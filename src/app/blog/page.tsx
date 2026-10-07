@@ -4,9 +4,9 @@ import { BLOG_POSTS } from '@/lib/data'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = buildMetadata({
-  title: 'IPTV Rehberleri ve Kurulum Kilavuzlari',
+  title: 'IPTV Rehberleri ve Kurulum Kılavuzları',
   description:
-    'AloIPTV blog. IPTV kurulum rehberleri, cihaz karsilastirmalari, donma cozumleri ve premium IPTV hakkinda bilmeniz gereken her sey.',
+    'AloIPTV blog: akıllı TV\'de IPTV kurulumu, donma ve kasma çözümleri, 4K izleme ayarları, IPTV ve kablo TV karşılaştırması, servis seçim kriterleri.',
   path: '/blog/',
 })
 
@@ -16,7 +16,7 @@ export default function BlogPage() {
       <Breadcrumb items={[{ label: 'Ana Sayfa', href: '/' }, { label: 'Blog' }]} />
 
       <header className="mb-14 text-center">
-        <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">Blog</h1>
+        <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">IPTV Rehberleri ve Kurulum Kılavuzları</h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:text-lg">
           IPTV kurulum rehberleri, karşılaştırmalar ve ipuçları.
         </p>
@@ -27,7 +27,7 @@ export default function BlogPage() {
           <li key={post.slug}>
             <article className="rounded-2xl border border-white/10 bg-[#111827] p-6 transition-colors hover:border-white/20 sm:p-8">
               <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500">
-                <time dateTime={post.date}>{post.date}</time>
+                <time dateTime={post.isoDate}>{post.date}</time>
                 <span aria-hidden="true">&middot;</span>
                 <span>{post.readTime}</span>
               </div>

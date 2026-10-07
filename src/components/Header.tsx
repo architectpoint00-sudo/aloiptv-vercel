@@ -78,7 +78,7 @@ export default function Header() {
           onClick={() => setMobileOpen((v) => !v)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
-          aria-label={mobileOpen ? 'Menuyu kapat' : 'Menuyu ac'}
+          aria-label={mobileOpen ? 'Menüyü kapat' : 'Menüyü aç'}
           className="-mr-2 rounded-lg p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true">
@@ -94,7 +94,7 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div id="mobile-menu" className="border-t border-white/10 bg-[#0a0a0a] lg:hidden">
-          <nav aria-label="Mobil menu" className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+          <nav aria-label="Mobil menü" className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
             <ul className="space-y-1">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href

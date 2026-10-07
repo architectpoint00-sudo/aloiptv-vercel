@@ -73,6 +73,7 @@ export function PricingJsonLd({ packages }: { packages: PricingPackage[] }) {
       data={{
         '@context': 'https://schema.org',
         '@type': 'Product',
+        '@id': `${SITE_URL}/fiyatlar/#product`,
         name: `${SITE_NAME} Premium IPTV Aboneliği`,
         description: SITE_DESCRIPTION,
         brand: { '@type': 'Brand', name: SITE_NAME },
@@ -83,7 +84,7 @@ export function PricingJsonLd({ packages }: { packages: PricingPackage[] }) {
           price: pkg.price,
           priceCurrency: 'TRY',
           availability: 'https://schema.org/InStock',
-          priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
+          priceValidUntil: '2027-12-31',
           url: `${SITE_URL}/fiyatlar/`,
           seller: { '@id': `${SITE_URL}/#organization` },
         })),

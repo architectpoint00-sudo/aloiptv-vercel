@@ -4,9 +4,9 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = buildMetadata({
-  title: 'Hakkımızda',
+  title: 'AloIPTV Hakkında',
   description:
-    'AloIPTV hakkında. 2019 yılından bu yana premium IPTV hizmeti.',
+    'AloIPTV hakkında: 2019\'dan bu yana sunulan IPTV hizmeti, değerlerimiz, 24 saatlik ücretsiz test, 7 gün iade koşulları ve 7/24 Türkçe destek.',
   path: '/hakkimizda/',
 })
 

@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Link columns */}
           {FOOTER_COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <h2 className="text-xs font-bold uppercase tracking-wider text-white">{col.title}</h2>
+              <p className="text-xs font-bold uppercase tracking-wider text-white">{col.title}</p>
               <ul className="mt-5 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.href}>
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Subscription */}
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-white">Abonelik</h2>
+            <p className="text-xs font-bold uppercase tracking-wider text-white">Abonelik</p>
             <ul className="mt-5 space-y-3">
               <li>
                 <a href={WHATSAPP_LINKS.test} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 transition-colors hover:text-white">

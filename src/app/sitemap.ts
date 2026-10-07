@@ -15,9 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/kanallar/', priority: 0.8, changeFrequency: 'weekly', lastmod: '2026-10-07' },
     { path: '/hakkimizda/', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-07' },
     { path: '/sss/', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-07' },
-    { path: '/iletisim/', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-08-21' },
+    { path: '/iletisim/', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-07' },
     { path: '/blog/', priority: 0.6, changeFrequency: 'weekly', lastmod: latestBlogDate },
-    { path: '/gizlilik-politikasi/', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-21' },
+    { path: '/gizlilik-politikasi/', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-07' },
     { path: '/kullanim-sartlari/', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-07' },
     { path: '/iade-politikasi/', priority: 0.4, changeFrequency: 'yearly', lastmod: '2026-10-07' },
   ]

@@ -4,9 +4,9 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import PolicyPage from '@/components/PolicyPage'
 
 export const metadata = buildMetadata({
-  title: 'İade Politikası',
+  title: 'İade Politikası — 7 Gün İade Koşulları',
   description:
-    'AloIPTV iade politikası. 7 gün para iade garantisi ve iade süreci hakkında detaylı bilgi.',
+    'AloIPTV iade politikası: 7 gün içinde iade talebi, iade koşulları, iade yapılmayan durumlar ve ödeme yöntemine göre iade süreleri.',
   path: '/iade-politikasi/',
 })
 

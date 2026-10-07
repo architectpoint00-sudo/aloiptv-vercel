@@ -14,7 +14,7 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
   return (
     <div>
       {categoryTitle && (
-        <h3 className="mb-6 text-xl font-bold text-white sm:text-2xl">{categoryTitle}</h3>
+        <h2 className="mb-6 text-xl font-bold text-white sm:text-2xl">{categoryTitle}</h2>
       )}
 
       <div className="flex flex-col gap-3">
@@ -25,7 +25,7 @@ export default function FaqAccordion({ items, categoryTitle }: FaqAccordionProps
             className="group overflow-hidden rounded-xl border border-white/10 bg-[#111827] transition-colors hover:border-white/20 open:border-purple-500/40"
           >
             <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left [&::-webkit-details-marker]:hidden">
-              <h4 className="text-[15px] font-medium leading-snug text-white">{item.question}</h4>
+              <h3 className="text-[15px] font-medium leading-snug text-white">{item.question}</h3>
               <svg
                 className="h-4 w-4 shrink-0 text-gray-500 transition-transform duration-200 group-open:rotate-180 group-open:text-purple-400"
                 fill="none"

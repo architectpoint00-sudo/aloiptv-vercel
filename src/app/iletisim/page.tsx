@@ -3,15 +3,15 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = buildMetadata({
-  title: 'İletişim',
+  title: 'İletişim ve WhatsApp Destek Hattı',
   description:
-    'AloIPTV iletişim. WhatsApp üzerinden 7/24 destek alın. Ortalama yanıt süremiz 3 dakikadır.',
+    'AloIPTV iletişim bilgileri: WhatsApp üzerinden 7/24 satış ve teknik destek, ücretsiz test hesabı talebi, iade ve bayilik soruları için bize ulaşın.',
   path: '/iletisim/',
 })
 
 const INFO_CARDS = [
-  { title: 'Çalışma Saatleri', value: '7/24 Kesintisiz Destek', icon: '🕐' },
-  { title: 'Yanıt Süresi', value: 'Ortalama 3 dakika', icon: '⚡' },
+  { title: 'Çalışma Saatleri', value: '7/24 Destek', icon: '🕐' },
+  { title: 'Destek Kanalları', value: 'WhatsApp', icon: '⚡' },
   { title: 'Dil', value: 'Türkçe + İngilizce', icon: '🌍' },
 ]
 
@@ -25,7 +25,7 @@ export default function IletisimPage() {
           Bizimle İletişime Geçin
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:text-lg">
-          WhatsApp üzerinden 7/24 destek alın. Ortalama yanıt süremiz 3 dakikadır.
+          Satış, kurulum ve teknik destek için WhatsApp üzerinden 7/24 bize yazabilirsiniz.
         </p>
       </header>
 
@@ -54,10 +54,7 @@ export default function IletisimPage() {
         </li>
 
         <li>
-          <a
-            href={WHATSAPP_LINKS.default}
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             className="group block h-full rounded-2xl border border-white/10 bg-[#111827] p-6 transition-colors hover:border-blue-500/40 sm:p-8"
           >
             <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10">
@@ -69,8 +66,8 @@ export default function IletisimPage() {
             <p className="mt-2 text-sm leading-relaxed text-gray-400">
               Telegram üzerinden de bize ulaşabilirsiniz.
             </p>
-            <p className="mt-4 text-sm font-medium text-blue-400 group-hover:underline">@aloiptv</p>
-          </a>
+            <p className="mt-4 text-sm font-medium text-blue-400">@aloiptv</p>
+          </div>
         </li>
       </ul>
 

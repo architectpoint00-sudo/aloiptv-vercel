@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/components/Breadcrumb'
 import { BlogPostingJsonLd } from '@/components/JsonLd'
@@ -6,12 +7,95 @@ import { BLOG_POSTS } from '@/lib/data'
 import type { BlogPost } from '@/lib/data'
 
 /**
- * Entries in post.content are a flat mix of section headings and body
- * paragraphs. Headings are short and never end in sentence punctuation,
- * so we promote those to <h2> and render the rest as <p>.
+ * post.content is a list of blocks written in a light markup (see
+ * src/lib/blog-posts.ts): "## " h2, "### " h3, "- " lists, "1. " ordered
+ * lists, "|" tables and [text](url) links.
  */
-function isHeading(text: string) {
-  return text.length < 80 && !/[.!:;]$/.test(text.trim())
+const LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g
+const LINK_CLASS = 'font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300'
+
+function renderInline(text: string): ReactNode[] {
+  const out: ReactNode[] = []
+  let last = 0
+  let m: RegExpExecArray | null
+  LINK_RE.lastIndex = 0
+  while ((m = LINK_RE.exec(text)) !== null) {
+    if (m.index > last) out.push(text.slice(last, m.index))
+    const [, label, href] = m
+    out.push(
+      href.startsWith('/') ? (
+        <Link key={m.index} href={href} className={LINK_CLASS}>{label}</Link>
+      ) : (
+        <a key={m.index} href={href} target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>{label}</a>
+      )
+    )
+    last = m.index + m[0].length
+  }
+  if (last < text.length) out.push(text.slice(last))
+  return out
+}
+
+const P_CLASS = 'text-sm leading-relaxed text-gray-400 sm:text-base'
+
+function renderBlock(block: string, key: number): ReactNode {
+  if (block.startsWith('## ')) {
+    return <h2 key={key} className="pt-5 text-xl font-bold text-white sm:text-2xl">{block.slice(3)}</h2>
+  }
+  if (block.startsWith('### ')) {
+    return <h3 key={key} className="pt-2 text-lg font-semibold text-white">{block.slice(4)}</h3>
+  }
+
+  // Group consecutive lines by kind: bullets, numbered, table rows, plain text.
+  const lines = block.split('\n').map((l) => l.trim()).filter(Boolean)
+  const groups: { kind: 'ul' | 'ol' | 'table' | 'p'; lines: string[] }[] = []
+  for (const line of lines) {
+    const kind = line.startsWith('- ') ? 'ul' : /^\d+\.\s/.test(line) ? 'ol' : line.startsWith('|') ? 'table' : 'p'
+    const g = groups[groups.length - 1]
+    if (g && g.kind === kind) g.lines.push(line)
+    else groups.push({ kind, lines: [line] })
+  }
+
+  return (
+    <div key={key} className="space-y-4">
+      {groups.map((g, gi) => {
+        if (g.kind === 'ul') {
+          return (
+            <ul key={gi} className={`list-disc space-y-2 pl-5 ${P_CLASS}`}>
+              {g.lines.map((l, i) => <li key={i}>{renderInline(l.slice(2))}</li>)}
+            </ul>
+          )
+        }
+        if (g.kind === 'ol') {
+          return (
+            <ol key={gi} className={`list-decimal space-y-2 pl-5 ${P_CLASS}`}>
+              {g.lines.map((l, i) => <li key={i}>{renderInline(l.replace(/^\d+\.\s/, ''))}</li>)}
+            </ol>
+          )
+        }
+        if (g.kind === 'table') {
+          const rows = g.lines.map((l) => l.replace(/^\||\|$/g, '').split('|').map((c) => c.trim()))
+          const [head, ...body] = rows
+          return (
+            <div key={gi} className="overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full min-w-[480px] text-left text-sm text-gray-400">
+                <thead className="bg-white/5 text-white">
+                  <tr>{head.map((c, i) => <th key={i} scope="col" className="px-4 py-3 font-semibold">{renderInline(c)}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {body.map((r, ri) => (
+                    <tr key={ri} className="border-t border-white/10">
+                      {r.map((c, ci) => <td key={ci} className="px-4 py-3 align-top">{renderInline(c)}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )
+        }
+        return <p key={gi} className={P_CLASS}>{renderInline(g.lines.join(' '))}</p>
+      })}
+    </div>
+  )
 }
 
 /** Topical related posts (from post.related), never the current one. */
@@ -54,17 +138,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         </header>
 
         <div className="mt-10 space-y-5 border-t border-white/10 pt-10">
-          {post.content.map((block, i) =>
-            isHeading(block) ? (
-              <h2 key={i} className="pt-5 text-xl font-bold text-white sm:text-2xl">
-                {block}
-              </h2>
-            ) : (
-              <p key={i} className="text-sm leading-relaxed text-gray-400 sm:text-base">
-                {block}
-              </p>
-            )
-          )}
+          {post.content.map((block, i) => renderBlock(block, i))}
         </div>
 
         {/* Contextual pricing CTA — internal link to /fiyatlar/ */}

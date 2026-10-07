@@ -4,9 +4,9 @@ import { WHATSAPP_LINKS } from '@/lib/constants'
 import PolicyPage from '@/components/PolicyPage'
 
 export const metadata = buildMetadata({
-  title: 'Gizlilik Politikası',
+  title: 'Gizlilik Politikası ve Çerezler',
   description:
-    'AloIPTV gizlilik politikası. Kişisel verilerinizin nasıl toplandığı, kullanıldığı ve korunduğu hakkında detaylı bilgi.',
+    'AloIPTV gizlilik politikası: günlük dosyaları, çerezler, üçüncü taraf hizmetleri ve çocukların gizliliği hakkında bilgi.',
   path: '/gizlilik-politikasi/',
 })
 

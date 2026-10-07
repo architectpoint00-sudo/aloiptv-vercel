@@ -30,15 +30,16 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-              Her Maç. Her Kanal.{' '}
+              Premium IPTV:{' '}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Sıfır Kesinti.
-              </span>
+                Canlı Kanal, Film ve Dizi
+              </span>{' '}
+              Tek Abonelikte
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg">
-              4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Türkçe destek ile
-              premium IPTV deneyimini yaşayın.
+              Desteklenen kanallarda 4K Ultra HD, donmayı azaltmayı hedefleyen Anti-Freeze
+              teknolojisi ve 7/24 Türkçe destek. Önce 24 saat ücretsiz test edin.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
