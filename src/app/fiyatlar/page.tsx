@@ -1,5 +1,6 @@
 import { buildMetadata } from '@/lib/seo'
 import { PRICING_PACKAGES, HOMEPAGE_FAQ } from '@/lib/data'
+import Link from 'next/link'
 import { WHATSAPP_LINKS } from '@/lib/constants'
 import PricingCard from '@/components/PricingCard'
 import FaqAccordion from '@/components/FaqAccordion'
@@ -25,7 +26,7 @@ export default function FiyatlarPage() {
         </h1>
         <p className="mt-4 text-base text-gray-400 sm:text-lg">
           Tüm paketlerde 150.000+ kanal, 4K UHD kalite ve 7/24 destek dahildir.
-          7 gün koşulsuz iade garantisi.
+          7 gün iade garantisi (koşullar iade politikasında).
         </p>
       </header>
 
@@ -64,6 +65,24 @@ export default function FiyatlarPage() {
           Sıkça Sorulan Sorular
         </h2>
         <FaqAccordion items={HOMEPAGE_FAQ} />
+      </section>
+
+      <section aria-labelledby="guides-heading" className="mx-auto mt-16 max-w-3xl">
+        <h2 id="guides-heading" className="text-xl font-bold text-white sm:text-2xl">Karar Vermeden Önce</h2>
+        <ul className="mt-5 space-y-3 text-sm text-gray-400">
+          <li>
+            <Link href="/blog/iptv-vs-kablo-tv-karsilastirma/" className="font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300">IPTV ve kablo TV karşılaştırması</Link>
+          </li>
+          <li>
+            <Link href="/blog/en-iyi-iptv-servisleri-2026/" className="font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300">IPTV servisi seçerken nelere bakmalı?</Link>
+          </li>
+          <li>
+            <Link href="/blog/akilli-tvde-iptv-kurulumu/" className="font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300">Samsung, LG ve Sony TV&apos;de kurulum rehberi</Link>
+          </li>
+          <li>
+            <Link href="/iade-politikasi/" className="font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300">İade politikası ve koşulları</Link>
+          </li>
+        </ul>
       </section>
     </div>
   )

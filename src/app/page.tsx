@@ -5,7 +5,6 @@ import {
   FEATURES,
   PRICING_PACKAGES,
   SETUP_STEPS,
-  TESTIMONIALS,
   HOMEPAGE_FAQ,
   DEVICES,
   TRUST_BADGES,
@@ -13,7 +12,6 @@ import {
 import Ticker from '@/components/Ticker'
 import { PricingJsonLd } from '@/components/JsonLd'
 import PricingCard from '@/components/PricingCard'
-import TestimonialCard from '@/components/TestimonialCard'
 import FaqAccordion from '@/components/FaqAccordion'
 
 export default function HomePage() {
@@ -92,7 +90,7 @@ export default function HomePage() {
           </div>
           <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
             <div style={{background:'linear-gradient(135deg,#1a1a2e,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>4K HDR</span><div style={{textAlign:'center',fontSize:'28px'}}>🎬</div></div>
-            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>Netflix Originals</div><div style={{color:'#64748b',fontSize:'11px'}}>200.000+ VOD</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'100%',height:'100%',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',borderRadius:'2px'}}></div></div></div>
+            <div style={{padding:'10px 12px'}}><div style={{color:'#e2e8f0',fontSize:'13px',fontWeight:600}}>Film &amp; Dizi Arşivi</div><div style={{color:'#64748b',fontSize:'11px'}}>80.000+ VOD</div><div style={{marginTop:'6px',height:'3px',background:'#334155',borderRadius:'2px'}}><div style={{width:'100%',height:'100%',background:'linear-gradient(90deg,#3b82f6,#8b5cf6)',borderRadius:'2px'}}></div></div></div>
           </div>
           <div style={{background:'rgba(30,41,59,.7)',borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(255,255,255,.06)'}}>
             <div style={{background:'linear-gradient(135deg,#0c1e3f,#0f172a)',padding:'24px 16px 16px',position:'relative'}}><span style={{position:'absolute',top:'8px',left:'8px',background:'#e11d48',color:'#fff',fontSize:'10px',fontWeight:700,padding:'2px 8px',borderRadius:'4px'}}>4K</span><div style={{textAlign:'center',fontSize:'28px'}}>🎥</div></div>
@@ -143,24 +141,6 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      {/* ═══════ TESTIMONIALS ═══════ */}
-      <section aria-labelledby="testimonials-heading" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <h2 id="testimonials-heading" className="text-3xl font-extrabold text-white sm:text-4xl">
-            Müşterilerimiz Ne Diyor?
-          </h2>
-          <p className="mt-4 text-base text-gray-400 sm:text-lg">
-            Binlerce memnun kullanıcıdan gerçek yorumlar.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <TestimonialCard key={t.name} testimonial={t} />
-          ))}
-        </div>
       </section>
 
       {/* ═══════ PRICING ═══════ */}
@@ -291,7 +271,7 @@ export default function HomePage() {
               Hemen Başlayın
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-gray-400 sm:text-lg">
-              Binlerce memnun müşteriye katılın ve en sevdiğiniz kanalları izlemeye hemen başlayın.
+              24 saatlik ücretsiz test ile deneyin, en sevdiğiniz kanalları izlemeye hemen başlayın.
             </p>
             <a
               href={WHATSAPP_LINKS.buy}

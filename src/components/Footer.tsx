@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </p>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-gray-500">
-              Türkiye&apos;nin en güvenilir IPTV sağlayıcısı. 150.000+ kanal, 4K kalite ve
+              Premium IPTV hizmeti. 150.000+ kanal, 4K kalite ve
               7/24 WhatsApp desteği.
             </p>
             <a

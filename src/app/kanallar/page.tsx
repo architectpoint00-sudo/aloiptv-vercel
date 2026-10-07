@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { buildMetadata } from '@/lib/seo'
 import { CHANNEL_CATEGORIES, CHANNEL_LISTS } from '@/lib/data'
 import { WHATSAPP_LINKS } from '@/lib/constants'
@@ -67,6 +68,13 @@ export default function KanallarPage() {
           ))}
         </div>
       </section>
+
+      <p className="mx-auto mt-12 max-w-3xl text-center text-sm text-gray-400">
+        4K izleme için gereken internet hızı ve cihazlar:{' '}
+        <Link href="/blog/iptv-4k-ultra-hd-rehberi/" className="font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300">IPTV 4K Ultra HD rehberi</Link>
+        {' '}&middot;{' '}
+        <Link href="/fiyatlar/" className="font-medium text-purple-400 underline underline-offset-2 hover:text-purple-300">Paketler ve fiyatlar</Link>
+      </p>
 
       {/* CTA */}
       <section className="relative mx-auto mt-20 max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 text-center sm:p-14">

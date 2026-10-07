@@ -1,6 +1,17 @@
 {
   "redirects": [
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.aloiptv.net" }], "destination": "https://aloiptv.net/:path", "permanent": true },
+    { "source": "/iptvizle/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/yeni/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/kalite-iptv/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/kaliteiptv/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/super-iptv/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/vip-iptv/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/sistem/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/iptv1/:path*", "destination": "/", "statusCode": 301 },
+    { "source": "/test-iptv/:path*", "destination": "/fiyatlar/", "statusCode": 301 },
+    { "source": "/iptv-test/:path*", "destination": "/fiyatlar/", "statusCode": 301 },
+    { "source": "/blog/samsung-lg-tv-iptv-kurulumu-2026/:path*", "destination": "/blog/akilli-tvde-iptv-kurulumu/", "statusCode": 301 },
     { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
     { "source": "/wp-login.php", "destination": "/", "permanent": true },
     { "source": "/wp-content/:path*", "destination": "/", "permanent": true },

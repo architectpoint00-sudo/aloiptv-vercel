@@ -6,7 +6,7 @@ import PolicyPage from '@/components/PolicyPage'
 export const metadata = buildMetadata({
   title: 'İade Politikası',
   description:
-    'AloIPTV iade politikası. 7 gün koşulsuz para iade garantisi ve iade süreci hakkında detaylı bilgi.',
+    'AloIPTV iade politikası. 7 gün para iade garantisi ve iade süreci hakkında detaylı bilgi.',
   path: '/iade-politikasi/',
 })
 
@@ -21,7 +21,7 @@ export default function IadePolitikasiPage() {
       ctaLabel="İade Talebi Oluştur"
       intro={
         <p>
-          Satın alma tarihinden itibaren 7 gün içinde koşulsuz para iade garantisi sunuyoruz.
+          Satın alma tarihinden itibaren 7 gün içinde para iade garantisi sunuyoruz.
           Aşağıda iade koşullarını, sürecini ve sürelerini detaylı olarak bulabilirsiniz.
         </p>
       }

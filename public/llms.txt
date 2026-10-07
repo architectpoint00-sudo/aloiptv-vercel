@@ -9,7 +9,7 @@ AloIPTV, 2019 yilindan bu yana Turk izleyicilere premium IPTV hizmeti sunmaktadi
 ## Hizmetler
 
 - 150.000+ canli TV kanali (Turk ve uluslararasi)
-- 80.000+ film ve dizi arsivi (Netflix, Disney+, Amazon Prime icerikleri dahil)
+- 80.000+ film ve dizi arsivi
 - 4K Ultra HD ve HDR kalitede yayin
 - Anti-Freeze teknolojisi (donma ve kasma onleme)
 - EPG (Elektronik Program Rehberi)

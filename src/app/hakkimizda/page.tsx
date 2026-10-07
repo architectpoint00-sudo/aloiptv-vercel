@@ -6,7 +6,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata = buildMetadata({
   title: 'Hakkımızda',
   description:
-    'AloIPTV hakkında. 2019 yılından bu yana Türkiye\'nin en güvenilir premium IPTV hizmeti.',
+    'AloIPTV hakkında. 2019 yılından bu yana premium IPTV hizmeti.',
   path: '/hakkimizda/',
 })
 
@@ -17,10 +17,10 @@ export default function HakkimizdaPage() {
 
       <header className="mb-14 text-center">
         <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
-          Premium IPTV&apos;de Güvenilir İsim
+          Premium IPTV Hizmeti
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:text-lg">
-          2019&apos;dan beri Türkiye&apos;nin en güvenilir IPTV hizmetini sunuyoruz.
+          2019&apos;dan beri IPTV hizmeti sunuyoruz.
         </p>
       </header>
 

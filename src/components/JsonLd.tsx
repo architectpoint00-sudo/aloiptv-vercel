@@ -22,7 +22,7 @@ export function OrganizationJsonLd() {
           name: SITE_NAME,
           url: SITE_URL,
           description: SITE_DESCRIPTION,
-          logo: `${SITE_URL}/og-image-aloiptv.png`,
+          logo: `${SITE_URL}/logo.png`,
           foundingDate: '2019',
           contactPoint: {
             '@type': 'ContactPoint',
@@ -76,7 +76,7 @@ export function PricingJsonLd({ packages }: { packages: PricingPackage[] }) {
         name: `${SITE_NAME} Premium IPTV Aboneliği`,
         description: SITE_DESCRIPTION,
         brand: { '@type': 'Brand', name: SITE_NAME },
-        image: `${SITE_URL}/og-image-aloiptv.png`,
+        image: `${SITE_URL}/og-default.png`,
         offers: paid.map((pkg) => ({
           '@type': 'Offer',
           name: pkg.name,
@@ -117,11 +117,11 @@ export function BlogPostingJsonLd({ post }: { post: BlogPost }) {
         headline: post.title,
         description: post.excerpt,
         datePublished: iso,
-        dateModified: iso,
+        dateModified: post.modifiedIso || iso,
         inLanguage: 'tr-TR',
         url: `${SITE_URL}/blog/${post.slug}/`,
         mainEntityOfPage: `${SITE_URL}/blog/${post.slug}/`,
-        image: `${SITE_URL}/og-image-aloiptv.png`,
+        image: `${SITE_URL}/og-default.png`,
         author: { '@id': `${SITE_URL}/#organization` },
         publisher: { '@id': `${SITE_URL}/#organization` },
       }}

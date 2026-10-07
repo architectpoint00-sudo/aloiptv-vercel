@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
     locale: 'tr_TR',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME} — Premium IPTV Satın Al`,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.png'],
+    images: ['/og-default.png'],
   },
 }
 

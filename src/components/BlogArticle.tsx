@@ -14,9 +14,11 @@ function isHeading(text: string) {
   return text.length < 80 && !/[.!:;]$/.test(text.trim())
 }
 
-/** Pick up to 3 related posts that are NOT the current one. */
+/** Topical related posts (from post.related), never the current one. */
 function getRelatedPosts(current: BlogPost): BlogPost[] {
-  return BLOG_POSTS.filter((p) => p.slug !== current.slug).slice(0, 3)
+  return current.related
+    .map((slug) => BLOG_POSTS.find((p) => p.slug === slug))
+    .filter((p): p is BlogPost => Boolean(p) && p!.slug !== current.slug)
 }
 
 export default function BlogArticle({ post }: { post: BlogPost }) {
@@ -68,11 +70,11 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
         {/* Contextual pricing CTA — internal link to /fiyatlar/ */}
         <aside className="mt-10 rounded-xl border border-blue-500/20 bg-blue-500/5 p-6">
           <p className="text-sm leading-relaxed text-gray-300">
-            AloIPTV paketleri hakkinda detayli bilgi ve guncel fiyatlar icin{' '}
+            AloIPTV paketleri hakkında detaylı bilgi ve güncel fiyatlar için{' '}
             <Link href="/fiyatlar/" className="font-semibold text-purple-400 underline underline-offset-2 hover:text-purple-300">
-              IPTV fiyatlari sayfamizi
+              IPTV fiyatları sayfamızı
             </Link>{' '}
-            ziyaret edin. 24 saatlik ucretsiz test hesabi ile tum kanallari deneyebilirsiniz.
+            ziyaret edin. 24 saatlik ücretsiz test hesabı ile kanalları deneyebilirsiniz.
           </p>
         </aside>
       </article>
@@ -84,9 +86,9 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
           className="pointer-events-none absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-purple-600/10 blur-[100px]"
         />
         <div className="relative">
-          <h2 className="text-xl font-bold text-white sm:text-2xl">AloIPTV&apos;yi Ucretsiz Deneyin</h2>
+          <h2 className="text-xl font-bold text-white sm:text-2xl">AloIPTV&apos;yi Ücretsiz Deneyin</h2>
           <p className="mx-auto mt-4 max-w-lg text-sm text-gray-400">
-            24 saatlik ucretsiz test hesabi ile 150.000+ kanali kesfedin.
+            24 saatlik ücretsiz test hesabı ile 150.000+ kanalı keşfedin.
           </p>
           <a
             href={WHATSAPP_LINKS.test}
@@ -94,7 +96,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
             rel="noopener noreferrer"
             className="mt-6 inline-block rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-transform duration-200 hover:scale-105"
           >
-            Ucretsiz Test Al
+            Ücretsiz Test Al
           </a>
         </div>
       </section>
@@ -102,7 +104,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
       {/* Related posts — cross-links between blog articles */}
       {related.length > 0 && (
         <section className="mt-12">
-          <h2 className="mb-5 text-lg font-bold text-white">Ilgili Yazilar</h2>
+          <h2 className="mb-5 text-lg font-bold text-white">İlgili Yazılar</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((r) => (
               <Link
@@ -119,7 +121,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
       )}
 
       <section className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-8">
-        <h2 className="mb-4 text-lg font-bold text-white">Kesfetmeye Devam Edin</h2>
+        <h2 className="mb-4 text-lg font-bold text-white">Keşfetmeye Devam Edin</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           <Link href="/fiyatlar/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
             IPTV Paketleri ve Fiyatlar
@@ -128,10 +130,10 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
             150.000+ Kanal Listesi
           </Link>
           <Link href="/sss/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
-            Sikca Sorulan Sorular
+            Sıkça Sorulan Sorular
           </Link>
           <Link href="/iletisim/" className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-300 transition hover:border-red-500/30 hover:text-white">
-            Bize Ulasin
+            Bize Ulaşın
           </Link>
         </div>
       </section>
@@ -144,7 +146,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
           <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="m15 19-7-7 7-7" />
           </svg>
-          Tum yazilara don
+          Tüm yazılara dön
         </Link>
       </p>
     </div>
