@@ -26,7 +26,7 @@ export default function FiyatlarPage() {
         </h1>
         <p className="mt-4 text-base text-gray-400 sm:text-lg">
           Tüm paketlerde 150.000+ kanal, 4K UHD kalite ve 7/24 destek dahildir.
-          7 gün iade garantisi (koşullar iade politikasında).
+          7 gün iade seçeneği (koşullar iade politikasında).
         </p>
       </header>
 

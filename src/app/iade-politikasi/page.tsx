@@ -21,7 +21,7 @@ export default function IadePolitikasiPage() {
       ctaLabel="İade Talebi Oluştur"
       intro={
         <p>
-          Satın alma tarihinden itibaren 7 gün içinde para iade garantisi sunuyoruz.
+          Satın alma tarihinden itibaren 7 gün içinde para iadesi talep edebilirsiniz.
           Aşağıda iade koşullarını, sürecini ve sürelerini detaylı olarak bulabilirsiniz.
         </p>
       }

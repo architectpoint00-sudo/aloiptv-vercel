@@ -6,7 +6,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata = buildMetadata({
   title: 'AloIPTV Hakkında',
   description:
-    'AloIPTV hakkında: 2019\'dan bu yana sunulan IPTV hizmeti, değerlerimiz, 24 saatlik ücretsiz test, 7 gün iade koşulları ve 7/24 Türkçe destek.',
+    'AloIPTV hakkında: sunulan IPTV hizmeti, değerlerimiz, 24 saatlik ücretsiz test, 7 gün iade koşulları ve 7/24 Türkçe destek.',
   path: '/hakkimizda/',
 })
 
@@ -20,13 +20,13 @@ export default function HakkimizdaPage() {
           Premium IPTV Hizmeti
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-gray-400 sm:text-lg">
-          2019&apos;dan beri IPTV hizmeti sunuyoruz.
+          Canlı TV, film ve dizi arşivi tek abonelikte.
         </p>
       </header>
 
       {/* Story */}
       <section aria-labelledby="story">
-        <h2 id="story" className="text-2xl font-extrabold text-white sm:text-3xl">Hikayemiz</h2>
+        <h2 id="story" className="text-2xl font-extrabold text-white sm:text-3xl">Hizmetimiz</h2>
         <div className="mt-6 space-y-4">
           {ABOUT_PAGE_DATA.hikayemiz.map((paragraph, index) => (
             <p key={index} className="text-sm leading-relaxed text-gray-400 sm:text-base">

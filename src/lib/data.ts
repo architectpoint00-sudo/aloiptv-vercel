@@ -88,7 +88,7 @@ export interface BlogPost {
 
 export const ANNOUNCEMENT_MESSAGES = [
   '🔥 12 Aylık Pakette %40 İndirim — Sınırlı Süre',
-  '⚡ 24 Aylık Pakette %53 İndirim — En İyi Fiyat',
+  '⚡ 24 Aylık Pakette %53 İndirim',
   '🎯 Ücretsiz 24 Saat Test Sunucusu',
 ]
 
@@ -113,7 +113,7 @@ export const TRUST_BADGES: TrustBadge[] = [
   {
     icon: '🎧',
     title: '7/24 VIP Destek',
-    description: 'WhatsApp + Telegram üzerinden 7/24 teknik destek',
+    description: 'WhatsApp üzerinden 7/24 teknik destek',
   },
 ]
 
@@ -124,43 +124,6 @@ export const STATS: Stat[] = [
   { value: '80K+', label: 'Film & Dizi' },
   { value: '4K HDR', label: 'Ultra Kalite' },
   { value: '⚡', label: 'Anında Aktivasyon' },
-]
-
-// ─── Türk Kanalları ──────────────────────────
-
-export const TURKISH_CHANNELS: string[] = [
-  'TRT 1',
-  'TRT 2',
-  'TRT Haber',
-  'TRT Spor',
-  'TRT Çocuk',
-  'TRT Belgesel',
-  'TRT Müzik',
-  'Show TV',
-  'Star TV',
-  'ATV',
-  'Kanal D',
-  'Fox TV',
-  'TV8',
-  'TV8,5',
-  'Kanal 7',
-  'Teve2',
-  'Beyaz TV',
-  '360',
-  'A Haber',
-  'A Spor',
-  'CNN Türk',
-  'Habertürk',
-  'Haber Global',
-  'NTV',
-  'NTV Spor',
-  'S Sport',
-  'Spor Smart',
-  'Nat Geo',
-  'Discovery',
-  'TLC',
-  'Kral TV',
-  'Power Türk',
 ]
 
 // ─── Cihazlar ────────────────────────────────
@@ -259,17 +222,17 @@ export const FEATURES: Feature[] = [
   {
     icon: '🎧',
     title: '7/24 Destek',
-    description: 'WhatsApp ve Telegram üzerinden 7/24 Türkçe teknik destek. Kurulum yardımı, sorun giderme ve hesap yönetimi desteği.',
+    description: 'WhatsApp üzerinden 7/24 Türkçe teknik destek. Kurulum yardımı, sorun giderme ve hesap yönetimi desteği.',
   },
 ]
 
 // ─── Hakkımızda Bölümü (Ana Sayfa) ──────────
 
 export const ABOUT_SECTION: string[] = [
-  'AloIPTV olarak 2019 yılından bu yana IPTV hizmeti sunmaktayız. Müşteri memnuniyetini ön planda tutarak ve hizmetimizi sürekli geliştirerek çalışıyoruz.',
+  'AloIPTV, canlı TV kanalları, film ve dizi arşivi ile spor yayınlarını tek abonelikte sunan bir IPTV hizmetidir. Paketler, fiyatlar ve koşullar sitede açıkça yer alır.',
   'Anti-Freeze teknolojimizle maç günleri gibi yoğun saatlerde donma ve kesinti sorunlarını azaltmayı hedefliyoruz. Yerel sunucu önbellekleme sistemi ile yüksek talep anlarında stabil yayın sağlamak için çalışıyoruz. 150.000\'den fazla kanal ve 80.000\'i aşan film-dizi arşivinden oluşan geniş bir içerik seçkisi sunuyoruz.',
-  '7/24 WhatsApp ve Telegram üzerinden Türkçe destek ekibimiz her an yanınızda. Kurulum, sorun giderme veya hesap yönetimi — ne ihtiyacınız olursa olsun, dakikalar içinde size yardımcı oluyoruz.',
-  'Güvenli ödeme altyapımız, 7 gün iade garantimiz ve şeffaf fiyat politikamız ile hizmet vermeye devam ediyoruz.',
+  'WhatsApp üzerinden 7/24 Türkçe destek hattımız mevcuttur. Kurulum, sorun giderme veya hesap yönetimi — ne ihtiyacınız olursa olsun, dakikalar içinde size yardımcı oluyoruz.',
+  'Güvenli ödeme, 7 gün iade seçeneği (koşullar iade politikası sayfasında) ve şeffaf fiyatlandırma ile hizmet veriyoruz.',
 ]
 
 // ─── Hakkımızda İstatistikleri (Ana Sayfa) ──
@@ -277,8 +240,8 @@ export const ABOUT_SECTION: string[] = [
 export const ABOUT_STATS: Stat[] = [
   { value: '150K+', label: 'CANLI KANAL' },
   { value: '80K+', label: 'FILM & DIZI' },
-  { value: '7 GÜN', label: 'İADE GARANTİSİ' },
-  { value: '2019', label: 'YILINDAN BERİ' },
+  { value: '7 GÜN', label: 'İADE SÜRESİ' },
+  { value: '24 Saat', label: 'ÜCRETSİZ TEST' },
 ]
 
 // ─── Ana Sayfa SSS ───────────────────────────
@@ -302,7 +265,7 @@ export const HOMEPAGE_FAQ: FaqItem[] = [
   },
   {
     question: 'İade politikanız nedir?',
-    answer: '7 gün iade garantisi sunuyoruz. Satın aldıktan sonra 7 gün içinde memnun kalmazsanız WhatsApp üzerinden bize yazmanız yeterli. İade koşulları ve istisnalar iade politikası sayfamızda yer alır.',
+    answer: '7 gün iade seçeneği sunuyoruz. Satın aldıktan sonra 7 gün içinde memnun kalmazsanız WhatsApp üzerinden bize yazmanız yeterli. İade koşulları ve istisnalar iade politikası sayfamızda yer alır.',
   },
 ]
 
@@ -414,7 +377,7 @@ export const CHANNEL_CATEGORIES: ChannelCategory[] = [
   },
   {
     name: 'Sinema & Filmler',
-    description: 'Hollywood, Türk sineması ve dünya sinemasından film arşivi ve sinema kanalları.',
+    description: 'Türk ve yabancı yapımlardan film arşivi ve sinema kanalları.',
     icon: '🎬',
   },
   {
@@ -423,13 +386,13 @@ export const CHANNEL_CATEGORIES: ChannelCategory[] = [
     icon: '📺',
   },
   {
-    name: 'Boks/MMA/PPV',
-    description: 'UFC, boks ve MMA gibi dövüş sporları ile PPV etkinlik kanalları. Yayınlanan etkinlikler kanal içeriğine göre değişir.',
+    name: 'Dövüş Sporları',
+    description: 'Boks, MMA ve diğer dövüş sporlarına yönelik kanallar. Yayınlanan etkinlikler kanal içeriğine göre değişir.',
     icon: '🥊',
   },
   {
-    name: 'NFL/MLB/NBA',
-    description: 'Amerikan futbolu, beyzbol ve basketbol ligleri için NFL, MLB ve NBA kanalları.',
+    name: 'Amerikan Sporları',
+    description: 'Amerikan futbolu, beyzbol ve basketbol gibi Amerikan spor dallarına yönelik kanallar.',
     icon: '🏈',
   },
   {
@@ -459,56 +422,23 @@ export const CHANNEL_CATEGORIES: ChannelCategory[] = [
 export const CHANNEL_LISTS: ChannelGroup[] = [
   {
     title: 'Türk Kanalları',
-    channels: [
-      'TRT 1', 'TRT 2', 'TRT Haber', 'TRT Spor', 'TRT Çocuk', 'TRT Belgesel', 'TRT Müzik',
-      'Show TV', 'Star TV', 'ATV', 'Kanal D', 'Fox TV', 'TV8', 'TV8,5',
-      'Kanal 7', 'Teve2', 'Beyaz TV', '360',
-      'A Haber', 'A Spor', 'CNN Türk', 'Habertürk', 'Haber Global',
-      'NTV', 'NTV Spor', 'S Sport', 'Spor Smart',
-      'Nat Geo', 'Discovery', 'TLC', 'Kral TV', 'Power Türk',
-    ],
+    channels: ['Ulusal kanallar', 'Haber', 'Spor', 'Belgesel', 'Çocuk', 'Müzik', 'Yaşam ve eğlence'],
   },
   {
     title: 'Spor Kanalları',
-    channels: [
-      'beIN Sports 1', 'beIN Sports 2', 'beIN Sports 3', 'beIN Sports 4',
-      'S Sport', 'S Sport 2', 'Spor Smart', 'A Spor', 'TRT Spor', 'TRT Spor 2',
-      'ESPN', 'ESPN 2', 'Sky Sports Main Event', 'Sky Sports Premier League',
-      'Sky Sports Football', 'Sky Sports F1', 'Eurosport 1', 'Eurosport 2',
-      'DAZN 1', 'DAZN 2', 'NBA TV', 'NFL Network', 'MLB Network',
-      'Fox Sports 1', 'Fox Sports 2', 'BT Sport 1', 'BT Sport 2', 'BT Sport 3',
-      'TNT Sports 1', 'TNT Sports 2',
-    ],
+    channels: ['Futbol', 'Basketbol', 'Tenis', 'Motor sporları', 'Dövüş sporları', 'Amerikan sporları'],
   },
   {
     title: 'Sinema & Dizi',
-    channels: [
-      'BluTV', 'Exxen', 'GAIN', 'TOD', 'Tabii',
-      'Crunchyroll', 'Peacock', 'Starz',
-      'FX', 'AMC', 'Showtime', 'Cinemax',
-      'Movie Smart Premium', 'Movie Smart Platin', 'Movie Smart Gold',
-      'Sinema TV', 'Sinema TV 1001',
-    ],
+    channels: ['Sinema kanalları', 'Dizi kanalları', 'Film arşivi', 'Dizi arşivi', 'Animasyon'],
   },
   {
     title: 'Çocuk Kanalları',
-    channels: [
-      'TRT Çocuk', 'Cartoon Network', 'Disney Channel', 'Nickelodeon',
-      'Nick Jr.', 'Disney Junior', 'Baby TV', 'Minika Go', 'Minika Çocuk',
-      'Boomerang', 'Cartoonito', 'PBS Kids', 'CBeebies', 'Da Vinci Kids',
-    ],
+    channels: ['Çizgi film', 'Eğitici içerik', 'Okul öncesi', 'Aile'],
   },
   {
     title: 'Uluslararası',
-    channels: [
-      'BBC One', 'BBC Two', 'BBC News', 'ITV', 'Channel 4', 'Sky One',
-      'CNN International', 'Fox News', 'MSNBC', 'Al Jazeera English',
-      'France 24', 'DW', 'Euronews', 'RT', 'CGTN',
-      'ARD', 'ZDF', 'RTL', 'ProSieben', 'SAT.1',
-      'TF1', 'France 2', 'France 3', 'M6', 'Canal+',
-      'RAI 1', 'RAI 2', 'Mediaset', 'Antenna 3', 'TVE',
-      'MBC', 'Rotana Cinema', 'OSN', 'Al Arabiya',
-    ],
+    channels: ['İngilizce', 'Almanca', 'Fransızca', 'İtalyanca', 'İspanyolca', 'Arapça', 'Uluslararası haber'],
   },
 ]
 
@@ -516,16 +446,16 @@ export const CHANNEL_LISTS: ChannelGroup[] = [
 
 export const ABOUT_PAGE_DATA: AboutPageData = {
   hikayemiz: [
-    'AloIPTV, 2019 yılında Türk izleyicilere IPTV hizmeti sunmak amacıyla kuruldu. IPTV kullanıcılarının sık dile getirdiği donma sorunları ve yetersiz destek gibi konulara çözüm üretmeyi hedefledik.',
-    'İlk günden itibaren teknolojiye yatırım yapmayı ve müşteri memnuniyetini her şeyin üzerinde tutmayı ilke edindik. Anti-Freeze teknolojimizi geliştirdik, güçlü sunucu altyapımızı kurduk ve 7/24 Türkçe destek ekibimizi oluşturduk.',
-    'Hizmeti satın almadan değerlendirebilmeniz için 24 saatlik ücretsiz test ve 7 gün iade seçeneği sunuyoruz (koşullar iade politikası sayfasında yer alır). Amacımız, kullanıcılarımıza iyi bir izleme deneyimi sunmaktır.',
-    'Hizmetimizi kullanıcı geri bildirimleriyle geliştirmeye devam ediyoruz. Sitemizde 150.000\'den fazla kanal, 80.000\'i aşan film ve dizi arşivi ve desteklenen kanallarda 4K Ultra HD yayın sunduğumuzu belirtiyoruz.',
+    'AloIPTV, canlı TV kanalları, film ve dizi arşivi ile spor yayınlarını tek abonelikte sunan bir IPTV hizmetidir. İnternet bağlantısı olan desteklenen cihazlarda izlenebilir; uydu çanağı veya kablo altyapısı gerekmez.',
+    'Hizmetin merkezinde Anti-Freeze teknolojisi bulunur. Yerel sunucu önbellekleme kullanan bu yapı, maç günleri gibi yoğun saatlerde donma ve kesinti sorunlarını azaltmayı hedefler. Desteklenen kanallarda 4K Ultra HD yayın sunulur.',
+    'Hizmeti satın almadan değerlendirebilmeniz için 24 saatlik ücretsiz test ve 7 gün iade seçeneği sunuyoruz (koşullar iade politikası sayfasında yer alır). Kurulum ve teknik sorularınız için WhatsApp üzerinden 7/24 Türkçe destek verilir.',
+    'Sitemizde 150.000\'den fazla kanal, 80.000\'i aşan film ve dizi arşivi sunduğumuzu belirtiyoruz; paketler ve fiyatlar fiyatlar sayfasında açıkça yer alır.',
   ],
   stats: [
-    { value: '2019', label: 'Kuruluş Yılı' },
+    { value: '24 Saat', label: 'Ücretsiz Test' },
     { value: '150K+', label: 'Kanal Sayısı' },
     { value: '80K+', label: 'Film & Dizi' },
-    { value: '7 Gün', label: 'İade Garantisi' },
+    { value: '7 Gün', label: 'İade Süresi' },
   ],
   values: [
     {
@@ -538,7 +468,7 @@ export const ABOUT_PAGE_DATA: AboutPageData = {
     },
     {
       title: '7/24 Destek',
-      description: 'WhatsApp ve Telegram üzerinden 7 gün 24 saat Türkçe teknik destek. Kurulum yardımı, sorun giderme ve hesap yönetimi desteği.',
+      description: 'WhatsApp üzerinden 7 gün 24 saat Türkçe teknik destek. Kurulum yardımı, sorun giderme ve hesap yönetimi desteği.',
     },
     {
       title: 'Şeffaflık',
@@ -559,7 +489,7 @@ export const SSS_DATA: { category: string; items: FaqItem[] }[] = [
       },
       {
         question: 'AloIPTV nedir?',
-        answer: 'AloIPTV, 2019\'dan bu yana hizmet veren bir premium IPTV sağlayıcısıdır. 150.000\'den fazla canlı TV kanalı, 80.000+ film ve dizi arşivi, Anti-Freeze teknolojisi, 4K Ultra HD kalite ve 7/24 Türkçe destek sunar. 7 gün iade garantisi uygulanır; koşullar iade politikası sayfasında yer alır.',
+        answer: 'AloIPTV, canlı TV kanalları, film ve dizi arşivi sunan bir IPTV hizmetidir. 150.000\'den fazla canlı TV kanalı, 80.000+ film ve dizi arşivi, Anti-Freeze teknolojisi, 4K Ultra HD kalite ve 7/24 Türkçe destek sunar. 7 gün iade seçeneği sunulur; koşullar iade politikası sayfasında yer alır.',
       },
       {
         question: 'Ücretsiz test nasıl alınır?',
@@ -684,7 +614,7 @@ export const REFUND_POLICY: { title: string; content: string[] }[] = [
   {
     title: 'Genel İade Politikası',
     content: [
-      'AloIPTV olarak müşteri memnuniyetini ön planda tutuyoruz. Hizmetlerimizden memnun kalmamanız durumunda, satın alma tarihinden itibaren 7 gün içinde para iade garantisi sunuyoruz.',
+      'AloIPTV olarak müşteri memnuniyetini ön planda tutuyoruz. Hizmetlerimizden memnun kalmamanız durumunda, satın alma tarihinden itibaren 7 gün içinde para iadesi talep edebilirsiniz.',
       'İade talebinizi WhatsApp üzerinden bize ileterek hızlı ve sorunsuz bir şekilde iade sürecinizi başlatabilirsiniz.',
     ],
   },
@@ -757,11 +687,11 @@ export const TERMS_OF_USE: { title: string; content: string[] }[] = [
     ],
   },
   {
-    title: 'Hizmet Garantisi',
+    title: 'Hizmet Kapsamı',
     content: [
       'Planlı bakım çalışmaları önceden duyurulur ve genellikle gece saatlerinde (02:00-06:00 arası) gerçekleştirilir.',
       'Hizmetimiz "olduğu gibi" sunulmaktadır. İnternet bağlantınızın kalitesi, cihazınızın uyumluluğu ve yerel ağ sorunlarından kaynaklanan performans düşüşlerinden AloIPTV sorumlu tutulamaz.',
-      '7 gün para iade garantisi, iade politikası sayfasındaki koşullara tabidir.',
+      '7 gün para iadesi, iade politikası sayfasındaki koşullara tabidir.',
     ],
   },
   {

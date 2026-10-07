@@ -30,7 +30,7 @@ export default function CtaSection() {
         </a>
 
         <p className="text-gray-600 text-xs mt-6">
-          7/24 Destek &middot; Aninda Aktivasyon &middot; 7 Gun Iade
+          7/24 Destek &middot; Anında Aktivasyon &middot; 7 Gün İade
         </p>
       </div>
     </section>

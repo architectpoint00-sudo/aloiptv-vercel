@@ -23,7 +23,6 @@ export function OrganizationJsonLd() {
           url: SITE_URL,
           description: SITE_DESCRIPTION,
           logo: `${SITE_URL}/logo.png`,
-          foundingDate: '2019',
           contactPoint: {
             '@type': 'ContactPoint',
             telephone: WHATSAPP_NUMBER,

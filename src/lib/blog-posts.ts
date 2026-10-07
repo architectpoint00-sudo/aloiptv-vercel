@@ -301,8 +301,8 @@ export const BLOG_POSTS: BlogPost[] = [
   /* ─────────────────────────────────────────── 4 ── */
   {
     slug: 'en-iyi-iptv-servisleri-2026',
-    title: 'En İyi IPTV Servisi Nasıl Seçilir? — 2026 Kontrol Listesi',
-    metaTitle: 'En İyi IPTV Servisi Nasıl Seçilir? 2026',
+    title: 'IPTV Servisi Nasıl Seçilir? — 2026 Kontrol Listesi',
+    metaTitle: 'IPTV Servisi Nasıl Seçilir? 2026 Kontrol Listesi',
     date: '17 Ağustos 2026',
     isoDate: '2026-08-17',
     modifiedIso: '2026-10-07',
@@ -319,7 +319,7 @@ export const BLOG_POSTS: BlogPost[] = [
 | Kanal listesi | İzlemek istediğiniz kanallar listede mi? | [Kanal listesi sayfası](/kanallar/) |
 | Görüntü kalitesi | HD/FHD/4K destek, 4K için gereken hız | Desteklenen kanallarda 4K UHD |
 | Kararlılık | Yoğun saatlerde donma | 24 saatlik ücretsiz test |
-| Destek | Hangi kanaldan, hangi saatlerde, hangi dilde | WhatsApp ve Telegram, Türkçe |
+| Destek | Hangi kanaldan, hangi saatlerde, hangi dilde | WhatsApp, Türkçe |
 | Fiyat şeffaflığı | KDV, para birimi, otomatik yenileme | TL, KDV dahil, otomatik yenileme yok |
 | İade ve deneme | Deneme süresi, iade koşulları | 24 saat test, 7 gün iade |
 | Cihaz limiti | Aynı anda kaç cihaz | Pakete göre 1-3 cihaz |
@@ -376,14 +376,14 @@ export const BLOG_POSTS: BlogPost[] = [
 
       `## AloIPTV\'yi Bu Listeyle Değerlendirin`,
 
-      `AloIPTV, sitede 150.000\'den fazla canlı kanal, 80.000\'i aşan film ve dizi arşivi, desteklenen kanallarda 4K UHD, WhatsApp ve Telegram üzerinden Türkçe destek, 24 saatlik ücretsiz test ve 7 gün iade koşulları sunduğunu belirtir. Bu iddiaları bir başlangıç noktası olarak kullanın ve yukarıdaki test planıyla kendi koşullarınızda doğrulayın. Güncel paketleri [fiyatlar sayfasında](/fiyatlar/) inceleyebilir, ücretsiz test hesabı için [WhatsApp hattımıza](https://wa.me/17185864134) yazabilirsiniz. IPTV ile paketli yayın arasında kararsızsanız [IPTV ve kablo TV karşılaştırmamızı](/blog/iptv-vs-kablo-tv-karsilastirma/) da okuyabilirsiniz.`,
+      `AloIPTV, sitede 150.000\'den fazla canlı kanal, 80.000\'i aşan film ve dizi arşivi, desteklenen kanallarda 4K UHD, WhatsApp üzerinden Türkçe destek, 24 saatlik ücretsiz test ve 7 gün iade koşulları sunduğunu belirtir. Bu iddiaları bir başlangıç noktası olarak kullanın ve yukarıdaki test planıyla kendi koşullarınızda doğrulayın. Güncel paketleri [fiyatlar sayfasında](/fiyatlar/) inceleyebilir, ücretsiz test hesabı için [WhatsApp hattımıza](https://wa.me/17185864134) yazabilirsiniz. IPTV ile paketli yayın arasında kararsızsanız [IPTV ve kablo TV karşılaştırmamızı](/blog/iptv-vs-kablo-tv-karsilastirma/) da okuyabilirsiniz.`,
     ],
   },
 
   /* ─────────────────────────────────────────── 5 ── */
   {
     slug: 'iptv-4k-ultra-hd-rehberi',
-    title: 'IPTV 4K Ultra HD Rehberi — En İyi Kalitede Nasıl İzlenir',
+    title: 'IPTV 4K Ultra HD Rehberi — Yüksek Kalitede Nasıl İzlenir',
     metaTitle: 'IPTV\'de 4K İzleme: Hız, Cihaz ve Ayarlar',
     date: '16 Ağustos 2026',
     isoDate: '2026-08-16',

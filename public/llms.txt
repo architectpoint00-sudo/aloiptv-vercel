@@ -1,10 +1,10 @@
 # AloIPTV
 
-> Turkiye'nin premium IPTV hizmeti. 150.000+ canli kanal, 80.000+ film ve dizi, 4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Turkce destek.
+> Premium IPTV hizmeti. 150.000+ canli kanal, 80.000+ film ve dizi, 4K Ultra HD kalite, Anti-Freeze teknolojisi ve 7/24 Turkce destek.
 
 ## Hakkinda
 
-AloIPTV, 2019 yilindan bu yana Turk izleyicilere premium IPTV hizmeti sunmaktadir. Canli TV kanallari, film ve dizi arsivi, spor yayinlari ve uluslararasi kanallari tek bir abonelikle sunar.
+AloIPTV, Turk izleyicilere yonelik bir IPTV hizmetidir. Canli TV kanallari, film ve dizi arsivi, spor yayinlari ve uluslararasi kanallari tek bir abonelikle sunar.
 
 ## Hizmetler
 
@@ -13,7 +13,7 @@ AloIPTV, 2019 yilindan bu yana Turk izleyicilere premium IPTV hizmeti sunmaktadi
 - 4K Ultra HD ve HDR kalitede yayin
 - Anti-Freeze teknolojisi (donma ve kasma onleme)
 - EPG (Elektronik Program Rehberi)
-- 7/24 WhatsApp ve Telegram uzerinden Turkce destek
+- 7/24 WhatsApp uzerinden Turkce destek
 - Uzaktan kurulum destegi
 
 ## Paketler
