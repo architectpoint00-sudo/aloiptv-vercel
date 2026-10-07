@@ -64,32 +64,6 @@ export default function HakkimizdaPage() {
         </ul>
       </section>
 
-      {/* Team */}
-      <section aria-labelledby="team" className="mt-16">
-        <h2 id="team" className="text-2xl font-extrabold text-white sm:text-3xl">Ekibimiz</h2>
-        <ul className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {ABOUT_PAGE_DATA.team.map((member) => {
-            const initials = member.name.split(' ').map((n) => n[0]).join('')
-            return (
-              <li
-                key={member.name}
-                className="rounded-2xl border border-white/10 bg-[#111827] p-6 text-center transition-colors hover:border-white/20 sm:p-8"
-              >
-                <span
-                  className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white"
-                  aria-hidden="true"
-                >
-                  {initials}
-                </span>
-                <h3 className="mt-5 text-lg font-bold text-white">{member.name}</h3>
-                <p className="mt-1.5 text-sm font-medium text-purple-400">{member.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-400">{member.description}</p>
-              </li>
-            )
-          })}
-        </ul>
-      </section>
-
       {/* CTA */}
       <section className="relative mt-20 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0d0d14] to-[#111827] p-10 text-center sm:p-14">
         <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-purple-600/10 blur-[100px]" />

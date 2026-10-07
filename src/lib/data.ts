@@ -67,17 +67,10 @@ export interface ChannelGroup {
   channels: string[]
 }
 
-export interface TeamMember {
-  name: string
-  role: string
-  description: string
-}
-
 export interface AboutPageData {
   hikayemiz: string[]
   stats: Stat[]
   values: { title: string; description: string }[]
-  team: TeamMember[]
 }
 
 export interface BlogPost {
@@ -589,23 +582,6 @@ export const ABOUT_PAGE_DATA: AboutPageData = {
     {
       title: 'Şeffaflık',
       description: 'Fiyatlarımız net ve açıktır. Gizli ücret, otomatik yenileme veya zorunlu sözleşme yoktur. Aboneliğiniz bittiğinde yenileme tamamen sizin tercihinizdir.',
-    },
-  ],
-  team: [
-    {
-      name: 'Ahmet Yılmaz',
-      role: 'Kurucu & CEO',
-      description: 'IPTV sektöründe 8 yılı aşkın deneyime sahip. AloIPTV\'nin vizyonunu belirliyor ve şirketin stratejik yönünü yönetiyor. Müşteri memnuniyetini her şeyin üstünde tutar.',
-    },
-    {
-      name: 'Elif Kaya',
-      role: 'Teknik Direktör (CTO)',
-      description: 'Sunucu altyapısı, Anti-Freeze teknolojisi ve yayın kalitesinden sorumlu. 10 yıllık yazılım mühendisliği tecrübesi ile AloIPTV\'nin teknik omurgasını oluşturuyor.',
-    },
-    {
-      name: 'Mehmet Demir',
-      role: 'Müşteri İlişkileri Müdürü',
-      description: 'Müşteri destek ekibini yönetiyor ve kullanıcı deneyimini sürekli iyileştiriyor. 7/24 destek sürecinin aksamadan işlemesini sağlıyor.',
     },
   ],
 }
